@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import QuoteComponent from "./components/QuoteComponent";
-import RegisterFormComponent from "./components/RegisterFormComponent";
+import QuoteComponent from "../components/QuoteComponent";
+import LoginFormComponent from "./LoginFormComponent";
 
 export default function RegisterPage(props) {
-
     return (
         <div id="root" className="flex flex-row h-screen w-screen">
             <div
@@ -12,7 +11,7 @@ export default function RegisterPage(props) {
                 className="h-screen w-4/5 flex flex-col items-start justify-center bg-primary"
             >
                 <div id="form-wrapper" className="w-full">
-                    <RegisterFormComponent />
+                    <LoginFormComponent />
                 </div>
             </div>
             <div
@@ -27,6 +26,6 @@ export default function RegisterPage(props) {
     );
 }
 
-if (document.getElementById("register-root")) {
-    ReactDOM.render(<RegisterPage />, document.getElementById("register-root"));
+if (document.getElementById("login-root")) {
+    ReactDOM.render(<RegisterPage />, document.getElementById("login-root"));
 }
