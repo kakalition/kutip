@@ -4,7 +4,15 @@ module.exports = {
     "./resources/**/*.blade.php",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "primary": "#F6F4EA",
+        "secondary": "#C8A703"
+      },
+      fontFamily: {
+        "playfair-display": ["Playfair Display", "sans-serif"]
+      }
+    },
   },
   plugins: [],
 }
