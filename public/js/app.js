@@ -5524,7 +5524,7 @@ function RegisterForm(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
       className: "ml-28 font-playfair-display font-bold text-secondary text-8xl",
-      children: "New Account"
+      children: "Welcome back"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "h-20"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
@@ -5535,10 +5535,21 @@ function RegisterForm(props) {
         children: (0,_common_component_CommonInputBuilder__WEBPACK_IMPORTED_MODULE_1__.CommonInputBuilder)("email", "email", "Email address", "name@provider.com")
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         children: (0,_common_component_CommonInputBuilder__WEBPACK_IMPORTED_MODULE_1__.CommonInputBuilder)("password", "password", "Password", "••••••••")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+        className: "form-label",
+        htmlFor: "remember",
+        children: "Remember me?  "
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+        type: "checkbox",
+        id: "remember",
+        name: "remember",
+        value: "on"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "h-8"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         className: "form-button",
         type: "submit",
-        children: "Create account"
+        children: "Login"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "h-8"
