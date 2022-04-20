@@ -5376,7 +5376,11 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 
-__webpack_require__(/*! ./features/register/RegisterPage */ "./resources/js/features/register/RegisterPage.js");
+__webpack_require__(/*! ./features/auth/register/RegisterPage */ "./resources/js/features/auth/register/RegisterPage.js");
+
+__webpack_require__(/*! ./features/auth/login/LoginPage */ "./resources/js/features/auth/login/LoginPage.js");
+
+__webpack_require__(/*! ./features/home/HomePage */ "./resources/js/features/home/HomePage.js");
 
 /***/ }),
 
@@ -5452,62 +5456,10 @@ function CommonInputBuilder(type, id, label, placeholder) {
 
 /***/ }),
 
-/***/ "./resources/js/features/register/RegisterPage.js":
-/*!********************************************************!*\
-  !*** ./resources/js/features/register/RegisterPage.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ RegisterPage)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _components_QuoteComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/QuoteComponent */ "./resources/js/features/register/components/QuoteComponent.js");
-/* harmony import */ var _components_RegisterFormComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/RegisterFormComponent */ "./resources/js/features/register/components/RegisterFormComponent.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
-function RegisterPage(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    id: "root",
-    className: "flex flex-row h-screen w-screen",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      id: "left-side-wrapper",
-      className: "h-screen w-4/5 flex flex-col items-start justify-center bg-primary",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        id: "form-wrapper",
-        className: "w-full",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_RegisterFormComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      id: "right-side-wrapper",
-      className: "h-screen w-3/5 flex items-center justify-center bg-secondary",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        id: "quote-wrapper",
-        className: "w-full m-20",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-      })
-    })]
-  });
-}
-
-if (document.getElementById("register-root")) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(RegisterPage, {}), document.getElementById("register-root"));
-}
-
-/***/ }),
-
-/***/ "./resources/js/features/register/components/QuoteComponent.js":
-/*!*********************************************************************!*\
-  !*** ./resources/js/features/register/components/QuoteComponent.js ***!
-  \*********************************************************************/
+/***/ "./resources/js/features/auth/components/QuoteComponent.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/features/auth/components/QuoteComponent.js ***!
+  \*****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5535,10 +5487,123 @@ function QuoteComponent(props) {
 
 /***/ }),
 
-/***/ "./resources/js/features/register/components/RegisterFormComponent.js":
-/*!****************************************************************************!*\
-  !*** ./resources/js/features/register/components/RegisterFormComponent.js ***!
-  \****************************************************************************/
+/***/ "./resources/js/features/auth/login/LoginFormComponent.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/features/auth/login/LoginFormComponent.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RegisterForm)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_component_CommonInputBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common-component/CommonInputBuilder */ "./resources/js/common-component/CommonInputBuilder.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+function RegisterForm(props) {
+  function onSubmit(e) {
+    e.preventDefault();
+    var formData = new FormData(document.getElementById("login-form"));
+    var config = {
+      headers: {
+        'X-CSRF-TOKEN': document.querySelector("meta[name='csrf-token']").content
+      }
+    };
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post("/register", formData, config).then(function (response) {
+      return window.location.href = "/";
+    });
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+      className: "ml-28 font-playfair-display font-bold text-secondary text-8xl",
+      children: "New Account"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "h-20"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+      id: "login-form",
+      className: "ml-28",
+      onSubmit: onSubmit,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: (0,_common_component_CommonInputBuilder__WEBPACK_IMPORTED_MODULE_1__.CommonInputBuilder)("email", "email", "Email address", "name@provider.com")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: (0,_common_component_CommonInputBuilder__WEBPACK_IMPORTED_MODULE_1__.CommonInputBuilder)("password", "password", "Password", "••••••••")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        className: "form-button",
+        type: "submit",
+        children: "Create account"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "h-8"
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/features/auth/login/LoginPage.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/features/auth/login/LoginPage.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RegisterPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _components_QuoteComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/QuoteComponent */ "./resources/js/features/auth/components/QuoteComponent.js");
+/* harmony import */ var _LoginFormComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LoginFormComponent */ "./resources/js/features/auth/login/LoginFormComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function RegisterPage(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    id: "root",
+    className: "flex flex-row h-screen w-screen",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      id: "left-side-wrapper",
+      className: "h-screen w-4/5 flex flex-col items-start justify-center bg-primary",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        id: "form-wrapper",
+        className: "w-full",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_LoginFormComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      id: "right-side-wrapper",
+      className: "h-screen w-3/5 flex items-center justify-center bg-secondary",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        id: "quote-wrapper",
+        className: "w-full m-20",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+      })
+    })]
+  });
+}
+
+if (document.getElementById("login-root")) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(RegisterPage, {}), document.getElementById("login-root"));
+}
+
+/***/ }),
+
+/***/ "./resources/js/features/auth/register/RegisterFormComponent.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/features/auth/register/RegisterFormComponent.js ***!
+  \**********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5565,7 +5630,7 @@ function RegisterForm(props) {
       }
     };
     axios__WEBPACK_IMPORTED_MODULE_0___default().post("/register", formData, config).then(function (response) {
-      return console.log(response);
+      return window.location.href = "/";
     });
   }
 
@@ -5598,6 +5663,109 @@ function RegisterForm(props) {
       className: "h-8"
     })]
   });
+}
+
+/***/ }),
+
+/***/ "./resources/js/features/auth/register/RegisterPage.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/features/auth/register/RegisterPage.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RegisterPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _components_QuoteComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/QuoteComponent */ "./resources/js/features/auth/components/QuoteComponent.js");
+/* harmony import */ var _RegisterFormComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RegisterFormComponent */ "./resources/js/features/auth/register/RegisterFormComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function RegisterPage(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    id: "root",
+    className: "flex flex-row h-screen w-screen",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      id: "left-side-wrapper",
+      className: "h-screen w-4/5 flex flex-col items-start justify-center bg-primary",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        id: "form-wrapper",
+        className: "w-full",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_RegisterFormComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      id: "right-side-wrapper",
+      className: "h-screen w-3/5 flex items-center justify-center bg-secondary",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        id: "quote-wrapper",
+        className: "w-full m-20",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+      })
+    })]
+  });
+}
+
+if (document.getElementById("register-root")) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(RegisterPage, {}), document.getElementById("register-root"));
+}
+
+/***/ }),
+
+/***/ "./resources/js/features/home/HomePage.js":
+/*!************************************************!*\
+  !*** ./resources/js/features/home/HomePage.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ HomePage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+function HomePage(props) {
+  function logout() {
+    axios__WEBPACK_IMPORTED_MODULE_2___default().post('/logout');
+  }
+
+  var username = JSON.parse(props.user)["name"];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    id: "root",
+    className: "h-screen w-screen bg-primary",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+      className: "font-bold font-poppins text-secondary text-xl float-right",
+      onClick: logout,
+      children: username
+    })
+  });
+}
+
+if (document.getElementById("home-root")) {
+  var element = document.getElementById("home-root");
+  var props = Object.assign({}, element.dataset);
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(HomePage, _objectSpread({}, props)), document.getElementById("home-root"));
 }
 
 /***/ }),
