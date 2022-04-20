@@ -10,7 +10,8 @@ module.exports = {
         "secondary": "#C8A703"
       },
       fontFamily: {
-        "playfair-display": ["Playfair Display", "sans-serif"]
+        "playfair-display": ["Playfair Display", "sans-serif"],
+        "poppins": ["Poppins", "sans-serif"]
       }
     },
   },

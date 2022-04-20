@@ -6,6 +6,7 @@
     <title>Create New Acount</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
