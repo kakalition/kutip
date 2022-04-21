@@ -25,6 +25,6 @@ class QuoteController extends Controller
     }
 
     public function quote($author) {
-        return "jfkdsljfs";
+        return $author;
     }
 }

@@ -5806,19 +5806,33 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 function AuthorNameBuilder(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
-    className: "font-playfair-display font-black text-[12vmax] leading-none tracking-wide text-secondary",
-    children: props.value
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+    type: "button",
+    onClick: props.onClick,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+      className: "font-playfair-display font-black text-[12vmax] leading-none tracking-wide text-secondary",
+      children: props.value
+    })
   });
 }
 
 function HomePage(props) {
   var username = JSON.parse(props.user)["name"];
   var authors = JSON.parse(props.authors).map(function (author) {
+    var formattedName = author.replace("-", " ");
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(AuthorNameBuilder, {
-      value: author.replace("-", " ")
+      value: formattedName,
+      onClick: onClickBuilder(formattedName)
     }, author);
   });
+
+  function onClickBuilder(endPointKey) {
+    return function () {
+      console.log('click');
+      var formattedEndPoint = endPointKey.toLowerCase().replace(/\s/g, "");
+      window.location.href = "/quotes/".concat(formattedEndPoint);
+    };
+  }
 
   function logout() {
     axios__WEBPACK_IMPORTED_MODULE_4___default().post("/logout");
