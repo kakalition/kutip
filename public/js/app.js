@@ -5844,7 +5844,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function WelcomeFragmentFourComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    className: "w-screen h-[120vh] flex flex-col items-center justify-center bg-[#5B0B2C]",
+    className: "w-screen h-screen flex flex-col items-center justify-center bg-[#5B0B2C]",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
       className: "font-playfair-display font-regular text-6xl text-center text-primary",
       children: "Sign up to get started"
@@ -5933,29 +5933,32 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function WelcomeFragmentThreeComponent(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    className: "w-screen h-[170vh] bg-[#8D1747]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "flex w-full items-end justify-end",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
-        className: "mt-24 mr-24 font-playfair-display font-regular text-7xl text-primary",
-        children: ["Many different", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "famous name to", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "choose from."]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "h-44"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-      className: "font-playfair-display font-black text-[14rem] leading-none tracking-wide text-[#FFA781]",
-      children: "Epictetus"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-      className: "font-playfair-display font-black text-[14rem] leading-none tracking-wide text-[#FFA781]",
-      children: "Seneca"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-      className: "font-playfair-display font-black text-[13rem] leading-none tracking-wide text-[#FFA781]",
-      children: "Marcus Aurelius"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-      className: "font-playfair-display font-black text-[13rem] leading-none tracking-wide text-white",
-      children: "And many more!"
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "w-screen h-[170vh] bg-[#8D1747] flex justify-center items-center",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "w-full h-full",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "flex w-full items-end justify-end",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
+          className: "mt-32 mr-32 font-playfair-display font-regular text-7xl text-primary",
+          children: ["Many different", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "famous name to", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "choose from."]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "h-44"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
+        className: "font-playfair-display font-black text-[14rem] leading-none tracking-wide text-[#FFA781]",
+        children: "Epictetus"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
+        className: "font-playfair-display font-black text-[14rem] leading-none tracking-wide text-[#FFA781]",
+        children: "Seneca"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
+        className: "font-playfair-display font-black text-[13rem] leading-none tracking-wide text-[#FFA781]",
+        children: "Marcus Aurelius"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
+        className: "font-playfair-display font-black text-[13rem] leading-none tracking-wide text-white",
+        children: "And many more!"
+      })]
+    })
   });
 }
 
@@ -5976,23 +5979,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function WelcomeFragmentTwoComponent(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    className: "w-screen h-screen bg-secondary",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
-      className: "pl-24 pt-24 font-playfair-display font-semibold text-8xl text-primary",
-      children: ["Uplift your day with", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "curated quotes."]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "float-right w-1/3 mt-12 mr-44 p-14 rounded-3xl bg-slate-100",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-        className: "font-playfair-display font-regular text-6xl text-secondary",
-        children: "\"Whatever can happen at any time can happen today.\""
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "flex items-center justify-center w-screen h-[120vh] bg-secondary",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
+        className: "pl-24 font-playfair-display font-semibold text-8xl text-primary",
+        children: ["Uplift your day with", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "curated quotes."]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "h-12"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-        className: "font-playfair-display font-regular text-4xl text-secondary",
-        children: "Seneca"
+        className: "h-16"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "float-right w-1/3 mt-12 mr-44 p-14 rounded-3xl bg-slate-100",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+          className: "font-playfair-display font-regular text-6xl text-secondary",
+          children: "\"Whatever can happen at any time can happen today.\""
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "h-12"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+          className: "font-playfair-display font-regular text-4xl text-secondary",
+          children: "Seneca"
+        })]
       })]
-    })]
+    })
   });
 }
 
