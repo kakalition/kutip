@@ -5807,10 +5807,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function AuthorNameBuilder(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+    className: "",
     type: "button",
     onClick: props.onClick,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
-      className: "font-playfair-display font-black text-[12vmax] leading-none tracking-wide text-secondary",
+      className: "font-playfair-display font-black text-[12vmax] leading-snug tracking-wide text-secondary",
       children: props.value
     })
   });
@@ -5844,7 +5845,7 @@ function HomePage(props) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_HomeHeaderComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "h-24"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
-      className: "font-playfair-display font-black text-[12vmax] leading-none tracking-wide text-[#8D1747]",
+      className: "font-playfair-display font-black text-[12vmax] leading-snug tracking-wide text-[#8D1747]",
       children: "Random"
     }), authors, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "h-24"
