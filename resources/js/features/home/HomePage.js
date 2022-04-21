@@ -1,25 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ArrowFabComponentBuilder from "../../common-component/ArrowFabComponent";
+import ArrowFabComponent from "../../common-component/ArrowFabComponent";
+import HomeHeaderComponent from "./components/HomeHeaderComponent"
 import axios from "axios";
-
-function HomeHeader(props) {
-    return (
-        <div className="flex flex-row items-center justify-between px-8 py-6">
-            <p className="font-playfair-display font-semibold text-secondary text-4xl">
-                Kutip
-            </p>
-            <div className="flex flex-col">
-                <p className="font-playfair-display font-semibold text-secondary text-2xl">
-                    Kharisma Sri Wibowo
-                </p>
-                <p className="font-playfair-display font-semibold text-secondary text-xl">
-                    Daily Limit: 1/10
-                </p>
-            </div>
-        </div>
-    );
-}
 
 function AuthorNameBuilder(props) {
     return (
@@ -38,8 +21,8 @@ export default function HomePage(props) {
     }
 
     return (
-        <div id="root" className="w-screen bg-primary">
-            <HomeHeader />
+        <div id="root" className="w-screen select-none bg-primary">
+            <HomeHeaderComponent />
             <div className="h-24"/>
             <h2 className="font-playfair-display font-black text-[12vmax] leading-none tracking-wide text-[#8D1747]">
                 Random
@@ -47,6 +30,7 @@ export default function HomePage(props) {
             {authors}
             <div className="h-24"/>
             <div className="fixed bottom-10 right-10">
+                <ArrowFabComponent/>
             </div>
         </div>
     );
