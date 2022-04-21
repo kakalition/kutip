@@ -20,4 +20,5 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/home', [QuoteController::class, 'index']);
+    Route::get('/quotes/{author}', [QuoteController::class, 'quote']);
 });
