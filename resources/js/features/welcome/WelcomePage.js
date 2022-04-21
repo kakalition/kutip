@@ -1,15 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import WelcomeFragmentOneComponent from "./components/WelcomeFragmentOneComponent";
+import WelcomeFragmentTwoComponent from "./components/WelcomeFragmentTwoComponent";
+import WelcomeFragmentThreeComponent from "./components/WelcomeFragmentThreeComponent";
+import WelcomeFragmentFourComponent from "./components/WelcomeFragmentFourComponent";
 
 export default function WelcomePage(props) {
     return (
-        <>
+        <div className="select-none">
             <WelcomeFragmentOneComponent/>
-            <div className="w-screen h-screen bg-secondary"></div>
-            <div className="w-screen h-screen bg-[#8D1747]"></div>
-            <div className="w-screen h-screen bg-[#5B0B2C]"></div>
-        </>
+            <WelcomeFragmentTwoComponent/>
+            <WelcomeFragmentThreeComponent/>
+            <WelcomeFragmentFourComponent/>
+        </div>
     );
 }
 

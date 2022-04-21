@@ -10,6 +10,6 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
-    <div id="welcome-root"></div>
+    <div id="welcome-root" class="overflow-x-clip"></div>
 </body>
 </html>
