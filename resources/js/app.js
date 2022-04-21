@@ -15,3 +15,4 @@ require('./bootstrap');
 require('./features/auth/register/RegisterPage');
 require('./features/auth/login/LoginPage');
 require('./features/home/HomePage');
+require('./features/welcome/WelcomePage');

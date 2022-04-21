@@ -5382,6 +5382,8 @@ __webpack_require__(/*! ./features/auth/login/LoginPage */ "./resources/js/featu
 
 __webpack_require__(/*! ./features/home/HomePage */ "./resources/js/features/home/HomePage.js");
 
+__webpack_require__(/*! ./features/welcome/WelcomePage */ "./resources/js/features/welcome/WelcomePage.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -5783,6 +5785,89 @@ if (document.getElementById("home-root")) {
   var element = document.getElementById("home-root");
   var props = Object.assign({}, element.dataset);
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(HomePage, _objectSpread({}, props)), document.getElementById("home-root"));
+}
+
+/***/ }),
+
+/***/ "./resources/js/features/welcome/WelcomePage.js":
+/*!******************************************************!*\
+  !*** ./resources/js/features/welcome/WelcomePage.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ WelcomePage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _components_WelcomeFragmentOneComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/WelcomeFragmentOneComponent */ "./resources/js/features/welcome/components/WelcomeFragmentOneComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function WelcomePage(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_WelcomeFragmentOneComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "w-screen h-screen bg-secondary"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "w-screen h-screen bg-[#8D1747]"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "w-screen h-screen bg-[#5B0B2C]"
+    })]
+  });
+}
+
+if (document.getElementById("welcome-root")) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(WelcomePage, {}), document.getElementById("welcome-root"));
+}
+
+/***/ }),
+
+/***/ "./resources/js/features/welcome/components/WelcomeFragmentOneComponent.js":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/features/welcome/components/WelcomeFragmentOneComponent.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ WelcomeFragmentOneComponent)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function WelcomeFragmentOneComponent(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    className: "h-screen w-screen bg-primary",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+      className: "font-playfair-display font-black text-[14rem] tracking-wide text-secondary",
+      children: "Kutip"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h2", {
+      className: "w-full break-all font-playfair-display font-regular text-[9rem] tracking-wide leading-[11rem] text-secondary",
+      children: "Curated quotes to bring up your day."
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "h-20"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "flex flex-row items-center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
+        className: "py-5 px-16 bg-secondary rounded-full font-poppins font-semibold text-xl text-white",
+        type: "button",
+        children: "Sign Up"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "w-8"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
+        className: "p-5 font-poppins font-semibold text-2xl text-secondary",
+        type: "button",
+        children: "Login"
+      })]
+    })]
+  });
 }
 
 /***/ }),
