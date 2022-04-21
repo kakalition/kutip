@@ -5764,20 +5764,38 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
+
+function HomeHeader(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "flex flex-row items-center justify-between px-8 py-6",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      className: "font-playfair-display font-semibold text-secondary text-4xl",
+      children: "Kutip"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "flex flex-col",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "font-playfair-display font-semibold text-secondary text-2xl",
+        children: "Kharisma Sri Wibowo"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "font-playfair-display font-semibold text-secondary text-xl",
+        children: "Daily Limit: 1/10"
+      })]
+    })]
+  });
+}
+
 function HomePage(props) {
+  var username = JSON.parse(props.user)["name"];
+
   function logout() {
     axios__WEBPACK_IMPORTED_MODULE_2___default().post('/logout');
   }
 
-  var username = JSON.parse(props.user)["name"];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     id: "root",
     className: "h-screen w-screen bg-primary",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
-      className: "font-bold font-poppins text-secondary text-xl float-right",
-      onClick: logout,
-      children: username
-    })
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(HomeHeader, {})
   });
 }
 
