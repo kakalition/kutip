@@ -5902,7 +5902,7 @@ function WelcomeFragmentOneComponent(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "ml-24 flex flex-row items-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
-        className: "py-8 px-20 bg-secondary rounded-full font-poppins font-semibold text-3xl text-white",
+        className: "py-8 px-20  border-secondary border-4 rounded-full font-poppins font-semibold text-3xl text-secondary hover:bg-secondary hover:text-white hover:scale-[1.04] transition-all",
         type: "button",
         children: "Sign Up"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
