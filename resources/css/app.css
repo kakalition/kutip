@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .form-label {
+        @apply font-poppins text-slate-700 text-xl
+    }
+
+    .form-input {
+        @apply border-2 border-black rounded-md w-3/5 h-14 pl-4 mb-6
+    }
+
+    .form-input:placeholder-shown {
+        @apply border-2 border-form-border rounded-md w-3/5 h-14 pl-4 mb-6
+    }
+
+    .form-input:hover {
+        @apply border-secondary transition-colors
+    }
+
+    .form-input:focus {
+        @apply outline-secondary
+    }
+
+    .form-button {
+        @apply bg-secondary rounded-md w-3/5 font-poppins text-white p-3 text-lg
+    }
+
+    .form-button:hover {
+        @apply bg-secondary transition-colors duration-200
+    }
+}
