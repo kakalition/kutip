@@ -12,7 +12,7 @@ export default function RegisterForm(props) {
                 'X-CSRF-TOKEN': document.querySelector("meta[name='csrf-token']").content
             }
         }
-        axios.post("/register", formData, config).then((response) => window.location.href = "/");
+        axios.post("/register", formData, config).then((response) => window.location.href = "/home");
     }
 
     return (

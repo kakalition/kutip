@@ -5496,7 +5496,7 @@ function QuoteComponent(props) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ RegisterForm)
+/* harmony export */   "default": () => (/* binding */ LoginFormComponent)
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
@@ -5507,7 +5507,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function RegisterForm(props) {
+function LoginFormComponent(props) {
   function onSubmit(e) {
     e.preventDefault();
     var formData = new FormData(document.getElementById("login-form"));
@@ -5516,8 +5516,8 @@ function RegisterForm(props) {
         "X-CSRF-TOKEN": document.querySelector("meta[name='csrf-token']").content
       }
     };
-    axios__WEBPACK_IMPORTED_MODULE_0___default().post("/register", formData, config).then(function (response) {
-      return window.location.href = "/";
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post("/login", formData, config).then(function (response) {
+      return window.location.href = "/home";
     });
   }
 
@@ -5542,7 +5542,7 @@ function RegisterForm(props) {
           type: "checkbox",
           id: "remember",
           name: "remember",
-          value: "on"
+          value: "true"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "w-4"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
@@ -5647,7 +5647,7 @@ function RegisterForm(props) {
       }
     };
     axios__WEBPACK_IMPORTED_MODULE_0___default().post("/register", formData, config).then(function (response) {
-      return window.location.href = "/";
+      return window.location.href = "/home";
     });
   }
 

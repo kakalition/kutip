@@ -21,4 +21,4 @@ Route::get('/', function () {
 Route::get('/home', function() {
     $user = Auth::user();
     return view('home')->with('user', $user);
-});
+})->middleware('auth');

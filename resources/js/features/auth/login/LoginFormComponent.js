@@ -1,7 +1,7 @@
 import axios from "axios";
 import { CommonInputBuilder } from "../../../common-component/CommonInputBuilder";
 
-export default function RegisterForm(props) {
+export default function LoginFormComponent(props) {
     function onSubmit(e) {
         e.preventDefault();
 
@@ -14,8 +14,8 @@ export default function RegisterForm(props) {
             },
         };
         axios
-            .post("/register", formData, config)
-            .then((response) => (window.location.href = "/"));
+            .post("/login", formData, config)
+            .then((response) => (window.location.href = "/home"));
     }
 
     return (
@@ -47,7 +47,7 @@ export default function RegisterForm(props) {
                         type="checkbox"
                         id="remember"
                         name="remember"
-                        value="on"
+                        value="true"
                     />
                     <div className="w-4" />
                     <label className="form-label" htmlFor="remember">
