@@ -5444,7 +5444,7 @@ function CommonInputBuilder(type, id, label, placeholder) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "h-2"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
-      className: "form-input bg-primary",
+      className: "form-input bg-form-bg",
       type: type,
       id: id,
       name: id,
@@ -5513,7 +5513,7 @@ function RegisterForm(props) {
     var formData = new FormData(document.getElementById("login-form"));
     var config = {
       headers: {
-        'X-CSRF-TOKEN': document.querySelector("meta[name='csrf-token']").content
+        "X-CSRF-TOKEN": document.querySelector("meta[name='csrf-token']").content
       }
     };
     axios__WEBPACK_IMPORTED_MODULE_0___default().post("/register", formData, config).then(function (response) {
@@ -5535,16 +5535,22 @@ function RegisterForm(props) {
         children: (0,_common_component_CommonInputBuilder__WEBPACK_IMPORTED_MODULE_1__.CommonInputBuilder)("email", "email", "Email address", "name@provider.com")
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         children: (0,_common_component_CommonInputBuilder__WEBPACK_IMPORTED_MODULE_1__.CommonInputBuilder)("password", "password", "Password", "••••••••")
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-        className: "form-label",
-        htmlFor: "remember",
-        children: "Remember me?  "
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-        type: "checkbox",
-        id: "remember",
-        name: "remember",
-        value: "on"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "flex flex-row items-center justify-start w-2/3",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          className: "h-8 w-8 accent-sky-300 focus:outline-sky-300",
+          type: "checkbox",
+          id: "remember",
+          name: "remember",
+          value: "on"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "w-4"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          className: "form-label",
+          htmlFor: "remember",
+          children: "Remember me"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "h-8"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         className: "form-button",
