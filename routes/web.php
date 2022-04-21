@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Quote;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +21,16 @@ Route::get('/', function () {
 
 Route::get('/home', function() {
     $user = Auth::user();
-    return view('home')->with('user', $user);
+    $authors = Quote::select('author')
+        ->distinct()
+        ->orderBy('author')
+        ->get()
+        ->map(function ($item, $key) { return $item['author']; });
+
+    $js = $authors->toJson();
+    $temp = str_replace(" ", "-", $js);
+
+    return view('home')
+        ->with('user', $user)
+        ->with('authors', $temp);
 })->middleware('auth');

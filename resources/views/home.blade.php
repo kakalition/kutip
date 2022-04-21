@@ -11,6 +11,10 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
-    <div id="home-root" data-user={{ $user }}></div>
+    <div 
+        id="home-root" 
+        data-user={{ $user }}
+        data-authors={{ $authors }}>
+    </div>
 </body>
 </html>
