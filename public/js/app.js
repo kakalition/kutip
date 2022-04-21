@@ -5887,6 +5887,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function WelcomeFragmentOneComponent(props) {
+  function toLogin() {
+    window.location.href = '/login';
+  }
+
+  function toRegister() {
+    window.location.href = '/register';
+  }
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
     className: "h-screen w-screen bg-primary",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
@@ -5904,12 +5912,14 @@ function WelcomeFragmentOneComponent(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
         className: "py-8 px-20  border-secondary border-4 rounded-full font-poppins font-semibold text-3xl text-secondary hover:bg-secondary hover:text-white hover:scale-[1.04] transition-all",
         type: "button",
+        onClick: toRegister,
         children: "Sign Up"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "w-8"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
         className: "p-5 font-poppins font-semibold text-4xl text-secondary",
         type: "button",
+        onClick: toLogin,
         children: "Login"
       })]
     })]
