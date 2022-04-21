@@ -5823,14 +5823,13 @@ function HomePage(props) {
     var formattedName = author.replace("-", " ");
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(AuthorNameBuilder, {
       value: formattedName,
-      onClick: onClickBuilder(formattedName)
+      onClick: onClickBuilder(author)
     }, author);
   });
 
   function onClickBuilder(endPointKey) {
     return function () {
-      console.log('click');
-      var formattedEndPoint = endPointKey.toLowerCase().replace(/\s/g, "");
+      var formattedEndPoint = endPointKey.toLowerCase();
       window.location.href = "/quotes/".concat(formattedEndPoint);
     };
   }

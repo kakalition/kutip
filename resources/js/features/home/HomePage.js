@@ -20,14 +20,13 @@ export default function HomePage(props) {
     
     const authors = JSON.parse(props.authors).map((author) => {
         const formattedName = author.replace("-", " ");
-        return <AuthorNameBuilder key={author} value={formattedName} onClick={onClickBuilder(formattedName)} />
+        return <AuthorNameBuilder key={author} value={formattedName} onClick={onClickBuilder(author)} />
     });
 
 
     function onClickBuilder(endPointKey) {
         return () => {
-            console.log('click')
-            const formattedEndPoint = (endPointKey.toLowerCase()).replace(/\s/g, "");
+            const formattedEndPoint = (endPointKey.toLowerCase());
             window.location.href = `/quotes/${formattedEndPoint}`
         }
     }

@@ -25,6 +25,11 @@ class QuoteController extends Controller
     }
 
     public function quote($author) {
-        return $author;
+        $formattedName = ucwords(str_replace("-", " ", $author));
+        $quotes = Quote::select('quote')
+            ->where('author', '=', $formattedName)
+            ->get()
+            ->toJson();
+        return $quotes;
     }
 }
