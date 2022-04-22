@@ -1,8 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import ArrowFabComponent from "../../common-component/ArrowFabComponent";
 import HomeHeaderComponent from "./components/HomeHeaderComponent";
 import axios from "axios";
+import ElementBinder from "../../utils/ElementBinder";
 
 function AuthorNameBuilder(props) {
 
@@ -22,7 +22,6 @@ export default function HomePage(props) {
         const formattedName = _.startCase(author);
         return <AuthorNameBuilder key={author} value={formattedName} onClick={onClickBuilder(author)} />
     });
-
 
     function onClickBuilder(endPointKey) {
         return () => {
@@ -51,11 +50,4 @@ export default function HomePage(props) {
     );
 }
 
-if (document.getElementById("home-root")) {
-    const element = document.getElementById("home-root");
-    const props = Object.assign({}, element.dataset);
-    ReactDOM.render(
-        <HomePage {...props} />,
-        document.getElementById("home-root")
-    );
-}
+ElementBinder("home-root", <HomePage />)
