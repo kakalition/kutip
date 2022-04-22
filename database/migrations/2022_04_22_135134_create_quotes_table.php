@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('quotes', function (Blueprint $table) {
             $table->id();
-            $table->string('author');
+            $table->unsignedBigInteger('author_id');
+            $table->foreign('author_id')
+                ->references('id')
+                ->on('authors')
+                ->onDelete('cascade');
             $table->string('quote');
             $table->timestamps();
         });
