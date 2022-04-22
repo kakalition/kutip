@@ -5512,16 +5512,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function NameWithLimitComponent(props) {
-  var className = "font-playfair-display font-semibold text-2xl";
+  var className = "font-poppins font-regular";
   var textColor = props.color != null ? "text-" + props.color : "text-secondary";
   className = (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__["default"])(className, textColor);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "flex flex-col",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: className,
+      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__["default"])(className, "text-xl"),
       children: "Kharisma Sri Wibowo"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: className,
+      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__["default"])(className, "text-l"),
       children: "Daily Limit: 1/10"
     })]
   });
@@ -5950,12 +5950,12 @@ __webpack_require__.r(__webpack_exports__);
 
 function QuotesHeader(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "flex flex-row items-center justify-between px-8 py-6",
+    className: "flex flex-row items-center justify-between pl-8 pr-12 py-6",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "flex flex-row items-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
         xmlns: "http://www.w3.org/2000/svg",
-        className: "h-12 w-12 stroke-white",
+        className: "h-10 w-10 stroke-white",
         fill: "none",
         viewBox: "0 0 24 24",
         stroke: "currentColor",
@@ -5968,11 +5968,11 @@ function QuotesHeader(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "w-10"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-        className: "font-playfair-display font-semibold text-secondary text-4xl",
-        children: "Kutip"
+        className: "font-playfair-display font-semibold text-white text-4xl",
+        children: props.author
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      color: "sky-500"
+      color: "white"
     })]
   });
 }
@@ -5981,9 +5981,14 @@ function QuotesPage(props) {
   var parsedQuotes = JSON.parse(props.quotes).map(function (quote) {
     return quote["quote"].replace(/[-]/g, " ");
   });
+
+  var formattedAuthorName = _.startCase(props.author);
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "w-screen min-h-screen bg-[#5B0E2D]",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(QuotesHeader, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(QuotesHeader, {
+      author: formattedAuthorName
+    })
   });
 }
 (0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__["default"])('quotes-root', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(QuotesPage, {}));

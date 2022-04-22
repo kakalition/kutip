@@ -653,6 +653,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-80 {
   height: 20rem;
 }
+.h-10 {
+  height: 2.5rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -827,6 +830,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pl-24 {
   padding-left: 6rem;
+}
+.pl-6 {
+  padding-left: 1.5rem;
+}
+.pr-8 {
+  padding-right: 2rem;
+}
+.pl-8 {
+  padding-left: 2rem;
+}
+.pr-10 {
+  padding-right: 2.5rem;
+}
+.pr-12 {
+  padding-right: 3rem;
 }
 .text-center {
   text-align: center;

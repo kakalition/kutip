@@ -31,6 +31,8 @@ class QuoteController extends Controller
             ->get()
             ->toJson();
         $formattedJson = str_replace(" ", "-", $quotes);
-        return view('quotes')->with('quotes', $formattedJson);
+        return view('quotes')
+            ->with('author', $author)
+            ->with('quotes', $formattedJson);
     }
 }
