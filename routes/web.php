@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function() {
-    $user = Auth::user();
-    return view('home')->with('user', $user);
-})->middleware('auth');
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [QuoteController::class, 'index']);
+    Route::get('/quotes/{author}', [QuoteController::class, 'quote']);
+});
