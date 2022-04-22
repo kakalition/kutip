@@ -5968,11 +5968,29 @@ function NextIconComponent(props) {
   });
 }
 
+function ChangeColorComponent(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+    className: "h-28 w-28 hover:scale-[1.08] hover:-translate-y-3 hover:shadow-2xl transition-all rounded-full flex items-center justify-center bg-[#8D1747] shadow-l",
+    type: "button",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      className: "h-12 w-12 fill-white",
+      viewBox: "0 0 20 20",
+      fill: "currentColor",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+        fillRule: "evenodd",
+        d: "M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z",
+        clipRule: "evenodd"
+      })
+    })
+  });
+}
+
 function QuoteComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "p-28 w-5/6",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-      className: "font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781] borderize",
+      className: "font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781]",
       children: "\"Whatever can happen at any time can happen today.\""
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_VSpacer__WEBPACK_IMPORTED_MODULE_1__["default"], {
       size: "h-[2rem]"
@@ -5994,19 +6012,19 @@ function QuotesPage(props) {
       author: formattedAuthorName
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       id: "main-content",
-      className: "h-full flex flex-row borderize",
+      className: "h-full flex flex-row",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "flex items-center ",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(QuoteComponent, {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         id: "tool-box",
-        className: "flex flex-col items-center justify-center w-1/6 borderize",
+        className: "flex flex-col items-center justify-center w-1/6",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NextIconComponent, {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "absolute bottom-14",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NextIconComponent, {})
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ChangeColorComponent, {})
         })]
       })]
     })]
