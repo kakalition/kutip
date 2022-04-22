@@ -5512,16 +5512,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function NameWithLimitComponent(props) {
-  var className = "font-poppins font-regular";
+  var className = "font-poppins";
   var textColor = props.color != null ? "text-" + props.color : "text-secondary";
   className = (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__["default"])(className, textColor);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "flex flex-col",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__["default"])(className, "text-xl"),
+      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__["default"])(className, "text-xl font-regular"),
       children: "Kharisma Sri Wibowo"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__["default"])(className, "text-l"),
+      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__["default"])(className, "text-l font-light"),
       children: "Daily Limit: 1/10"
     })]
   });
@@ -5856,7 +5856,8 @@ function AuthorNameBuilder(props) {
 function HomePage(props) {
   var username = JSON.parse(props.user)["name"];
   var authors = JSON.parse(props.authors).map(function (author) {
-    var formattedName = author.replace("-", " ");
+    var formattedName = _.startCase(author);
+
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(AuthorNameBuilder, {
       value: formattedName,
       onClick: onClickBuilder(author)
@@ -5938,9 +5939,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ QuotesPage)
 /* harmony export */ });
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-component/NameWithLimitComponent */ "./resources/js/common-component/NameWithLimitComponent.js");
-/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
+/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
+/* harmony import */ var _utils_VSpacer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/VSpacer */ "./resources/js/utils/VSpacer.js");
+/* harmony import */ var _components_QuotesHeaderComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/QuotesHeaderComponent */ "./resources/js/features/quotes/components/QuotesHeaderComponent.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -5948,31 +5949,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function QuotesHeader(props) {
+function NextIconComponent(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "flex items-center justify-center h-28 w-28 border-white border-4 rounded-full",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      className: "h-12 w-12 stroke-white",
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor",
+      strokeWidth: 2,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        d: "M14 5l7 7m0 0l-7 7m7-7H3"
+      })
+    })
+  });
+}
+
+function QuoteComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "flex flex-row items-center justify-between pl-8 pr-12 py-6",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "flex flex-row items-center",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
-        xmlns: "http://www.w3.org/2000/svg",
-        className: "h-10 w-10 stroke-white",
-        fill: "none",
-        viewBox: "0 0 24 24",
-        stroke: "currentColor",
-        strokeWidth: 2,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
-          d: "M10 19l-7-7m0 0l7-7m-7 7h18"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "w-10"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-        className: "font-playfair-display font-semibold text-white text-4xl",
-        children: props.author
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      color: "white"
+    className: "p-28 w-5/6",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      className: "font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781] borderize",
+      children: "\"Whatever can happen at any time can happen today.\""
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_VSpacer__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      size: "10"
     })]
   });
 }
@@ -5984,14 +5987,79 @@ function QuotesPage(props) {
 
   var formattedAuthorName = _.startCase(props.author);
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "w-screen min-h-screen bg-[#5B0E2D]",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(QuotesHeader, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    id: "viewport",
+    className: "w-screen h-screen flex flex-col bg-[#5B0E2D]",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_QuotesHeaderComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
       author: formattedAuthorName
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      id: "main-content",
+      className: "h-full flex flex-row borderize",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "flex items-center ",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(QuoteComponent, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        id: "tool-box",
+        className: "flex flex-col items-center justify-center w-1/6 borderize",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NextIconComponent, {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "absolute bottom-14",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NextIconComponent, {})
+        })]
+      })]
+    })]
   });
 }
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__["default"])('quotes-root', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(QuotesPage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_0__["default"])('quotes-root', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(QuotesPage, {}));
+
+/***/ }),
+
+/***/ "./resources/js/features/quotes/components/QuotesHeaderComponent.js":
+/*!**************************************************************************!*\
+  !*** ./resources/js/features/quotes/components/QuotesHeaderComponent.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ QuotesHeaderComponent)
+/* harmony export */ });
+/* harmony import */ var _common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../common-component/NameWithLimitComponent */ "./resources/js/common-component/NameWithLimitComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function QuotesHeaderComponent(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex flex-row items-center justify-between pl-8 pr-12 py-6",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "flex flex-row items-center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        className: "h-10 w-10 stroke-white",
+        fill: "none",
+        viewBox: "0 0 24 24",
+        stroke: "currentColor",
+        strokeWidth: 2,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          d: "M10 19l-7-7m0 0l7-7m-7 7h18"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "w-10"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "font-playfair-display font-semibold text-white text-4xl",
+        children: props.author
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      color: "white"
+    })]
+  });
+}
 
 /***/ }),
 
@@ -6260,6 +6328,28 @@ function ElementBinder(rootName, jsx) {
     var props = Object.assign({}, element.dataset);
     react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(jsx, _objectSpread({}, props)), element);
   }
+}
+
+/***/ }),
+
+/***/ "./resources/js/utils/VSpacer.js":
+/*!***************************************!*\
+  !*** ./resources/js/utils/VSpacer.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ VSpacer)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+function VSpacer(props) {
+  var vClass = "h-[" + props.size + "rem]";
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: vClass
+  });
 }
 
 /***/ }),

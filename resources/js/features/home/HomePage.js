@@ -19,7 +19,7 @@ export default function HomePage(props) {
     const username = JSON.parse(props.user)["name"];
     
     const authors = JSON.parse(props.authors).map((author) => {
-        const formattedName = author.replace("-", " ");
+        const formattedName = _.startCase(author);
         return <AuthorNameBuilder key={author} value={formattedName} onClick={onClickBuilder(author)} />
     });
 

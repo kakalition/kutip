@@ -1,20 +1,24 @@
-import ReactDOM from 'react-dom';
-import NameWithLimitComponent from '../../common-component/NameWithLimitComponent';
 import ElementBinder from '../../utils/ElementBinder'
+import VSpacer from '../../utils/VSpacer';
+import QuotesHeaderComponent from './components/QuotesHeaderComponent';
 
-function QuotesHeader(props) {
+function NextIconComponent(props) {
     return (
-        <div className="flex flex-row items-center justify-between pl-8 pr-12 py-6">
-            <div className="flex flex-row items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 stroke-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                <div className="w-10" />
-                <p className="font-playfair-display font-semibold text-white text-4xl">
-                    {props.author}
-                </p>
-            </div>
-            <NameWithLimitComponent color="white"/>
+        <div className="flex items-center justify-center h-28 w-28 border-white border-4 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 stroke-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </div>
+    );
+}
+
+function QuoteComponent(props) {
+    return (
+        <div className="p-28 w-5/6">
+            <p className="font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781] borderize">
+                "Whatever can happen at any time can happen today."
+            </p>
+            <VSpacer size="10"/>
         </div>
     );
 }
@@ -24,8 +28,21 @@ export default function QuotesPage(props) {
     const formattedAuthorName = _.startCase(props.author)
 
     return (
-        <div className="w-screen min-h-screen bg-[#5B0E2D]">
-            <QuotesHeader author={formattedAuthorName}/>
+        <div id="viewport" className="w-screen h-screen flex flex-col bg-[#5B0E2D]">
+            <QuotesHeaderComponent author={formattedAuthorName}/>
+            <div id="main-content" className="h-full flex flex-row borderize">
+                <div className="flex items-center ">
+                    <QuoteComponent />
+                </div>
+                <div id="tool-box" className="flex flex-col items-center justify-center w-1/6 borderize">
+                    <div className="">
+                        <NextIconComponent/>
+                    </div>
+                    <div className="absolute bottom-14">
+                        <NextIconComponent/>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
