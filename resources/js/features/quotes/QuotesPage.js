@@ -1,8 +1,10 @@
+import { useDispatch, useSelector } from 'react-redux';
 import ElementBinder from '../../utils/ElementBinder'
 import VSpacer from '../../utils/VSpacer';
 import ChangeColorFabComponent from './components/ChangeColorFabComponent';
 import NextButtonComponent from './components/NextButtonComponent';
 import QuotesHeaderComponent from './components/QuotesHeaderComponent';
+import { randomize } from './data/ColorSlice';
 
 function QuoteComponent(props) {
     return (
@@ -16,11 +18,18 @@ function QuoteComponent(props) {
 }
 
 export default function QuotesPage(props) {
+    const color = useSelector((state) => state.color.value)
+
     const parsedQuotes = JSON.parse(props.quotes).map((quote) => quote["quote"].replace(/[-]/g, " "));
     const formattedAuthorName = _.startCase(props.author)
 
+    console.log(color.bgColor);
+
     return (
-        <div id="viewport" className="w-screen h-screen flex flex-col bg-[#5B0E2D]">
+        <div 
+            id="viewport" 
+            className="w-screen h-screen flex flex-col transition-colors"
+            style={{backgroundColor: `${color.bgColor}`}}>
             <QuotesHeaderComponent author={formattedAuthorName}/>
             <div id="main-content" className="h-full flex flex-row">
                 <div className="flex items-center ">
