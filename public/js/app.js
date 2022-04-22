@@ -6049,7 +6049,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function NextButtonComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "flex items-center justify-center h-28 w-28 border-white border-4 rounded-full hover:scale-[1.02] hover:translate-x-2 transition-all",
+    className: "flex items-center justify-center h-28 w-28 border-white border-4 rounded-full hover:scale-[1.02] hover:translate-x-4 transition-all",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       className: "h-12 w-12 stroke-white",
