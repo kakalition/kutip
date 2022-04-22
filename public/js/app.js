@@ -7328,22 +7328,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ NameWithLimitComponent)
 /* harmony export */ });
-/* harmony import */ var _utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/ClassNameJoiner */ "./resources/js/utils/ClassNameJoiner.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/ClassNameJoiner */ "./resources/js/utils/ClassNameJoiner.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 function NameWithLimitComponent(props) {
+  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useSelector)(function (state) {
+    return state.color.value;
+  });
   var className = "font-poppins";
-  var textColor = props.color != null ? "text-" + props.color : "text-secondary";
-  className = (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__["default"])(className, textColor);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "flex flex-col",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__["default"])(className, "text-xl font-regular"),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_1__["default"])(className, "text-xl font-regular"),
+      style: {
+        color: color.neutralColor
+      },
       children: "Kharisma Sri Wibowo"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__["default"])(className, "text-l font-light"),
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_1__["default"])(className, "text-l font-light"),
+      style: {
+        color: color.neutralColor
+      },
       children: "Daily Limit: 1/10"
     })]
   });
@@ -7643,18 +7652,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ HomePage)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _common_component_ArrowFabComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../common-component/ArrowFabComponent */ "./resources/js/common-component/ArrowFabComponent.js");
-/* harmony import */ var _components_HomeHeaderComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/HomeHeaderComponent */ "./resources/js/features/home/components/HomeHeaderComponent.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _common_component_ArrowFabComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-component/ArrowFabComponent */ "./resources/js/common-component/ArrowFabComponent.js");
+/* harmony import */ var _components_HomeHeaderComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/HomeHeaderComponent */ "./resources/js/features/home/components/HomeHeaderComponent.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -7694,13 +7697,13 @@ function HomePage(props) {
   }
 
   function logout() {
-    axios__WEBPACK_IMPORTED_MODULE_4___default().post("/logout");
+    axios__WEBPACK_IMPORTED_MODULE_3___default().post("/logout");
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     id: "root",
     className: "w-screen select-none bg-primary",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_HomeHeaderComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_HomeHeaderComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "h-24"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
       className: "font-playfair-display font-black text-[12vmax] leading-snug tracking-wide text-[#8D1747]",
@@ -7709,16 +7712,11 @@ function HomePage(props) {
       className: "h-24"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "fixed bottom-10 right-10",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_ArrowFabComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_ArrowFabComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {})
     })]
   });
 }
-
-if (document.getElementById("home-root")) {
-  var element = document.getElementById("home-root");
-  var props = Object.assign({}, element.dataset);
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(HomePage, _objectSpread({}, props)), document.getElementById("home-root"));
-}
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_4__["default"])("home-root", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(HomePage, {}));
 
 /***/ }),
 
@@ -7761,14 +7759,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ QuotesPage)
 /* harmony export */ });
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
-/* harmony import */ var _utils_VSpacer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/VSpacer */ "./resources/js/utils/VSpacer.js");
-/* harmony import */ var _components_ChangeColorFabComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ChangeColorFabComponent */ "./resources/js/features/quotes/components/ChangeColorFabComponent.js");
-/* harmony import */ var _components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/NextButtonComponent */ "./resources/js/features/quotes/components/NextButtonComponent.js");
-/* harmony import */ var _components_QuotesHeaderComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/QuotesHeaderComponent */ "./resources/js/features/quotes/components/QuotesHeaderComponent.js");
-/* harmony import */ var _data_ColorSlice__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./data/ColorSlice */ "./resources/js/features/quotes/data/ColorSlice.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
+/* harmony import */ var _utils_VSpacer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/VSpacer */ "./resources/js/utils/VSpacer.js");
+/* harmony import */ var _components_ChangeColorFabComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/ChangeColorFabComponent */ "./resources/js/features/quotes/components/ChangeColorFabComponent.js");
+/* harmony import */ var _components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/NextButtonComponent */ "./resources/js/features/quotes/components/NextButtonComponent.js");
+/* harmony import */ var _components_QuotesHeaderComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/QuotesHeaderComponent */ "./resources/js/features/quotes/components/QuotesHeaderComponent.js");
+/* harmony import */ var _data_ColorSlice__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./data/ColorSlice */ "./resources/js/features/quotes/data/ColorSlice.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
@@ -7780,63 +7792,73 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function QuoteComponent(props) {
-  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useSelector)(function (state) {
+  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
     return state.color.value;
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     className: "p-28 w-5/6",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
       className: "font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781]",
       style: {
         color: color.primaryColor
       },
       children: "\"Whatever can happen at any time can happen today.\""
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_utils_VSpacer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_utils_VSpacer__WEBPACK_IMPORTED_MODULE_3__["default"], {
       size: "h-[2rem]"
     })]
   });
 }
 
 function QuotesPage(props) {
-  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useSelector)(function (state) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      randomApplied = _useState2[0],
+      setRandomApplied = _useState2[1];
+
+  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
     return state.color.value;
   });
   var parsedQuotes = JSON.parse(props.quotes).map(function (quote) {
     return quote["quote"].replace(/[-]/g, " ");
   });
 
-  var formattedAuthorName = _.startCase(props.author);
+  var formattedAuthorName = _.startCase(props.author); // Initial Random
 
-  console.log(color.bgColor);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+
+  if (randomApplied == false) {
+    (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)()((0,_data_ColorSlice__WEBPACK_IMPORTED_MODULE_7__.randomize)());
+    setRandomApplied(true);
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     id: "viewport",
     className: "w-screen h-screen flex flex-col transition-colors",
     style: {
       backgroundColor: color.bgColor
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_QuotesHeaderComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_QuotesHeaderComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
       author: formattedAuthorName
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       id: "main-content",
       className: "h-full flex flex-row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         className: "flex items-center ",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(QuoteComponent, {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(QuoteComponent, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         id: "tool-box",
         className: "flex flex-col items-center justify-center w-1/6 mr-6",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "absolute bottom-14",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_ChangeColorFabComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_ChangeColorFabComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {})
         })]
       })]
     })]
   });
 }
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__["default"])('quotes-root', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(QuotesPage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__["default"])('quotes-root', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(QuotesPage, {}));
 
 /***/ }),
 
@@ -7868,12 +7890,15 @@ function ChangeColorFabComponent(props) {
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-    className: "h-28 w-28 hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl transition-all rounded-full flex items-center justify-center bg-[#8D1747] shadow-l",
+    className: "h-28 w-28 hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl transition-all rounded-full flex items-center justify-center shadow-l",
+    style: {
+      backgroundColor: color.fabColor
+    },
     onClick: randomizeColor,
     type: "button",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
-      className: "h-12 w-12 fill-white",
+      className: "h-12 w-12 transition-colors",
       style: {
         stroke: color.neutralColor,
         fill: color.neutralColor
@@ -7902,19 +7927,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ NextButtonComponent)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 function NextButtonComponent(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "flex items-center justify-center h-28 w-28 border-white border-4 rounded-full hover:scale-[1.02] hover:translate-x-4 transition-all",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useSelector)(function (state) {
+    return state.color.value;
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "flex items-center justify-center h-28 w-28 border-4 rounded-full hover:scale-[1.02] hover:translate-x-4 transition-all",
+    style: {
+      borderColor: color.neutralColor
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
-      className: "h-12 w-12 stroke-white",
+      className: "h-12 w-12 transition-colors",
+      style: {
+        stroke: color.neutralColor
+      },
       fill: "none",
       viewBox: "0 0 24 24",
       stroke: "currentColor",
       strokeWidth: 2,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         d: "M14 5l7 7m0 0l-7 7m7-7H3"
@@ -7936,37 +7972,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ QuotesHeaderComponent)
 /* harmony export */ });
-/* harmony import */ var _common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../common-component/NameWithLimitComponent */ "./resources/js/common-component/NameWithLimitComponent.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common-component/NameWithLimitComponent */ "./resources/js/common-component/NameWithLimitComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 function QuotesHeaderComponent(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useSelector)(function (state) {
+    return state.color.value;
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "flex flex-row items-center justify-between pl-8 pr-12 py-6",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "flex flex-row items-center",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
         xmlns: "http://www.w3.org/2000/svg",
-        className: "h-10 w-10 stroke-white",
+        className: "h-10 w-10",
+        style: {
+          stroke: color.neutralColor
+        },
         fill: "none",
         viewBox: "0 0 24 24",
         stroke: "currentColor",
         strokeWidth: 2,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
           strokeLinecap: "round",
           strokeLinejoin: "round",
           d: "M10 19l-7-7m0 0l7-7m-7 7h18"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "w-10"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
         className: "font-playfair-display font-semibold text-white text-4xl",
+        style: {
+          color: color.neutralColor
+        },
         children: props.author
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      color: "white"
-    })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
   });
 }
 
@@ -7999,15 +8044,23 @@ var ColorHolder = /*#__PURE__*/_createClass(function ColorHolder(bgColor, primar
 });
 
 var colorArray = [{
+  // Maroon
   bgColor: "#5B0E2D",
   primaryColor: "#FFA781",
   neutralColor: "#FFFFFF",
   fabColor: "#7D103C"
 }, {
+  // Burly Wood
   bgColor: "#E7CBA9",
-  primaryColor: "#232323",
-  neutralColor: "#232323",
-  fabColor: "#232323"
+  primaryColor: "#4F4F4F",
+  neutralColor: "#4F4F4F",
+  fabColor: "#E4AD6B"
+}, {
+  // Indian Red
+  bgColor: "#C54B6C",
+  primaryColor: "#FFE3EB",
+  neutralColor: "#FAFAFA",
+  fabColor: "#D65F7F"
 }];
 
 /***/ }),

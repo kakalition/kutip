@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ElementBinder from '../../utils/ElementBinder'
 import VSpacer from '../../utils/VSpacer';
@@ -22,12 +23,17 @@ function QuoteComponent(props) {
 }
 
 export default function QuotesPage(props) {
+    const [randomApplied, setRandomApplied] = useState(false);
     const color = useSelector((state) => state.color.value)
 
     const parsedQuotes = JSON.parse(props.quotes).map((quote) => quote["quote"].replace(/[-]/g, " "));
     const formattedAuthorName = _.startCase(props.author)
 
-    console.log(color.bgColor);
+    // Initial Random
+    if (randomApplied == false) {
+        useDispatch()(randomize())
+        setRandomApplied(true)
+    }
 
     return (
         <div 

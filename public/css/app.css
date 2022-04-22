@@ -723,10 +723,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-4 {
   border-width: 4px;
 }
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
 .border-secondary {
   --tw-border-opacity: 1;
   border-color: rgb(200 167 3 / var(--tw-border-opacity));
@@ -743,10 +739,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(246 244 234 / var(--tw-bg-opacity));
 }
-.bg-\[\#5B0E2D\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(91 14 45 / var(--tw-bg-opacity));
-}
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(200 167 3 / var(--tw-bg-opacity));
@@ -758,9 +750,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-slate-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-}
-.fill-white {
-  fill: #fff;
 }
 .stroke-white {
   stroke: #fff;

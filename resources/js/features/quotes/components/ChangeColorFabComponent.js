@@ -11,13 +11,14 @@ export default function ChangeColorFabComponent(props) {
 
     return (
         <button
-            className="h-28 w-28 hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl transition-all rounded-full flex items-center justify-center bg-[#8D1747] shadow-l"
+            className="h-28 w-28 hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl transition-all rounded-full flex items-center justify-center shadow-l"
+            style={{ backgroundColor: color.fabColor }}
             onClick={randomizeColor}
             type="button"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12 fill-white"
+                className="h-12 w-12 transition-colors"
                 style={{ 
                     stroke: color.neutralColor,
                     fill: color.neutralColor,
