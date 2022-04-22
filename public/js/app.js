@@ -5975,7 +5975,7 @@ function QuoteComponent(props) {
       className: "font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781] borderize",
       children: "\"Whatever can happen at any time can happen today.\""
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_utils_VSpacer__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      size: "10"
+      size: "h-[2rem]"
     })]
   });
 }
@@ -6346,9 +6346,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 function VSpacer(props) {
-  var vClass = "h-[" + props.size + "rem]";
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: vClass
+    className: props.size
   });
 }
 

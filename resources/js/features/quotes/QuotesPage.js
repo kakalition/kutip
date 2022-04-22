@@ -18,7 +18,7 @@ function QuoteComponent(props) {
             <p className="font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781] borderize">
                 "Whatever can happen at any time can happen today."
             </p>
-            <VSpacer size="10"/>
+            <VSpacer size="h-[2rem]"/>
         </div>
     );
 }
