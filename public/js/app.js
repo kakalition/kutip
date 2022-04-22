@@ -7780,10 +7780,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function QuoteComponent(props) {
+  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useSelector)(function (state) {
+    return state.color.value;
+  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "p-28 w-5/6",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
       className: "font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781]",
+      style: {
+        color: color.primaryColor
+      },
       children: "\"Whatever can happen at any time can happen today.\""
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_utils_VSpacer__WEBPACK_IMPORTED_MODULE_2__["default"], {
       size: "h-[2rem]"
@@ -7806,7 +7812,7 @@ function QuotesPage(props) {
     id: "viewport",
     className: "w-screen h-screen flex flex-col transition-colors",
     style: {
-      backgroundColor: "".concat(color.bgColor)
+      backgroundColor: color.bgColor
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_QuotesHeaderComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
       author: formattedAuthorName
@@ -7852,6 +7858,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function ChangeColorFabComponent(props) {
+  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useSelector)(function (state) {
+    return state.color.value;
+  });
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useDispatch)();
 
   function randomizeColor() {
@@ -7865,6 +7874,10 @@ function ChangeColorFabComponent(props) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       className: "h-12 w-12 fill-white",
+      style: {
+        stroke: color.neutralColor,
+        fill: color.neutralColor
+      },
       viewBox: "0 0 20 20",
       fill: "currentColor",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
@@ -7993,13 +8006,8 @@ var colorArray = [{
 }, {
   bgColor: "#E7CBA9",
   primaryColor: "#232323",
-  neutralColor: "#FAFAFA",
-  fabColor: "#FAFAFA"
-}, {
-  bgColor: "#FFFFFF",
-  primaryColor: "#FFFFFF",
-  neutralColor: "#FFFFFF",
-  fabColor: "#FFFFFF"
+  neutralColor: "#232323",
+  fabColor: "#232323"
 }];
 
 /***/ }),
@@ -8028,9 +8036,15 @@ var colorSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createSlice)({
   },
   reducers: {
     randomize: function randomize(state) {
-      var randomIndex = _.random(0, _ColorHolder__WEBPACK_IMPORTED_MODULE_0__.colorArray.length - 1, false);
+      var color = state.value;
 
-      state.value = _ColorHolder__WEBPACK_IMPORTED_MODULE_0__.colorArray[randomIndex];
+      while (color.bgColor == state.value.bgColor) {
+        var randomIndex = _.random(0, _ColorHolder__WEBPACK_IMPORTED_MODULE_0__.colorArray.length - 1, false);
+
+        color = _ColorHolder__WEBPACK_IMPORTED_MODULE_0__.colorArray[randomIndex];
+      }
+
+      state.value = color;
     }
   }
 });

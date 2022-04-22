@@ -8,8 +8,14 @@ export const colorSlice = createSlice({
     },
     reducers: {
         randomize: (state) => {
-            const randomIndex = _.random(0, colorArray.length - 1, false);
-            state.value = colorArray[randomIndex];
+            let color = state.value;
+
+            while (color.bgColor == state.value.bgColor) {
+                const randomIndex = _.random(0, colorArray.length - 1, false);
+                color = colorArray[randomIndex];
+            }
+            
+            state.value = color;
         }
     }
 })

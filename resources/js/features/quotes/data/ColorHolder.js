@@ -17,13 +17,7 @@ export const colorArray = [
     {
         bgColor: "#E7CBA9",
         primaryColor: "#232323",
-        neutralColor: "#FAFAFA",
-        fabColor: "#FAFAFA"
+        neutralColor: "#232323",
+        fabColor: "#232323"
     },
-    {
-        bgColor: "#FFFFFF",
-        primaryColor: "#FFFFFF",
-        neutralColor: "#FFFFFF",
-        fabColor: "#FFFFFF"
-    }
 ];

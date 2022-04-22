@@ -1,7 +1,8 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { randomize } from "../data/ColorSlice";
 
 export default function ChangeColorFabComponent(props) {
+    const color = useSelector((state) => state.color.value)
     const dispatch = useDispatch();
 
     function randomizeColor() {
@@ -17,6 +18,10 @@ export default function ChangeColorFabComponent(props) {
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-12 w-12 fill-white"
+                style={{ 
+                    stroke: color.neutralColor,
+                    fill: color.neutralColor,
+                }}
                 viewBox="0 0 20 20"
                 fill="currentColor"
             >

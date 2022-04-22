@@ -7,9 +7,13 @@ import QuotesHeaderComponent from './components/QuotesHeaderComponent';
 import { randomize } from './data/ColorSlice';
 
 function QuoteComponent(props) {
+    const color = useSelector((state) => state.color.value)
+
     return (
         <div className="p-28 w-5/6">
-            <p className="font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781]">
+            <p 
+                className="font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781]"
+                style={{ color: color.primaryColor }}>
                 "Whatever can happen at any time can happen today."
             </p>
             <VSpacer size="h-[2rem]"/>
@@ -29,7 +33,7 @@ export default function QuotesPage(props) {
         <div 
             id="viewport" 
             className="w-screen h-screen flex flex-col transition-colors"
-            style={{backgroundColor: `${color.bgColor}`}}>
+            style={{backgroundColor: color.bgColor}}>
             <QuotesHeaderComponent author={formattedAuthorName}/>
             <div id="main-content" className="h-full flex flex-row">
                 <div className="flex items-center ">
