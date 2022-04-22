@@ -5495,6 +5495,40 @@ function CommonInputBuilder(type, id, label, placeholder) {
 
 /***/ }),
 
+/***/ "./resources/js/common-component/NameWithLimitComponent.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/common-component/NameWithLimitComponent.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ NameWithLimitComponent)
+/* harmony export */ });
+/* harmony import */ var _utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/ClassNameJoiner */ "./resources/js/utils/ClassNameJoiner.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function NameWithLimitComponent(props) {
+  var className = "font-playfair-display font-semibold text-2xl";
+  var textColor = props.color != null ? "text-" + props.color : "text-secondary";
+  className = (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_0__["default"])(className, textColor);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex flex-col",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: className,
+      children: "Kharisma Sri Wibowo"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: className,
+      children: "Daily Limit: 1/10"
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/features/auth/components/QuoteComponent.js":
 /*!*****************************************************************!*\
   !*** ./resources/js/features/auth/components/QuoteComponent.js ***!
@@ -5876,25 +5910,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ HomeHeaderComponent)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../common-component/NameWithLimitComponent */ "./resources/js/common-component/NameWithLimitComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 function HomeHeaderComponent(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "flex flex-row items-center justify-between px-8 py-6",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
       className: "font-playfair-display font-semibold text-secondary text-4xl",
       children: "Kutip"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "flex flex-col",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-        className: "font-playfair-display font-semibold text-secondary text-2xl",
-        children: "Kharisma Sri Wibowo"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-        className: "font-playfair-display font-semibold text-secondary text-xl",
-        children: "Daily Limit: 1/10"
-      })]
-    })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {})]
   });
 }
 
@@ -5912,19 +5939,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ QuotesPage)
 /* harmony export */ });
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-component/NameWithLimitComponent */ "./resources/js/common-component/NameWithLimitComponent.js");
+/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
+
+
+
+function QuotesHeader(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "flex flex-row items-center justify-between px-8 py-6",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "flex flex-row items-center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        className: "h-12 w-12 stroke-white",
+        fill: "none",
+        viewBox: "0 0 24 24",
+        stroke: "currentColor",
+        strokeWidth: 2,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          d: "M10 19l-7-7m0 0l7-7m-7 7h18"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "w-10"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "font-playfair-display font-semibold text-secondary text-4xl",
+        children: "Kutip"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      color: "sky-500"
+    })]
+  });
+}
 
 function QuotesPage(props) {
   var parsedQuotes = JSON.parse(props.quotes).map(function (quote) {
     return quote["quote"].replace(/[-]/g, " ");
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {});
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "w-screen min-h-screen bg-[#5B0E2D]",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(QuotesHeader, {})
+  });
 }
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__["default"])('quotes-root', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(QuotesPage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__["default"])('quotes-root', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(QuotesPage, {}));
 
 /***/ }),
 
@@ -6136,6 +6198,32 @@ function WelcomeFragmentTwoComponent(props) {
       })]
     })
   });
+}
+
+/***/ }),
+
+/***/ "./resources/js/utils/ClassNameJoiner.js":
+/*!***********************************************!*\
+  !*** ./resources/js/utils/ClassNameJoiner.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ClassNameJoiner)
+/* harmony export */ });
+function ClassNameJoiner(baseClass) {
+  var finalClass = baseClass;
+
+  for (var _len = arguments.length, className = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    className[_key - 1] = arguments[_key];
+  }
+
+  className.forEach(function (element) {
+    finalClass += " ".concat(element);
+  });
+  return finalClass;
 }
 
 /***/ }),

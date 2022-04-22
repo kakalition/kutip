@@ -653,6 +653,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-80 {
   height: 20rem;
 }
+.min-h-screen {
+  min-height: 100vh;
+}
 .w-screen {
   width: 100vw;
 }
@@ -697,6 +700,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[6rem\] {
   width: 6rem;
+}
+.w-6 {
+  width: 1.5rem;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.w-12 {
+  width: 3rem;
 }
 .select-none {
   -webkit-user-select: none;
@@ -774,6 +786,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-sky-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(14 165 233 / var(--tw-bg-opacity));
+}
+.bg-\[\#5B0E2D\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(91 14 45 / var(--tw-bg-opacity));
 }
 .stroke-white {
   stroke: #fff;
@@ -944,6 +960,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-\[\#8D1747\] {
   --tw-text-opacity: 1;
   color: rgb(141 23 71 / var(--tw-text-opacity));
+}
+.text-sky-500 {
+  --tw-text-opacity: 1;
+  color: rgb(14 165 233 / var(--tw-text-opacity));
+}
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 .accent-sky-300 {
   accent-color: #7dd3fc;
