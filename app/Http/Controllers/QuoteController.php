@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use Illuminate\Http\Request;
 use App\Models\Quote;
 use Illuminate\Support\Facades\Auth;
@@ -10,11 +11,11 @@ class QuoteController extends Controller
 {
     public function index() {
         $user = Auth::user();
-        $authors = Quote::select('author')
+        $authors = Author::select('name')
             ->distinct()
-            ->orderBy('author')
+            ->orderBy('name')
             ->get()
-            ->map(function ($item, $key) { return $item['author']; });
+            ->map(function ($item, $key) { return $item['name']; });
 
         $js = $authors->toJson();
         $temp = str_replace(" ", "-", $js);
@@ -26,11 +27,15 @@ class QuoteController extends Controller
 
     public function quote($author) {
         $formattedName = ucwords(str_replace("-", " ", $author));
-        $quotes = Quote::select('quote')
-            ->where('author', '=', $formattedName)
+        $quotes = Author::where('name', $formattedName)
+            ->first()
+            ->quotes()
             ->get()
+            ->map(function ($item) {
+                return $item['quote'];
+            })
             ->toJson();
-        $formattedJson = str_replace(" ", "-", $quotes);
+        $formattedJson = str_replace(" ", "~", $quotes);
         return view('quotes')
             ->with('author', $author)
             ->with('quotes', $formattedJson);
