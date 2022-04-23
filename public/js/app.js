@@ -7762,9 +7762,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
-/* harmony import */ var _utils_VSpacer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/VSpacer */ "./resources/js/utils/VSpacer.js");
-/* harmony import */ var _components_ChangeColorFabComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/ChangeColorFabComponent */ "./resources/js/features/quotes/components/ChangeColorFabComponent.js");
-/* harmony import */ var _components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/NextButtonComponent */ "./resources/js/features/quotes/components/NextButtonComponent.js");
+/* harmony import */ var _components_ChangeColorFabComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ChangeColorFabComponent */ "./resources/js/features/quotes/components/ChangeColorFabComponent.js");
+/* harmony import */ var _components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/NextButtonComponent */ "./resources/js/features/quotes/components/NextButtonComponent.js");
+/* harmony import */ var _components_QuoteComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/QuoteComponent */ "./resources/js/features/quotes/components/QuoteComponent.js");
 /* harmony import */ var _components_QuotesHeaderComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/QuotesHeaderComponent */ "./resources/js/features/quotes/components/QuotesHeaderComponent.js");
 /* harmony import */ var _data_ColorSlice__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./data/ColorSlice */ "./resources/js/features/quotes/data/ColorSlice.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -7790,45 +7790,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-function QuoteComponent(props) {
-  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
-    return state.color.value;
-  });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-    className: "p-28 w-5/6",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-      className: "font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781]",
-      style: {
-        color: color.primaryColor
-      },
-      children: "\"Whatever can happen at any time can happen today.\""
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_utils_VSpacer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      size: "h-[2rem]"
-    })]
-  });
-}
-
 function QuotesPage(props) {
   // Local State
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       isRandomApplied = _useState2[0],
-      setRandomApplied = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(JSON.parse(props.quotes).map(function (quote) {
-    return quote.replace(/[~]/g, " ");
-  })),
-      _useState4 = _slicedToArray(_useState3, 2),
-      originalQuoteList = _useState4[0],
-      setOriginalQuoteList = _useState4[1]; // ReduxState
+      setRandomApplied = _useState2[1]; // ReduxState
 
 
   var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
     return state.color.value;
-  });
-  var quotes = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
-    return state.quote.value;
   }); // Property
 
   var formattedAuthorName = _.startCase(props.author); // Initial Random
@@ -7852,16 +7823,18 @@ function QuotesPage(props) {
       className: "h-full flex flex-row",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         className: "flex items-center ",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(QuoteComponent, {})
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          quotes: props.quotes
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         id: "tool-box",
         className: "flex flex-col items-center justify-center w-1/6 mr-6",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "absolute bottom-14",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_ChangeColorFabComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_ChangeColorFabComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {})
         })]
       })]
     })]
@@ -7965,6 +7938,66 @@ function NextButtonComponent(props) {
         d: "M14 5l7 7m0 0l-7 7m7-7H3"
       })
     })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/features/quotes/components/QuoteComponent.js":
+/*!*******************************************************************!*\
+  !*** ./resources/js/features/quotes/components/QuoteComponent.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ QuoteComponent)
+/* harmony export */ });
+/* harmony import */ var _utils_VSpacer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/VSpacer */ "./resources/js/utils/VSpacer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+function QuoteComponent(props) {
+  // Local State
+  var _useState = useState(JSON.parse(props.quotes).map(function (quote) {
+    return quote.replace(/[~]/g, " ");
+  })),
+      _useState2 = _slicedToArray(_useState, 2),
+      originalQuoteList = _useState2[0],
+      setOriginalQuoteList = _useState2[1]; // Redux State
+
+
+  var color = useSelector(function (state) {
+    return state.color.value;
+  });
+  var quotes = useSelector(function (state) {
+    return state.quote.value;
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "p-28 w-5/6",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781]",
+      style: {
+        color: color.primaryColor
+      },
+      children: "\"Whatever can happen at any time can happen today.\""
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_utils_VSpacer__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      size: "h-[2rem]"
+    })]
   });
 }
 

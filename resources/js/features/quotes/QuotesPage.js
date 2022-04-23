@@ -1,37 +1,18 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ElementBinder from '../../utils/ElementBinder'
-import VSpacer from '../../utils/VSpacer';
 import ChangeColorFabComponent from './components/ChangeColorFabComponent';
 import NextButtonComponent from './components/NextButtonComponent';
+import QuoteComponent from './components/QuoteComponent';
 import QuotesHeaderComponent from './components/QuotesHeaderComponent';
 import { randomize } from './data/ColorSlice';
-
-function QuoteComponent(props) {
-    const color = useSelector((state) => state.color.value)
-
-    return (
-        <div className="p-28 w-5/6">
-            <p 
-                className="font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781]"
-                style={{ color: color.primaryColor }}>
-                "Whatever can happen at any time can happen today."
-            </p>
-            <VSpacer size="h-[2rem]"/>
-        </div>
-    );
-}
 
 export default function QuotesPage(props) {
     // Local State
     const [isRandomApplied, setRandomApplied] = useState(false);
-    const [originalQuoteList, setOriginalQuoteList] = useState(
-        JSON.parse(props.quotes).map((quote) => quote.replace(/[~]/g, " "))
-    )
 
     // ReduxState
     const color = useSelector((state) => state.color.value);
-    const quotes = useSelector((state) => state.quote.value);
 
     // Property
     const formattedAuthorName = _.startCase(props.author)
@@ -50,7 +31,7 @@ export default function QuotesPage(props) {
             <QuotesHeaderComponent author={formattedAuthorName}/>
             <div id="main-content" className="h-full flex flex-row">
                 <div className="flex items-center ">
-                    <QuoteComponent />
+                    <QuoteComponent quotes={props.quotes} />
                 </div>
                 <div id="tool-box" className="flex flex-col items-center justify-center w-1/6 mr-6">
                     <div className="">
