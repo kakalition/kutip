@@ -23,14 +23,21 @@ function QuoteComponent(props) {
 }
 
 export default function QuotesPage(props) {
-    const [randomApplied, setRandomApplied] = useState(false);
-    const color = useSelector((state) => state.color.value)
+    // Local State
+    const [isRandomApplied, setRandomApplied] = useState(false);
+    const [originalQuoteList, setOriginalQuoteList] = useState(
+        JSON.parse(props.quotes).map((quote) => quote.replace(/[~]/g, " "))
+    )
 
-    const parsedQuotes = JSON.parse(props.quotes).map((quote) => quote.replace(/[~]/g, " "));
+    // ReduxState
+    const color = useSelector((state) => state.color.value);
+    const quotes = useSelector((state) => state.quote.value);
+
+    // Property
     const formattedAuthorName = _.startCase(props.author)
 
     // Initial Random
-    if (randomApplied == false) {
+    if (isRandomApplied == false) {
         useDispatch()(randomize())
         setRandomApplied(true)
     }

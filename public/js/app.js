@@ -7810,22 +7810,31 @@ function QuoteComponent(props) {
 }
 
 function QuotesPage(props) {
+  // Local State
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
-      randomApplied = _useState2[0],
+      isRandomApplied = _useState2[0],
       setRandomApplied = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(JSON.parse(props.quotes).map(function (quote) {
+    return quote.replace(/[~]/g, " ");
+  })),
+      _useState4 = _slicedToArray(_useState3, 2),
+      originalQuoteList = _useState4[0],
+      setOriginalQuoteList = _useState4[1]; // ReduxState
+
 
   var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
     return state.color.value;
   });
-  var parsedQuotes = JSON.parse(props.quotes).map(function (quote) {
-    return quote.replace(/[~]/g, " ");
-  });
+  var quotes = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
+    return state.quote.value;
+  }); // Property
 
   var formattedAuthorName = _.startCase(props.author); // Initial Random
 
 
-  if (randomApplied == false) {
+  if (isRandomApplied == false) {
     (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)()((0,_data_ColorSlice__WEBPACK_IMPORTED_MODULE_7__.randomize)());
     setRandomApplied(true);
   }
@@ -8107,6 +8116,45 @@ var randomize = colorSlice.actions.randomize;
 
 /***/ }),
 
+/***/ "./resources/js/features/quotes/data/QuoteSlice.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/features/quotes/data/QuoteSlice.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "fillList": () => (/* binding */ fillList),
+/* harmony export */   "quoteSlice": () => (/* binding */ quoteSlice),
+/* harmony export */   "removeQuote": () => (/* binding */ removeQuote)
+/* harmony export */ });
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
+
+var quoteSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
+  name: 'quotes',
+  initialState: [],
+  reducers: {
+    removeQuote: function removeQuote(state, action) {
+      var newValue = state.value.filter(function (value) {
+        return value !== action.payload;
+      });
+      state.value = newValue;
+    },
+    fillList: function fillList(state, action) {
+      state.value = action.payload;
+    }
+  }
+});
+var _quoteSlice$actions = quoteSlice.actions,
+    removeQuote = _quoteSlice$actions.removeQuote,
+    fillList = _quoteSlice$actions.fillList;
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (quoteSlice.reducer);
+
+/***/ }),
+
 /***/ "./resources/js/features/welcome/WelcomePage.js":
 /*!******************************************************!*\
   !*** ./resources/js/features/welcome/WelcomePage.js ***!
@@ -8330,13 +8378,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 /* harmony import */ var _features_quotes_data_ColorSlice__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./features/quotes/data/ColorSlice */ "./resources/js/features/quotes/data/ColorSlice.js");
+/* harmony import */ var _features_quotes_data_QuoteSlice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./features/quotes/data/QuoteSlice */ "./resources/js/features/quotes/data/QuoteSlice.js");
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.configureStore)({
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_2__.configureStore)({
   reducer: {
-    color: _features_quotes_data_ColorSlice__WEBPACK_IMPORTED_MODULE_0__["default"]
+    color: _features_quotes_data_ColorSlice__WEBPACK_IMPORTED_MODULE_0__["default"],
+    quotes: _features_quotes_data_QuoteSlice__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 }));
 
