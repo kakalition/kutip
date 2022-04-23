@@ -26,7 +26,7 @@ export default function QuotesPage(props) {
     const [randomApplied, setRandomApplied] = useState(false);
     const color = useSelector((state) => state.color.value)
 
-    const parsedQuotes = JSON.parse(props.quotes).map((quote) => quote["quote"].replace(/[-]/g, " "));
+    const parsedQuotes = JSON.parse(props.quotes).map((quote) => quote.replace(/[~]/g, " "));
     const formattedAuthorName = _.startCase(props.author)
 
     // Initial Random

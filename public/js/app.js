@@ -7819,7 +7819,7 @@ function QuotesPage(props) {
     return state.color.value;
   });
   var parsedQuotes = JSON.parse(props.quotes).map(function (quote) {
-    return quote["quote"].replace(/[-]/g, " ");
+    return quote.replace(/[~]/g, " ");
   });
 
   var formattedAuthorName = _.startCase(props.author); // Initial Random
