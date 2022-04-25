@@ -52,7 +52,7 @@ export default function QuotesPage(props) {
                 <div className="w-[90%] flex items-center">
                     <QuoteComponent />
                 </div>
-                <div id="tool-box" className="flex flex-col items-center justify-center w-[10%] mr-6 borderize">
+                <div id="tool-box" className="flex flex-col items-center justify-center w-[10%] mr-6">
                     <div className="">
                         <NextButtonComponent callback={changeQuote}/>
                     </div>
