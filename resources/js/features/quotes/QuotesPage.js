@@ -26,7 +26,6 @@ export default function QuotesPage(props) {
     const color = useSelector((state) => state.color.value);
 
     function changeQuote() {
-        console.log(availableQuote.length);
         if (availableQuote.length === 0) {
             availableQuote = originalQuoteList;
         }
@@ -50,10 +49,10 @@ export default function QuotesPage(props) {
             style={{backgroundColor: color.bgColor}}>
             <QuotesHeaderComponent author={formattedAuthorName}/>
             <div id="main-content" className="h-full flex flex-row">
-                <div className="flex items-center ">
+                <div className="w-[90%] flex items-center">
                     <QuoteComponent />
                 </div>
-                <div id="tool-box" className="flex flex-col items-center justify-center w-1/6 mr-6">
+                <div id="tool-box" className="flex flex-col items-center justify-center w-[10%] mr-6 borderize">
                     <div className="">
                         <NextButtonComponent callback={changeQuote}/>
                     </div>

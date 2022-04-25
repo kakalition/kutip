@@ -7832,8 +7832,6 @@ function QuotesPage(props) {
   });
 
   function changeQuote() {
-    console.log(availableQuote.length);
-
     if (availableQuote.length === 0) {
       availableQuote = originalQuoteList;
     }
@@ -7866,11 +7864,11 @@ function QuotesPage(props) {
       id: "main-content",
       className: "h-full flex flex-row",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-        className: "flex items-center ",
+        className: "w-[90%] flex items-center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
         id: "tool-box",
-        className: "flex flex-col items-center justify-center w-1/6 mr-6",
+        className: "flex flex-col items-center justify-center w-[10%] mr-6 borderize",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
           className: "",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -8015,7 +8013,7 @@ function QuoteComponent(props) {
     return state.quote.value;
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "p-28 w-5/6",
+    className: "p-28 borderize",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
       className: "font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781]",
       style: {

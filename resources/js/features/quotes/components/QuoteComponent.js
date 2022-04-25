@@ -8,7 +8,7 @@ export default function QuoteComponent(props) {
     const quote = useSelector((state) => state.quote.value);
 
     return (
-        <div className="p-28 w-5/6">
+        <div className="p-28 borderize">
             <p
                 className="font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781]"
                 style={{ color: color.primaryColor }}
