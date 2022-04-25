@@ -8057,29 +8057,33 @@ function QuotesHeaderComponent(props) {
     return state.color.value;
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "flex flex-row items-center justify-between pl-8 pr-12 py-6",
+    className: "flex flex-row items-center justify-between pl-8 pr-10 py-6",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "flex flex-row items-center",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        type: "button",
         onClick: props.onBackClicked,
-        xmlns: "http://www.w3.org/2000/svg",
-        className: "h-10 w-10",
-        style: {
-          stroke: color.neutralColor
-        },
-        fill: "none",
-        viewBox: "0 0 24 24",
-        stroke: "currentColor",
-        strokeWidth: 2,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
-          d: "M10 19l-7-7m0 0l7-7m-7 7h18"
+        className: "p-2 hover:-translate-x-3 transition-transform",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+          xmlns: "http://www.w3.org/2000/svg",
+          className: "h-10 w-10",
+          style: {
+            stroke: color.neutralColor
+          },
+          fill: "none",
+          viewBox: "0 0 24 24",
+          stroke: "currentColor",
+          strokeWidth: 2,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            d: "M10 19l-7-7m0 0l7-7m-7 7h18"
+          })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "w-10"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        className: "font-playfair-display font-semibold text-white text-4xl",
+        className: "font-playfair-display font-semibold text-white text-4xl pb-1",
         style: {
           color: color.neutralColor
         },
