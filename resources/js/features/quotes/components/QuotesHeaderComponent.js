@@ -8,6 +8,7 @@ export default function QuotesHeaderComponent(props) {
         <div className="flex flex-row items-center justify-between pl-8 pr-12 py-6">
             <div className="flex flex-row items-center">
                 <svg
+                    onClick={props.onBackClicked}
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-10 w-10"
                     style={{ stroke: color.neutralColor }}

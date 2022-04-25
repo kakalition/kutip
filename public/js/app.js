@@ -7844,6 +7844,10 @@ function QuotesPage(props) {
       return element != pickedQuote;
     }));
     dispatch((0,_data_QuoteSlice__WEBPACK_IMPORTED_MODULE_9__.setQuote)(pickedQuote));
+  }
+
+  function onBackClicked() {
+    window.location.href = "/quotes";
   } // Initial Random
 
 
@@ -7860,7 +7864,8 @@ function QuotesPage(props) {
       backgroundColor: color.bgColor
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_QuotesHeaderComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      author: formattedAuthorName
+      author: formattedAuthorName,
+      onBackClicked: onBackClicked
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
       id: "main-content",
       className: "h-full flex flex-row",
@@ -8056,6 +8061,7 @@ function QuotesHeaderComponent(props) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "flex flex-row items-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+        onClick: props.onBackClicked,
         xmlns: "http://www.w3.org/2000/svg",
         className: "h-10 w-10",
         style: {

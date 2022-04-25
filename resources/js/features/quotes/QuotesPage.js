@@ -35,6 +35,10 @@ export default function QuotesPage(props) {
         dispatch(setQuote(pickedQuote));
     }
 
+    function onBackClicked() {
+        window.location.href = "/quotes";
+    }
+
     // Initial Random
     if (isInitialState) {
         dispatch(randomize());
@@ -47,7 +51,7 @@ export default function QuotesPage(props) {
             id="viewport" 
             className="w-screen h-screen flex flex-col transition-colors"
             style={{backgroundColor: color.bgColor}}>
-            <QuotesHeaderComponent author={formattedAuthorName}/>
+            <QuotesHeaderComponent author={formattedAuthorName} onBackClicked={onBackClicked}/>
             <div id="main-content" className="h-full flex flex-row">
                 <div className="w-[90%] flex items-center">
                     <QuoteComponent />
