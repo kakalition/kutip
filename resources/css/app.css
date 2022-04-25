@@ -8,7 +8,7 @@
     }
 
     .form-input {
-        @apply border-2 border-black rounded-md w-3/5 h-14 pl-4 mb-6
+        @apply border-2 border-black rounded-md w-3/5 h-14 pl-4 mb-6 transition-colors
     }
 
     .form-input:placeholder-shown {

@@ -1,7 +1,6 @@
 import _ from "lodash";
 
-export const PickRandomElement = (list) => {
+export const pickRandomElement = (list) => {
     const randomIndex = _.random(0, list.length, false);
-    const pickedQuote = list.splice(randomIndex, 1);
-    return pickedQuote;
+    return list[randomIndex];
 }

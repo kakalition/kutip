@@ -1,18 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const quoteSlice = createSlice({
-    name: 'quotes',
-    initialState: [],
+    name: 'quote',
+    initialState: {
+        value: ''
+    },
     reducers: {
-        removeQuote: (state, action) => {
-            const newValue = state.value.filter((value) => value !== action.payload);
-            state.value = newValue;
-        },
-        fillList: (state, action) => {
+        setQuote: (state, action) => {
             state.value = action.payload;
         }
     }
 })
 
-export const { removeQuote, fillList } = quoteSlice.actions;
+export const { setQuote } = quoteSlice.actions;
 export default quoteSlice.reducer;
