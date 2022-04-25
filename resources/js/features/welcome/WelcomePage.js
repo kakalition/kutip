@@ -6,12 +6,17 @@ import WelcomeFragmentThreeComponent from "./components/WelcomeFragmentThreeComp
 import WelcomeFragmentFourComponent from "./components/WelcomeFragmentFourComponent";
 
 export default function WelcomePage(props) {
+
+    function scrollToTop() {
+        window.scroll({top: 0, behavior: "smooth"});
+    }
+
     return (
         <div className="select-none">
             <WelcomeFragmentOneComponent/>
             <WelcomeFragmentTwoComponent/>
             <WelcomeFragmentThreeComponent/>
-            <WelcomeFragmentFourComponent/>
+            <WelcomeFragmentFourComponent toTopCallback={scrollToTop}/>
         </div>
     );
 }

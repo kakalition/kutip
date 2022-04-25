@@ -7,7 +7,7 @@ export default function WelcomeFragmentFourComponent(props) {
                 Sign up to get started
             </h3>
             <div className="h-28" />
-            <ArrowFabComponent/>
+            <ArrowFabComponent toTopCallback={props.toTopCallback}/>
         </div>
     );
 }
