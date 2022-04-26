@@ -7422,7 +7422,9 @@ function LoginFormComponent(props) {
       }
     };
     axios__WEBPACK_IMPORTED_MODULE_0___default().post("/login", formData, config).then(function (response) {
-      window.location.href = "/home";
+      if (response.status == 200) {
+        window.location.href = "/quotes";
+      }
     });
   }
 
@@ -7548,11 +7550,13 @@ function RegisterForm(props) {
     var formData = new FormData(document.getElementById("register-form"));
     var config = {
       headers: {
-        'X-CSRF-TOKEN': document.querySelector("meta[name='csrf-token']").content
+        "X-CSRF-TOKEN": document.querySelector("meta[name='csrf-token']").content
       }
     };
     axios__WEBPACK_IMPORTED_MODULE_0___default().post("/register", formData, config).then(function (response) {
-      return window.location.href = "/home";
+      if (response.status == 200) {
+        window.location.href = "/quotes";
+      }
     });
   }
 
