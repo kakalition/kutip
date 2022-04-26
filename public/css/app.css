@@ -542,6 +542,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
 }
+.borderize {
+  border-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(220 38 38 / var(--tw-border-opacity));
+}
 .fixed {
   position: fixed;
 }
@@ -556,6 +561,36 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .bottom-14 {
   bottom: 3.5rem;
+}
+.col-start-1 {
+  grid-column-start: 1;
+}
+.col-start-3 {
+  grid-column-start: 3;
+}
+.col-end-3 {
+  grid-column-end: 3;
+}
+.col-end-6 {
+  grid-column-end: 6;
+}
+.col-end-5 {
+  grid-column-end: 5;
+}
+.col-end-4 {
+  grid-column-end: 4;
+}
+.row-start-1 {
+  grid-row-start: 1;
+}
+.row-start-2 {
+  grid-row-start: 2;
+}
+.row-end-2 {
+  grid-row-end: 2;
+}
+.row-end-3 {
+  grid-row-end: 3;
 }
 .float-right {
   float: right;
@@ -586,6 +621,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .flex {
   display: flex;
+}
+.grid {
+  display: grid;
 }
 .h-36 {
   height: 9rem;
@@ -638,6 +676,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-16 {
   height: 4rem;
 }
+.h-\[100vh\] {
+  height: 100vh;
+}
+.h-4 {
+  height: 1rem;
+}
 .w-36 {
   width: 9rem;
 }
@@ -683,11 +727,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-1\/3 {
   width: 33.333333%;
 }
+.w-5\/6 {
+  width: 83.333333%;
+}
 .select-none {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 .flex-row {
   flex-direction: row;
@@ -771,6 +827,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-14 {
   padding: 3.5rem;
 }
+.p-24 {
+  padding: 6rem;
+}
+.p-12 {
+  padding: 3rem;
+}
+.p-8 {
+  padding: 2rem;
+}
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -787,6 +852,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 5rem;
   padding-right: 5rem;
 }
+.px-24 {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
 .pl-8 {
   padding-left: 2rem;
 }
@@ -798,6 +867,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pl-24 {
   padding-left: 6rem;
+}
+.pr-12 {
+  padding-right: 3rem;
 }
 .text-center {
   text-align: center;
@@ -846,6 +918,30 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-\[13rem\] {
   font-size: 13rem;
+}
+.text-\[calc\(3rem\+3vw\)\] {
+  font-size: calc(3rem + 3vw);
+}
+.text-\[calc\(2rem\+3vw\)\] {
+  font-size: calc(2rem + 3vw);
+}
+.text-\[calc\(1rem\+3vw\)\] {
+  font-size: calc(1rem + 3vw);
+}
+.text-\[calc\(0\.5rem\+3vw\)\] {
+  font-size: calc(0.5rem + 3vw);
+}
+.text-\[calc\(0\.5rem\+1vw\)\] {
+  font-size: calc(0.5rem + 1vw);
+}
+.text-\[calc\(0\.5rem\+2vw\)\] {
+  font-size: calc(0.5rem + 2vw);
+}
+.text-\[calc\(1rem\+2vw\)\] {
+  font-size: calc(1rem + 2vw);
+}
+.text-\[calc\(2rem\+2vw\)\] {
+  font-size: calc(2rem + 2vw);
 }
 .font-light {
   font-weight: 300;
@@ -983,4 +1079,193 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .focus\:outline-sky-300:focus {
   outline-color: #7dd3fc;
+}
+
+@media (min-width: 768px) {
+
+  .md\:col-start-1 {
+    grid-column-start: 1;
+  }
+
+  .md\:col-start-3 {
+    grid-column-start: 3;
+  }
+
+  .md\:col-end-4 {
+    grid-column-end: 4;
+  }
+
+  .md\:col-end-6 {
+    grid-column-end: 6;
+  }
+
+  .md\:row-start-1 {
+    grid-row-start: 1;
+  }
+
+  .md\:row-start-2 {
+    grid-row-start: 2;
+  }
+
+  .md\:row-end-2 {
+    grid-row-end: 2;
+  }
+
+  .md\:row-end-3 {
+    grid-row-end: 3;
+  }
+
+  .md\:ml-24 {
+    margin-left: 6rem;
+  }
+
+  .md\:mr-44 {
+    margin-right: 11rem;
+  }
+
+  .md\:grid {
+    display: grid;
+  }
+
+  .md\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .md\:grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:justify-center {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .lg\:col-start-1 {
+    grid-column-start: 1;
+  }
+
+  .lg\:col-start-3 {
+    grid-column-start: 3;
+  }
+
+  .lg\:col-end-4 {
+    grid-column-end: 4;
+  }
+
+  .lg\:col-end-6 {
+    grid-column-end: 6;
+  }
+
+  .lg\:row-start-1 {
+    grid-row-start: 1;
+  }
+
+  .lg\:row-start-2 {
+    grid-row-start: 2;
+  }
+
+  .lg\:row-start-3 {
+    grid-row-start: 3;
+  }
+
+  .lg\:row-end-2 {
+    grid-row-end: 2;
+  }
+
+  .lg\:row-end-3 {
+    grid-row-end: 3;
+  }
+
+  .lg\:row-end-4 {
+    grid-row-end: 4;
+  }
+
+  .lg\:ml-24 {
+    margin-left: 6rem;
+  }
+
+  .lg\:mr-44 {
+    margin-right: 11rem;
+  }
+
+  .lg\:grid {
+    display: grid;
+  }
+
+  .lg\:h-0 {
+    height: 0px;
+  }
+
+  .lg\:h-12 {
+    height: 3rem;
+  }
+
+  .lg\:w-full {
+    width: 100%;
+  }
+
+  .lg\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-rows-3 {
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:items-stretch {
+    align-items: stretch;
+  }
+
+  .lg\:justify-center {
+    justify-content: center;
+  }
+
+  .lg\:p-4 {
+    padding: 1rem;
+  }
+
+  .lg\:p-24 {
+    padding: 6rem;
+  }
+
+  .lg\:text-left {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .xl\:row-start-3 {
+    grid-row-start: 3;
+  }
+
+  .xl\:row-start-2 {
+    grid-row-start: 2;
+  }
+
+  .xl\:row-end-4 {
+    grid-row-end: 4;
+  }
+
+  .xl\:row-end-3 {
+    grid-row-end: 3;
+  }
+
+  .xl\:w-full {
+    width: 100%;
+  }
+
+  .xl\:grid-rows-3 {
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
 }

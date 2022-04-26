@@ -8424,22 +8424,23 @@ __webpack_require__.r(__webpack_exports__);
 
 function WelcomeFragmentTwoComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "flex items-center justify-center w-screen h-[120vh] bg-secondary",
+    className: "flex h-[120vh] w-screen items-center justify-center bg-secondary",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
-        className: "pl-24 font-playfair-display font-semibold text-8xl text-primary",
-        children: ["Uplift your day with", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "curated quotes."]
+      className: "flex h-[100vh] flex-col items-center justify-center p-8 lg:grid lg:grid-cols-5 lg:grid-rows-2 lg:items-stretch lg:justify-center lg:p-24",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
+        className: "w-[90%] text-center font-playfair-display text-[calc(2rem+2vw)] font-semibold text-primary lg:col-start-1 lg:col-end-4 lg:row-start-1 lg:row-end-2 lg:w-full lg:text-left",
+        children: "Uplift your day with curated quotes."
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "h-16"
+        className: "h-24 lg:h-0"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: "float-right w-1/3 mt-12 mr-44 p-14 rounded-3xl bg-slate-100",
+        className: "lg:placeholder: flex w-[90%] flex-col justify-center rounded-3xl bg-slate-100 p-8 lg:col-start-3 lg:col-end-6  lg:row-start-2 lg:row-end-3 lg:w-full",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-          className: "font-playfair-display font-regular text-6xl text-secondary",
+          className: "font-regular font-playfair-display text-6xl text-[calc(1rem+2vw)] leading-tight text-secondary",
           children: "\"Whatever can happen at any time can happen today.\""
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-          className: "h-12"
+          className: "h-4 lg:h-12"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-          className: "font-playfair-display font-regular text-4xl text-secondary",
+          className: "font-regular font-playfair-display text-4xl text-[calc(0.5rem+2vw)] text-secondary",
           children: "Seneca"
         })]
       })]
