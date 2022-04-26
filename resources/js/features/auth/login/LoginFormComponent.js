@@ -15,7 +15,11 @@ export default function LoginFormComponent(props) {
         };
         axios
             .post("/login", formData, config)
-            .then((response) => (window.location.href = "/home"));
+            .then((response) => {
+                if (response.status == 200) {
+                    window.location.href = "/quotes";
+                }
+            });
     }
 
     return (

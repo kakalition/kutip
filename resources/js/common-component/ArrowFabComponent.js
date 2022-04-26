@@ -3,6 +3,7 @@ export default function ArrowFabComponent(props) {
         <button
             className="h-36 w-36 hover:scale-[1.08] hover:-translate-y-3 hover:shadow-2xl transition-all rounded-full flex items-center justify-center bg-[#8D1747] shadow-l"
             type="button"
+            onClick={props.toTopCallback}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"

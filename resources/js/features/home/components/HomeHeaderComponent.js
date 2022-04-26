@@ -6,7 +6,9 @@ export default function HomeHeaderComponent(props) {
             <p className="font-playfair-display font-semibold text-secondary text-4xl">
                 Kutip
             </p>
-            <NameWithLimitComponent />
+            <div onClick={props.logoutCallback}>
+                <NameWithLimitComponent />
+            </div>
         </div>
     );
 }
