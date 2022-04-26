@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
-use Illuminate\Http\Request;
-use App\Models\Quote;
 use Illuminate\Support\Facades\Auth;
 
 class QuoteController extends Controller

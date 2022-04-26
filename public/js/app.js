@@ -7422,7 +7422,7 @@ function LoginFormComponent(props) {
       }
     };
     axios__WEBPACK_IMPORTED_MODULE_0___default().post("/login", formData, config).then(function (response) {
-      return window.location.href = "/home";
+      window.location.href = "/home";
     });
   }
 
@@ -7680,7 +7680,7 @@ function AuthorNameBuilder(props) {
 }
 
 function HomePage(props) {
-  var username = JSON.parse(props.user)["name"];
+  //const username = JSON.parse(props.user)["name"];
   var authors = JSON.parse(props.authors).map(function (author) {
     var formattedName = _.startCase(author);
 
@@ -7704,7 +7704,9 @@ function HomePage(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     id: "root",
     className: "w-screen select-none bg-primary",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_HomeHeaderComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_HomeHeaderComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      logoutCallback: logout
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "h-24"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
       className: "font-playfair-display font-black text-[12vmax] leading-snug tracking-wide text-[#8D1747]",
@@ -7743,7 +7745,10 @@ function HomeHeaderComponent(props) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
       className: "font-playfair-display font-semibold text-secondary text-4xl",
       children: "Kutip"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      onClick: props.logoutCallback,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+    })]
   });
 }
 
