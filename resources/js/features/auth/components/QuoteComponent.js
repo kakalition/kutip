@@ -1,13 +1,13 @@
 export default function QuoteComponent(props) {
-    return(
-        <>
-            <p className="font-playfair-display font-semibold text-primary text-7xl leading-tight">
+    return (
+        <div className="flex flex-col items-start">
+            <p className="font-playfair-display text-[calc(2rem+2vw)] font-semibold leading-tight text-primary">
                 “Quickness is the essence of the war.”
             </p>
-            <div className="h-8"/>
-            <p className="font-playfair-display font-bold text-primary text-4xl">
+            <div className="h-8" />
+            <p className="font-playfair-display text-4xl font-bold text-primary">
                 Sun Tzu
             </p>
-        </>
+        </div>
     );
 }

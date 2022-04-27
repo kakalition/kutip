@@ -7375,16 +7375,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
-
 function QuoteComponent(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    className: "flex flex-col items-start",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-      className: "font-playfair-display font-semibold text-primary text-7xl leading-tight",
+      className: "font-playfair-display text-[calc(2rem+2vw)] font-semibold leading-tight text-primary",
       children: "\u201CQuickness is the essence of the war.\u201D"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "h-8"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-      className: "font-playfair-display font-bold text-primary text-4xl",
+      className: "font-playfair-display text-4xl font-bold text-primary",
       children: "Sun Tzu"
     })]
   });
@@ -7411,7 +7411,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 function LoginFormComponent(props) {
   function onSubmit(e) {
     e.preventDefault();
@@ -7428,24 +7427,25 @@ function LoginFormComponent(props) {
     });
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "w-full flex flex-col items-center justify-center lg:items-start",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-      className: "ml-28 font-playfair-display font-bold text-secondary text-8xl",
+      className: "text-center font-playfair-display text-[calc(2rem+6vw)] font-bold text-secondary lg:text-left lg:text-[calc(2rem+3vw)]",
       children: "Welcome back"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "h-20"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
       id: "login-form",
-      className: "ml-28",
+      className: "px-20 lg:px-0 w-full",
       onSubmit: onSubmit,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         children: (0,_common_component_CommonInputBuilder__WEBPACK_IMPORTED_MODULE_1__.CommonInputBuilder)("email", "email", "Email address", "name@provider.com")
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         children: (0,_common_component_CommonInputBuilder__WEBPACK_IMPORTED_MODULE_1__.CommonInputBuilder)("password", "password", "Password", "••••••••")
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "flex flex-row items-center justify-start w-2/3",
+        className: "flex w-full flex-row items-center justify-start",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          className: "h-8 w-8 accent-sky-300 focus:outline-sky-300",
+          className: "h-6 w-6 accent-secondary",
           type: "checkbox",
           id: "remember",
           name: "remember",
@@ -7497,23 +7497,15 @@ __webpack_require__.r(__webpack_exports__);
 function RegisterPage(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     id: "root",
-    className: "flex flex-row h-screen w-screen",
+    className: "flex h-screen w-screen flex-col lg:flex-row",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      id: "left-side-wrapper",
-      className: "h-screen w-4/5 flex flex-col items-start justify-center bg-primary",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        id: "form-wrapper",
-        className: "w-full",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_LoginFormComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-      })
+      id: "form-wrapper",
+      className: "flex h-screen w-full flex-col items-center justify-center bg-primary  lg:px-[10vw]",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_LoginFormComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {})
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      id: "right-side-wrapper",
-      className: "h-screen w-3/5 flex items-center justify-center bg-secondary",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        id: "quote-wrapper",
-        className: "w-full m-20",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-      })
+      id: "quote-wrapper",
+      className: "lg:single-centering  hidden lg:visible lg:h-screen lg:w-3/5 lg:bg-secondary lg:px-12",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {})
     })]
   });
 }

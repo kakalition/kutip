@@ -4,34 +4,38 @@
 
 @layer components {
     .form-label {
-        @apply font-poppins text-slate-700 text-xl
+        @apply font-poppins text-xl text-slate-700;
     }
 
     .form-input {
-        @apply border-2 border-black rounded-md w-3/5 h-14 pl-4 mb-6 transition-colors
+        @apply mb-6 h-14 w-full rounded-md border-2 border-black pl-4 transition-colors;
     }
 
     .form-input:placeholder-shown {
-        @apply border-2 border-form-border rounded-md w-3/5 h-14 pl-4 mb-6
+        @apply mb-6 h-14 w-full rounded-md border-2 border-form-border pl-4;
     }
 
     .form-input:hover {
-        @apply border-secondary transition-colors
+        @apply border-secondary transition-colors;
     }
 
     .form-input:focus {
-        @apply outline-secondary
+        @apply outline-secondary;
     }
 
     .form-button {
-        @apply bg-secondary rounded-md w-3/5 font-poppins text-white p-3 text-lg
+        @apply w-full rounded-md bg-secondary p-3 font-poppins text-lg text-white;
     }
 
     .form-button:hover {
-        @apply bg-secondary transition-colors duration-200
+        @apply bg-secondary transition-colors duration-200;
+    }
+
+    .single-centering {
+        @apply flex items-center justify-center;
     }
 
     .borderize {
-        @apply border-4 border-red-600
+        @apply border-4 border-red-600;
     }
 }

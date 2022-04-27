@@ -5,22 +5,24 @@ import LoginFormComponent from "./LoginFormComponent";
 
 export default function RegisterPage(props) {
     return (
-        <div id="root" className="flex flex-row h-screen w-screen">
+        <div
+            id="root"
+            className="flex h-screen w-screen flex-col
+            lg:flex-row"
+        >
             <div
-                id="left-side-wrapper"
-                className="h-screen w-4/5 flex flex-col items-start justify-center bg-primary"
+                id="form-wrapper"
+                className="flex h-screen w-full flex-col items-center justify-center bg-primary 
+                lg:px-[10vw]"
             >
-                <div id="form-wrapper" className="w-full">
-                    <LoginFormComponent />
-                </div>
+                <LoginFormComponent />
             </div>
             <div
-                id="right-side-wrapper"
-                className="h-screen w-3/5 flex items-center justify-center bg-secondary"
+                id="quote-wrapper"
+                className="lg:single-centering 
+                hidden lg:visible lg:h-screen lg:w-3/5 lg:bg-secondary lg:px-12"
             >
-                <div id="quote-wrapper" className="w-full m-20">
-                    <QuoteComponent />
-                </div>
+                <QuoteComponent />
             </div>
         </div>
     );
