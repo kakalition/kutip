@@ -21,15 +21,19 @@ export default function LoginFormComponent(props) {
     }
 
     return (
-        <div className="w-full flex flex-col items-center justify-center lg:items-start">
+        <div className="flex w-full flex-col items-center justify-center lg:items-start">
             <h1
                 className="text-center font-playfair-display text-[calc(2rem+6vw)] font-bold text-secondary
-            lg:text-left lg:text-[calc(2rem+3vw)]"
+                lg:text-left lg:text-[calc(2rem+3vw)]"
             >
                 Welcome back
             </h1>
             <div className="h-20" />
-            <form id="login-form" className="px-20 lg:px-0 w-full" onSubmit={onSubmit}>
+            <form
+                id="login-form"
+                className="w-full px-20 lg:px-0"
+                onSubmit={onSubmit}
+            >
                 <div>
                     {CommonInputBuilder(
                         "email",

@@ -7282,6 +7282,38 @@ function ArrowFabComponent(props) {
 
 /***/ }),
 
+/***/ "./resources/js/common-component/AuthBuilder.js":
+/*!******************************************************!*\
+  !*** ./resources/js/common-component/AuthBuilder.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AuthBuilder": () => (/* binding */ AuthBuilder)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var AuthBuilder = function AuthBuilder(leftContent, rightContent) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    id: "root",
+    className: "flex h-screen w-screen flex-col lg:flex-row",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      id: "form-wrapper",
+      className: "flex h-screen w-full flex-col items-center justify-center bg-primary  lg:px-[10vw]",
+      children: leftContent
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      id: "quote-wrapper",
+      className: "lg:single-centering  hidden lg:visible lg:h-screen lg:w-3/5 lg:bg-secondary lg:px-12",
+      children: rightContent
+    })]
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/common-component/CommonInputBuilder.js":
 /*!*************************************************************!*\
   !*** ./resources/js/common-component/CommonInputBuilder.js ***!
@@ -7428,7 +7460,7 @@ function LoginFormComponent(props) {
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "w-full flex flex-col items-center justify-center lg:items-start",
+    className: "flex w-full flex-col items-center justify-center lg:items-start",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
       className: "text-center font-playfair-display text-[calc(2rem+6vw)] font-bold text-secondary lg:text-left lg:text-[calc(2rem+3vw)]",
       children: "Welcome back"
@@ -7436,7 +7468,7 @@ function LoginFormComponent(props) {
       className: "h-20"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
       id: "login-form",
-      className: "px-20 lg:px-0 w-full",
+      className: "w-full px-20 lg:px-0",
       onSubmit: onSubmit,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         children: (0,_common_component_CommonInputBuilder__WEBPACK_IMPORTED_MODULE_1__.CommonInputBuilder)("email", "email", "Email address", "name@provider.com")
@@ -7485,9 +7517,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _components_QuoteComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/QuoteComponent */ "./resources/js/features/auth/components/QuoteComponent.js");
-/* harmony import */ var _LoginFormComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LoginFormComponent */ "./resources/js/features/auth/login/LoginFormComponent.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _common_component_AuthBuilder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common-component/AuthBuilder */ "./resources/js/common-component/AuthBuilder.js");
+/* harmony import */ var _components_QuoteComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/QuoteComponent */ "./resources/js/features/auth/components/QuoteComponent.js");
+/* harmony import */ var _LoginFormComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./LoginFormComponent */ "./resources/js/features/auth/login/LoginFormComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -7495,23 +7528,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function RegisterPage(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    id: "root",
-    className: "flex h-screen w-screen flex-col lg:flex-row",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      id: "form-wrapper",
-      className: "flex h-screen w-full flex-col items-center justify-center bg-primary  lg:px-[10vw]",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_LoginFormComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      id: "quote-wrapper",
-      className: "lg:single-centering  hidden lg:visible lg:h-screen lg:w-3/5 lg:bg-secondary lg:px-12",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-    })]
-  });
+  return (0,_common_component_AuthBuilder__WEBPACK_IMPORTED_MODULE_2__.AuthBuilder)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_LoginFormComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {}));
 }
 
 if (document.getElementById("login-root")) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(RegisterPage, {}), document.getElementById("login-root"));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(RegisterPage, {}), document.getElementById("login-root"));
 }
 
 /***/ }),
@@ -7535,7 +7556,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 function RegisterForm(props) {
   function onSubmit(e) {
     e.preventDefault();
@@ -7552,15 +7572,16 @@ function RegisterForm(props) {
     });
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "flex w-full flex-col items-center justify-center lg:items-start",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-      className: "ml-28 font-playfair-display font-bold text-secondary text-8xl",
+      className: "text-center font-playfair-display text-[calc(2rem+6vw)] font-bold text-secondary lg:text-left lg:text-[calc(2rem+3vw)]",
       children: "New Account"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "h-20"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
       id: "register-form",
-      className: "ml-28",
+      className: "w-full px-20 lg:px-0",
       onSubmit: onSubmit,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         children: (0,_common_component_CommonInputBuilder__WEBPACK_IMPORTED_MODULE_1__.CommonInputBuilder)("text", "name", "Name", "Joseph Joestar")
@@ -7598,9 +7619,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _components_QuoteComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/QuoteComponent */ "./resources/js/features/auth/components/QuoteComponent.js");
-/* harmony import */ var _RegisterFormComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RegisterFormComponent */ "./resources/js/features/auth/register/RegisterFormComponent.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _common_component_AuthBuilder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common-component/AuthBuilder */ "./resources/js/common-component/AuthBuilder.js");
+/* harmony import */ var _components_QuoteComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/QuoteComponent */ "./resources/js/features/auth/components/QuoteComponent.js");
+/* harmony import */ var _RegisterFormComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./RegisterFormComponent */ "./resources/js/features/auth/register/RegisterFormComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -7608,31 +7630,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function RegisterPage(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    id: "root",
-    className: "flex flex-row h-screen w-screen",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      id: "left-side-wrapper",
-      className: "h-screen w-4/5 flex flex-col items-start justify-center bg-primary",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        id: "form-wrapper",
-        className: "w-full",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_RegisterFormComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      id: "right-side-wrapper",
-      className: "h-screen w-3/5 flex items-center justify-center bg-secondary",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        id: "quote-wrapper",
-        className: "w-full m-20",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-      })
-    })]
-  });
+  return (0,_common_component_AuthBuilder__WEBPACK_IMPORTED_MODULE_2__.AuthBuilder)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_RegisterFormComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {}));
 }
 
 if (document.getElementById("register-root")) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(RegisterPage, {}), document.getElementById("register-root"));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(RegisterPage, {}), document.getElementById("register-root"));
 }
 
 /***/ }),
