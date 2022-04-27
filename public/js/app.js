@@ -8387,27 +8387,27 @@ function WelcomeFragmentThreeComponent(props) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "flex h-full w-full flex-col",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
-        className: "font-regular place-self-end font-playfair-display text-[calc(2rem+3vw)] leading-[calc(1rem+8vw)] text-primary md:leading-[calc(1rem+7vw)] lg:leading-[calc(1rem+6vw)]",
+        className: "font-regular place-self-end font-playfair-display text-[calc(2rem+1vw)] leading-[calc(1rem+8vw)] text-primary md:leading-[calc(1rem+7vw)] lg:leading-[calc(1rem+6vw)]",
         children: ["Many different", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "famous name to", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "choose from."]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "h-44"
+        className: "h-[calc(8rem+5vw)]"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-        className: "font-playfair-display text-[calc(2rem+4vw)] font-black leading-none tracking-wide text-[#FFA781]",
+        className: "font-playfair-display text-[calc(2rem+2vw)] font-black leading-none tracking-wide text-[#FFA781] md:text-[calc(2rem+4vw)]",
         children: "Epictetus"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "h-4"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-        className: "font-playfair-display text-[calc(2rem+4vw)] font-black leading-none tracking-wide text-[#FFA781]",
+        className: "font-playfair-display text-[calc(2rem+2vw)] font-black leading-none tracking-wide text-[#FFA781] md:text-[calc(2rem+4vw)]",
         children: "Seneca"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "h-4"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-        className: "font-playfair-display text-[calc(2rem+4vw)] font-black leading-none tracking-wide text-[#FFA781]",
+        className: "font-playfair-display text-[calc(2rem+2vw)] font-black leading-none tracking-wide text-[#FFA781] md:text-[calc(2rem+4vw)]",
         children: "Marcus Aurelius"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "h-4"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-        className: "font-playfair-display text-[calc(2rem+4vw)] font-black leading-none tracking-wide text-white",
+        className: "font-playfair-display text-[calc(2rem+2vw)] font-black leading-none tracking-wide text-white md:text-[calc(2rem+4vw)]",
         children: "And many more!"
       })]
     })
@@ -8435,13 +8435,13 @@ function WelcomeFragmentTwoComponent(props) {
     className: "flex h-[120vh] w-screen items-center justify-center bg-secondary px-[10vw]",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "flex h-[100vh] flex-col items-center justify-center p-8 lg:justify-center lg:p-24",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
-        className: "w-[90%] text-center font-playfair-display text-[calc(2rem+2vw)] font-semibold text-primary  lg:w-full lg:text-left",
-        children: ["Uplift your day with ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), " curated quotes."]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
+        className: "w-full text-center font-playfair-display text-[calc(2rem+3vw)] font-semibold leading-tight text-primary lg:w-full lg:text-left lg:text-[calc(2rem+2vw)]",
+        children: "Uplift your day with curated quotes."
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "h-24"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: "flex w-[50%] flex-col justify-center  rounded-3xl bg-slate-100 p-8  lg:w-[70%] lg:place-self-end lg:p-12",
+        className: "flex w-[90%] flex-col justify-center  rounded-3xl bg-slate-100 p-8  lg:w-[70%] lg:place-self-end lg:p-12",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
           className: "font-regular font-playfair-display text-6xl text-[calc(1rem+2vw)] leading-tight text-secondary",
           children: "\"Whatever can happen at any time can happen today.\""

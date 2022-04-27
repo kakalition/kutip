@@ -727,6 +727,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[calc\(1rem\+4vw\)\] {
   height: calc(1rem + 4vw);
 }
+.h-\[calc\(8rem\+5vw\)\] {
+  height: calc(8rem + 5vw);
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -834,6 +837,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[calc\(1rem\+4vw\)\] {
   width: calc(1rem + 4vw);
+}
+.w-\[7-0\%\] {
+  width: 7 - 0%;
+}
+.w-\[70\%\] {
+  width: 70%;
 }
 .select-none {
   -webkit-user-select: none;
@@ -1170,6 +1179,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-\[calc\(2rem\+4vw\)\] {
   font-size: calc(2rem + 4vw);
+}
+.text-\[calc\(2rem\+1vw\)\] {
+  font-size: calc(2rem + 1vw);
+}
+.text-\[calc\(2rem\+0\.5vw\)\] {
+  font-size: calc(2rem + 0.5vw);
 }
 .font-light {
   font-weight: 300;
@@ -1544,6 +1559,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: calc(1rem + 1vw);
   }
 
+  .md\:text-\[calc\(2rem\+4vw\)\] {
+    font-size: calc(2rem + 4vw);
+  }
+
   .md\:leading-\[calc\(1rem\+8vw\)\] {
     line-height: calc(1rem + 8vw);
   }
@@ -1803,6 +1822,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:text-\[calc\(0\.8rem\+1vw\)\] {
     font-size: calc(0.8rem + 1vw);
+  }
+
+  .lg\:text-\[calc\(2rem\+2vw\)\] {
+    font-size: calc(2rem + 2vw);
+  }
+
+  .lg\:text-\[calc\(2rem\+4vw\)\] {
+    font-size: calc(2rem + 4vw);
   }
 
   .lg\:leading-\[calc\(1rem\+10vw\)\] {
