@@ -688,6 +688,45 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-4 {
   height: 1rem;
 }
+.h-\[4vw\] {
+  height: 4vw;
+}
+.h-\[40vw\] {
+  height: 40vw;
+}
+.h-\[20vw\] {
+  height: 20vw;
+}
+.h-\[15vw\] {
+  height: 15vw;
+}
+.h-\[4rem\+2vw\] {
+  height: 4rem + 2vw;
+}
+.h-\[4rem\+10vw\] {
+  height: 4rem + 10vw;
+}
+.h-\[calc\(4rem\+10vw\)\] {
+  height: calc(4rem + 10vw);
+}
+.h-\[10vw\] {
+  height: 10vw;
+}
+.h-\[calc\(3rem\+10vw\)\] {
+  height: calc(3rem + 10vw);
+}
+.h-\[calc\(0\.5rem\+1vw\)\] {
+  height: calc(0.5rem + 1vw);
+}
+.h-\[calc\(1rem\+1vw\)\] {
+  height: calc(1rem + 1vw);
+}
+.h-\[calc\(3rem\+8vw\)\] {
+  height: calc(3rem + 8vw);
+}
+.h-\[calc\(1rem\+4vw\)\] {
+  height: calc(1rem + 4vw);
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -756,6 +795,45 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[50\%\] {
   width: 50%;
+}
+.w-\[4vw\] {
+  width: 4vw;
+}
+.w-\[40vw\] {
+  width: 40vw;
+}
+.w-\[20vw\] {
+  width: 20vw;
+}
+.w-\[15vw\] {
+  width: 15vw;
+}
+.w-\[4rem\+2vw15vw\] {
+  width: 4rem + 2vw15vw;
+}
+.w-\[4rem\+2vw\] {
+  width: 4rem + 2vw;
+}
+.w-\[4rem\+10vw\] {
+  width: 4rem + 10vw;
+}
+.w-\[calc\(4rem\+10vw\)\] {
+  width: calc(4rem + 10vw);
+}
+.w-\[calc\(3rem\+10vw\)\] {
+  width: calc(3rem + 10vw);
+}
+.w-\[calc\(0\.5rem\+1vw\)\] {
+  width: calc(0.5rem + 1vw);
+}
+.w-\[calc\(1rem\+1vw\)\] {
+  width: calc(1rem + 1vw);
+}
+.w-\[calc\(3rem\+8vw\)\] {
+  width: calc(3rem + 8vw);
+}
+.w-\[calc\(1rem\+4vw\)\] {
+  width: calc(1rem + 4vw);
 }
 .select-none {
   -webkit-user-select: none;
@@ -1342,6 +1420,38 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 7rem;
   }
 
+  .md\:h-\[calc\(3rem\+7vw\)\] {
+    height: calc(3rem + 7vw);
+  }
+
+  .md\:h-\[calc\(1rem\+7vw\)\] {
+    height: calc(1rem + 7vw);
+  }
+
+  .md\:h-\[calc\(1rem\+2vw\)\] {
+    height: calc(1rem + 2vw);
+  }
+
+  .md\:h-\[calc\(1rem\+3vw\)\] {
+    height: calc(1rem + 3vw);
+  }
+
+  .md\:w-\[calc\(3rem\+7vw\)\] {
+    width: calc(3rem + 7vw);
+  }
+
+  .md\:w-\[calc\(1rem\+7vw\)\] {
+    width: calc(1rem + 7vw);
+  }
+
+  .md\:w-\[calc\(1rem\+2vw\)\] {
+    width: calc(1rem + 2vw);
+  }
+
+  .md\:w-\[calc\(1rem\+3vw\)\] {
+    width: calc(1rem + 3vw);
+  }
+
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -1525,12 +1635,60 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 7rem;
   }
 
+  .lg\:h-\[calc\(4rem\+10vw\)\] {
+    height: calc(4rem + 10vw);
+  }
+
+  .lg\:h-\[calc\(4rem\+5vw\)\] {
+    height: calc(4rem + 5vw);
+  }
+
+  .lg\:h-\[calc\(3rem\+5vw\)\] {
+    height: calc(3rem + 5vw);
+  }
+
+  .lg\:h-\[7vw\] {
+    height: 7vw;
+  }
+
+  .lg\:h-\[5vw\] {
+    height: 5vw;
+  }
+
+  .lg\:h-\[calc\(1rem\+5vw\)\] {
+    height: calc(1rem + 5vw);
+  }
+
+  .lg\:h-\[calc\(1rem\+3vw\)\] {
+    height: calc(1rem + 3vw);
+  }
+
   .lg\:w-full {
     width: 100%;
   }
 
   .lg\:w-\[70\%\] {
     width: 70%;
+  }
+
+  .lg\:w-\[calc\(4rem\+10vw\)\] {
+    width: calc(4rem + 10vw);
+  }
+
+  .lg\:w-\[calc\(4rem\+5vw\)\] {
+    width: calc(4rem + 5vw);
+  }
+
+  .lg\:w-\[calc\(3rem\+5vw\)\] {
+    width: calc(3rem + 5vw);
+  }
+
+  .lg\:w-\[calc\(1rem\+5vw\)\] {
+    width: calc(1rem + 5vw);
+  }
+
+  .lg\:w-\[calc\(1rem\+3vw\)\] {
+    width: calc(1rem + 3vw);
   }
 
   .lg\:grid-cols-5 {

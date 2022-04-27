@@ -7,7 +7,7 @@ export default function WelcomeFragmentTwoComponent(props) {
                     lg:justify-center lg:p-24"
             >
                 <h3
-                    className="borderize w-[90%]
+                    className="w-[90%]
                         text-center font-playfair-display text-[calc(2rem+2vw)] font-semibold text-primary 
                         lg:w-full lg:text-left"
                 >
@@ -17,7 +17,7 @@ export default function WelcomeFragmentTwoComponent(props) {
                 <div className="h-24" />
 
                 <div
-                    className="borderize flex w-[50%] flex-col justify-center 
+                    className="flex w-[50%] flex-col justify-center 
                     rounded-3xl bg-slate-100 p-8 
                     lg:w-[70%] lg:place-self-end lg:p-12"
                 >
