@@ -2,22 +2,26 @@ import NameWithLimitComponent from "../../../common-component/NameWithLimitCompo
 
 export default function HomeHeaderComponent(props) {
     return (
-        <div className="flex flex-row items-center justify-between pt-8">
-            <p className="font-playfair-display text-4xl font-semibold text-secondary">
+        <div className="flex flex-row items-center justify-between">
+            <p className="font-playfair-display text-[calc(1rem+2vw)] font-semibold text-secondary
+            lg:text-[calc(1rem+1vw)]">
                 Kutip
             </p>
 
             <div className="flex flex-row items-center">
-                <p className="font-playfair-display text-2xl font-semibold text-secondary">
+                <p className="font-playfair-display text-[calc(0.5rem+2vw)] font-semibold text-secondary
+                lg:text-[calc(0.5rem+1vw)]">
                     Kharisma Sri Wibowo
                 </p>
 
-                <div className="w-8" />
+                <div className="w-[3vw] md:w-[2vw] lg:w-[1vw]" />
 
                 <button type="button" onClick={props.logoutCallback}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-10 w-10 stroke-secondary"
+                        className="h-[6vw] w-[6vw] stroke-secondary
+                        md:h-[4vw] md:w-[4vw]
+                        lg:h-[3vw] lg:w-[3vw]"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"

@@ -7714,7 +7714,9 @@ function HomePage(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     id: "root",
     className: "w-screen min-h-screen select-none bg-primary px-[10vw]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_HomeHeaderComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "h-8"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_HomeHeaderComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
       logoutCallback: logout
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "h-24"
@@ -7751,23 +7753,23 @@ __webpack_require__.r(__webpack_exports__);
 
 function HomeHeaderComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "flex flex-row items-center justify-between pt-8",
+    className: "flex flex-row items-center justify-between",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-playfair-display text-4xl font-semibold text-secondary",
+      className: "font-playfair-display text-[calc(1rem+2vw)] font-semibold text-secondary lg:text-[calc(1rem+1vw)]",
       children: "Kutip"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "flex flex-row items-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-        className: "font-playfair-display text-2xl font-semibold text-secondary",
+        className: "font-playfair-display text-[calc(0.5rem+2vw)] font-semibold text-secondary lg:text-[calc(0.5rem+1vw)]",
         children: "Kharisma Sri Wibowo"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "w-8"
+        className: "w-[3vw] md:w-[2vw] lg:w-[1vw]"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
         type: "button",
         onClick: props.logoutCallback,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
           xmlns: "http://www.w3.org/2000/svg",
-          className: "h-10 w-10 stroke-secondary",
+          className: "h-[6vw] w-[6vw] stroke-secondary md:h-[4vw] md:w-[4vw] lg:h-[3vw] lg:w-[3vw]",
           fill: "none",
           viewBox: "0 0 24 24",
           stroke: "currentColor",

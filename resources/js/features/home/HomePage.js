@@ -52,6 +52,7 @@ export default function HomePage(props) {
 
     return (
         <div id="root" className="w-screen min-h-screen select-none bg-primary px-[10vw]">
+            <div className="h-8" />
             <HomeHeaderComponent logoutCallback={logout} />
             <div className="h-24" />
             <AuthorNameBuilder value="Random" textcolor="text-[#8D1747]" />

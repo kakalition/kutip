@@ -640,6 +640,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[15vw\] {
   height: 15vw;
 }
+.h-\[1vw\] {
+  height: 1vw;
+}
+.h-\[6vw\] {
+  height: 6vw;
+}
+.h-\[8vw\] {
+  height: 8vw;
+}
 .min-h-\[110vh\] {
   min-height: 110vh;
 }
@@ -681,6 +690,24 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-8 {
   width: 2rem;
+}
+.w-\[1vw\] {
+  width: 1vw;
+}
+.w-\[10vw\] {
+  width: 10vw;
+}
+.w-\[6vw\] {
+  width: 6vw;
+}
+.w-\[8vw\] {
+  width: 8vw;
+}
+.w-\[4vw\] {
+  width: 4vw;
+}
+.w-\[3vw\] {
+  width: 3vw;
 }
 .select-none {
   -webkit-user-select: none;
@@ -910,6 +937,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.5rem;
   line-height: 2rem;
 }
+.text-\[calc\(1rem-2vw\)\] {
+  font-size: calc(1rem - 2vw);
+}
 .font-light {
   font-weight: 300;
 }
@@ -1057,12 +1087,28 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: calc(1rem + 3vw);
   }
 
+  .md\:h-\[2vw\] {
+    height: 2vw;
+  }
+
+  .md\:h-\[4vw\] {
+    height: 4vw;
+  }
+
   .md\:w-\[calc\(3rem\+7vw\)\] {
     width: calc(3rem + 7vw);
   }
 
   .md\:w-\[calc\(1rem\+3vw\)\] {
     width: calc(1rem + 3vw);
+  }
+
+  .md\:w-\[2vw\] {
+    width: 2vw;
+  }
+
+  .md\:w-\[4vw\] {
+    width: 4vw;
   }
 
   .md\:border-\[3px\] {
@@ -1118,6 +1164,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 10vw;
   }
 
+    .lg\:h-\[2vw\] {
+    height: 2vw;
+  }
+
+    .lg\:h-\[3vw\] {
+    height: 3vw;
+  }
+
     .lg\:w-\[calc\(3rem\+5vw\)\] {
     width: calc(3rem + 5vw);
   }
@@ -1136,6 +1190,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
     .lg\:w-\[70\%\] {
     width: 70%;
+  }
+
+    .lg\:w-\[2vw\] {
+    width: 2vw;
+  }
+
+    .lg\:w-\[3vw\] {
+    width: 3vw;
+  }
+
+    .lg\:w-\[1vw\] {
+    width: 1vw;
   }
 
     .lg\:flex-row {
@@ -1218,6 +1284,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
     .lg\:text-\[calc\(2rem\+2vw\)\] {
     font-size: calc(2rem + 2vw);
+  }
+
+    .lg\:text-\[calc\(1rem\+1vw\)\] {
+    font-size: calc(1rem + 1vw);
+  }
+
+    .lg\:text-\[calc\(0\.5rem\+1vw\)\] {
+    font-size: calc(0.5rem + 1vw);
   }
 
     .lg\:leading-\[calc\(1rem\+6vw\)\] {
