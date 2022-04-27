@@ -8338,17 +8338,15 @@ function WelcomeFragmentOneComponent(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
         className: "text-center font-playfair-display text-[calc(3rem+10vw)] font-bold tracking-wide text-secondary lg:pl-24 lg:text-left lg:text-[calc(4rem+10vw)]",
         children: "Kutip"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "h-6"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h2", {
         className: "font-regular w-full text-center font-playfair-display text-[calc(1rem+5vw)] leading-[calc(1rem+7vw)] tracking-tight text-secondary  lg:pl-24 lg:text-left lg:leading-[calc(1rem+6vw)]",
         children: "Curated quotes to bring up your day."
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "h-12"
+        className: "h-16 lg:h-12"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: "flex flex-col items-center  lg:flex-row lg:pl-24",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
-          className: "rounded-full border-4  border-secondary py-[3vw] px-[7vw] font-poppins text-3xl text-[calc(1rem+2vw)] font-semibold text-secondary transition-all  hover:scale-[1.04] hover:bg-secondary hover:text-white  lg:py-[1.5vw] lg:px-[3vw] lg:text-[calc(0.8rem+1vw)]",
+          className: "rounded-full border-2 border-secondary py-[3vw] px-[7vw] font-poppins text-3xl text-[calc(1rem+2vw)] font-semibold text-secondary  transition-all hover:scale-[1.04] hover:bg-secondary hover:text-white  md:border-[3px] lg:border-4 lg:py-[1.5vw] lg:px-[3vw] lg:text-[calc(0.8rem+1vw)]",
           type: "button",
           onClick: toRegister,
           children: "Sign Up"
@@ -8431,16 +8429,16 @@ __webpack_require__.r(__webpack_exports__);
 
 function WelcomeFragmentTwoComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "flex h-[120vh] w-screen items-center justify-center bg-secondary",
+    className: "flex h-[120vh] w-screen items-center justify-center bg-secondary px-[10vw]",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "flex h-[100vh] flex-col items-center justify-center p-8 lg:grid lg:grid-cols-5 lg:grid-rows-2 lg:items-stretch lg:justify-center lg:p-24",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
-        className: "w-[90%] text-center font-playfair-display text-[calc(2rem+2vw)] font-semibold text-primary lg:col-start-1 lg:col-end-4 lg:row-start-1 lg:row-end-2 lg:w-full lg:text-left",
-        children: "Uplift your day with curated quotes."
+      className: "flex h-[100vh] flex-col items-center justify-center p-8 lg:justify-center lg:p-24",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
+        className: "borderize w-[90%] text-center font-playfair-display text-[calc(2rem+2vw)] font-semibold text-primary  lg:w-full lg:text-left",
+        children: ["Uplift your day with ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), " curated quotes."]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "h-20 lg:h-0"
+        className: "h-24"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: "lg:placeholder: flex w-[90%] flex-col justify-center rounded-3xl bg-slate-100 p-8 lg:col-start-3 lg:col-end-6  lg:row-start-2 lg:row-end-3 lg:w-full",
+        className: "borderize flex w-[50%] flex-col justify-center  rounded-3xl bg-slate-100 p-8  lg:w-[70%] lg:place-self-end lg:p-12",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
           className: "font-regular font-playfair-display text-6xl text-[calc(1rem+2vw)] leading-tight text-secondary",
           children: "\"Whatever can happen at any time can happen today.\""

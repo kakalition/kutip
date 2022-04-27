@@ -730,6 +730,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-5\/6 {
   width: 83.333333%;
 }
+.w-\[40\%\] {
+  width: 40%;
+}
+.w-\[50\%\] {
+  width: 50%;
+}
 .select-none {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -778,6 +784,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-20 {
   gap: 5rem;
 }
+.place-self-end {
+  place-self: end;
+}
+.self-end {
+  align-self: flex-end;
+}
+.justify-self-end {
+  justify-self: end;
+}
 .overflow-x-clip {
   overflow-x: clip;
 }
@@ -789,6 +804,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-4 {
   border-width: 4px;
+}
+.border-\[1vw\] {
+  border-width: 1vw;
+}
+.border-\[0\.5vw\] {
+  border-width: 0.5vw;
+}
+.border-2 {
+  border-width: 2px;
 }
 .border-secondary {
   --tw-border-opacity: 1;
@@ -1256,6 +1280,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     justify-content: center;
   }
 
+  .md\:border-4 {
+    border-width: 4px;
+  }
+
+  .md\:border-\[3px\] {
+    border-width: 3px;
+  }
+
   .md\:p-0 {
     padding: 0px;
   }
@@ -1415,6 +1447,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 100%;
   }
 
+  .lg\:w-\[70\%\] {
+    width: 70%;
+  }
+
   .lg\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -1439,12 +1475,28 @@ Ensure the default browser behavior of the `hidden` attribute.
     justify-content: center;
   }
 
+  .lg\:place-self-end {
+    place-self: end;
+  }
+
+  .lg\:border-4 {
+    border-width: 4px;
+  }
+
   .lg\:p-4 {
     padding: 1rem;
   }
 
   .lg\:p-24 {
     padding: 6rem;
+  }
+
+  .lg\:p-16 {
+    padding: 4rem;
+  }
+
+  .lg\:p-12 {
+    padding: 3rem;
   }
 
   .lg\:py-\[2vw\] {

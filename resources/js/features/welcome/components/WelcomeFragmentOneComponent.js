@@ -23,8 +23,6 @@ export default function WelcomeFragmentOneComponent(props) {
                     Kutip
                 </h1>
 
-                <div className="h-6" />
-
                 <h2
                     className="font-regular w-full text-center font-playfair-display text-[calc(1rem+5vw)] leading-[calc(1rem+7vw)] tracking-tight text-secondary 
                     lg:pl-24 lg:text-left lg:leading-[calc(1rem+6vw)]"
@@ -32,17 +30,18 @@ export default function WelcomeFragmentOneComponent(props) {
                     Curated quotes to bring up your day.
                 </h2>
 
-                <div className="h-12" />
+                <div className="h-16 lg:h-12" />
 
                 <div
                     className="flex flex-col items-center 
                         lg:flex-row lg:pl-24"
                 >
                     <button
-                        className="rounded-full border-4 
-                        border-secondary py-[3vw] px-[7vw] font-poppins text-3xl text-[calc(1rem+2vw)] font-semibold text-secondary transition-all 
-                        hover:scale-[1.04] hover:bg-secondary hover:text-white 
-                        lg:py-[1.5vw] lg:px-[3vw] lg:text-[calc(0.8rem+1vw)]"
+                        className="rounded-full
+                        border-2 border-secondary py-[3vw] px-[7vw] font-poppins text-3xl text-[calc(1rem+2vw)] font-semibold text-secondary 
+                        transition-all hover:scale-[1.04] hover:bg-secondary hover:text-white 
+                        md:border-[3px]
+                        lg:border-4 lg:py-[1.5vw] lg:px-[3vw] lg:text-[calc(0.8rem+1vw)]"
                         type="button"
                         onClick={toRegister}
                     >
