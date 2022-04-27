@@ -542,25 +542,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
 }
-.borderize {
-  border-width: 4px;
-  --tw-border-opacity: 1;
-  border-color: rgb(220 38 38 / var(--tw-border-opacity));
-}
 .fixed {
   position: fixed;
 }
 .absolute {
   position: absolute;
-}
-.relative {
-  position: relative;
-}
-.bottom-10 {
-  bottom: 2.5rem;
-}
-.right-10 {
-  right: 2.5rem;
 }
 .bottom-14 {
   bottom: 3.5rem;
@@ -570,9 +556,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mr-6 {
   margin-right: 1.5rem;
-}
-.mt-12 {
-  margin-top: 3rem;
 }
 .flex {
   display: flex;
@@ -592,20 +575,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-2 {
   height: 0.5rem;
 }
+.h-8 {
+  height: 2rem;
+}
 .h-24 {
   height: 6rem;
 }
 .h-full {
   height: 100%;
 }
-.h-8 {
-  height: 2rem;
-}
 .h-20 {
   height: 5rem;
 }
 .h-6 {
   height: 1.5rem;
+}
+.h-\[6vw\] {
+  height: 6vw;
 }
 .h-28 {
   height: 7rem;
@@ -640,20 +626,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[15vw\] {
   height: 15vw;
 }
-.h-\[1vw\] {
-  height: 1vw;
-}
-.h-\[6vw\] {
-  height: 6vw;
-}
-.h-\[8vw\] {
-  height: 8vw;
+.min-h-screen {
+  min-height: 100vh;
 }
 .min-h-\[110vh\] {
   min-height: 110vh;
-}
-.min-h-screen {
-  min-height: 100vh;
 }
 .w-\[calc\(3rem\+8vw\)\] {
   width: calc(3rem + 8vw);
@@ -679,6 +656,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-4 {
   width: 1rem;
 }
+.w-\[3vw\] {
+  width: 3vw;
+}
+.w-\[6vw\] {
+  width: 6vw;
+}
 .w-28 {
   width: 7rem;
 }
@@ -691,23 +674,29 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-8 {
   width: 2rem;
 }
-.w-\[1vw\] {
-  width: 1vw;
+@-webkit-keyframes typewriter {
+
+  0% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
-.w-\[10vw\] {
-  width: 10vw;
+@keyframes typewriter {
+
+  0% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
-.w-\[6vw\] {
-  width: 6vw;
-}
-.w-\[8vw\] {
-  width: 8vw;
-}
-.w-\[4vw\] {
-  width: 4vw;
-}
-.w-\[3vw\] {
-  width: 3vw;
+.animate-typewriter {
+  -webkit-animation: typewriter 700ms infinite ease-in;
+          animation: typewriter 700ms infinite ease-in;
 }
 .select-none {
   -webkit-user-select: none;
@@ -803,30 +792,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-8 {
   padding: 2rem;
 }
-.p-\[-3rem\] {
-  padding: -3rem;
-}
-.p-\[-4rem\] {
-  padding: -4rem;
-}
-.p-\[-8rem\] {
-  padding: -8rem;
+.px-\[10vw\] {
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 .px-20 {
   padding-left: 5rem;
   padding-right: 5rem;
 }
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-.px-\[10vw\] {
-  padding-left: 10vw;
-  padding-right: 10vw;
 }
 .py-\[3vw\] {
   padding-top: 3vw;
@@ -845,12 +821,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-1 {
   padding-bottom: 0.25rem;
 }
-.pt-12 {
-  padding-top: 3rem;
-}
-.pt-8 {
-  padding-top: 2rem;
-}
 .text-left {
   text-align: left;
 }
@@ -867,8 +837,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-\[12vmax\] {
-  font-size: 12vmax;
+.text-\[calc\(1rem\+6vw\)\] {
+  font-size: calc(1rem + 6vw);
 }
 .text-\[calc\(2rem\+2vw\)\] {
   font-size: calc(2rem + 2vw);
@@ -879,6 +849,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-\[calc\(2rem\+6vw\)\] {
   font-size: calc(2rem + 6vw);
+}
+.text-\[calc\(1rem\+2vw\)\] {
+  font-size: calc(1rem + 2vw);
+}
+.text-\[calc\(0\.5rem\+2vw\)\] {
+  font-size: calc(0.5rem + 2vw);
 }
 .text-\[7rem\] {
   font-size: 7rem;
@@ -896,9 +872,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
-.text-\[calc\(1rem\+2vw\)\] {
-  font-size: calc(1rem + 2vw);
-}
 .text-\[calc\(2rem\+1vw\)\] {
   font-size: calc(2rem + 1vw);
 }
@@ -908,37 +881,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
-}
-.text-\[calc\(0\.5rem\+2vw\)\] {
-  font-size: calc(0.5rem + 2vw);
-}
-.text-\[14vmax\] {
-  font-size: 14vmax;
-}
-.text-\[5vmax\] {
-  font-size: 5vmax;
-}
-.text-\[8vmax\] {
-  font-size: 8vmax;
-}
-.text-\[6rem\+4vw\] {
-  font-size: 6rem + 4vw;
-}
-.text-\[calc\(6rem\+4vw\)\] {
-  font-size: calc(6rem + 4vw);
-}
-.text-\[calc\(4rem\+4vw\)\] {
-  font-size: calc(4rem + 4vw);
-}
-.text-\[calc\(1rem\+6vw\)\] {
-  font-size: calc(1rem + 6vw);
-}
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-.text-\[calc\(1rem-2vw\)\] {
-  font-size: calc(1rem - 2vw);
 }
 .font-light {
   font-weight: 300;
@@ -1016,67 +958,55 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-
 .hover\:-translate-y-3:hover {
   --tw-translate-y: -0.75rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
 .hover\:-translate-y-2:hover {
   --tw-translate-y: -0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
 .hover\:translate-x-4:hover {
   --tw-translate-x: 1rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
 .hover\:-translate-x-3:hover {
   --tw-translate-x: -0.75rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
 .hover\:scale-\[1\.08\]:hover {
   --tw-scale-x: 1.08;
   --tw-scale-y: 1.08;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
 .hover\:scale-\[1\.05\]:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
 .hover\:scale-\[1\.02\]:hover {
   --tw-scale-x: 1.02;
   --tw-scale-y: 1.02;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
 .hover\:scale-\[1\.04\]:hover {
   --tw-scale-x: 1.04;
   --tw-scale-y: 1.04;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
 .hover\:bg-secondary:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(200 167 3 / var(--tw-bg-opacity));
 }
-
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-
 .hover\:shadow-2xl:hover {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-
 @media (min-width: 768px) {
 
   .md\:h-\[calc\(3rem\+7vw\)\] {
@@ -1085,10 +1015,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:h-\[calc\(1rem\+3vw\)\] {
     height: calc(1rem + 3vw);
-  }
-
-  .md\:h-\[2vw\] {
-    height: 2vw;
   }
 
   .md\:h-\[4vw\] {
@@ -1123,7 +1049,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: calc(1rem + 4vw);
   }
 }
-
 @media (min-width: 1024px) {
 
     .lg\:single-centering {
@@ -1148,6 +1073,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 100vh;
   }
 
+    .lg\:h-\[3vw\] {
+    height: 3vw;
+  }
+
     .lg\:h-\[5vw\] {
     height: 5vw;
   }
@@ -1164,14 +1093,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 10vw;
   }
 
-    .lg\:h-\[2vw\] {
-    height: 2vw;
-  }
-
-    .lg\:h-\[3vw\] {
-    height: 3vw;
-  }
-
     .lg\:w-\[calc\(3rem\+5vw\)\] {
     width: calc(3rem + 5vw);
   }
@@ -1184,24 +1105,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 60%;
   }
 
-    .lg\:w-full {
-    width: 100%;
-  }
-
-    .lg\:w-\[70\%\] {
-    width: 70%;
-  }
-
-    .lg\:w-\[2vw\] {
-    width: 2vw;
+    .lg\:w-\[1vw\] {
+    width: 1vw;
   }
 
     .lg\:w-\[3vw\] {
     width: 3vw;
   }
 
-    .lg\:w-\[1vw\] {
-    width: 1vw;
+    .lg\:w-full {
+    width: 100%;
+  }
+
+    .lg\:w-\[70\%\] {
+    width: 70%;
   }
 
     .lg\:flex-row {
@@ -1274,6 +1191,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: calc(2rem + 3vw);
   }
 
+    .lg\:text-\[calc\(1rem\+1vw\)\] {
+    font-size: calc(1rem + 1vw);
+  }
+
+    .lg\:text-\[calc\(0\.5rem\+1vw\)\] {
+    font-size: calc(0.5rem + 1vw);
+  }
+
     .lg\:text-\[calc\(4rem\+10vw\)\] {
     font-size: calc(4rem + 10vw);
   }
@@ -1284,14 +1209,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
     .lg\:text-\[calc\(2rem\+2vw\)\] {
     font-size: calc(2rem + 2vw);
-  }
-
-    .lg\:text-\[calc\(1rem\+1vw\)\] {
-    font-size: calc(1rem + 1vw);
-  }
-
-    .lg\:text-\[calc\(0\.5rem\+1vw\)\] {
-    font-size: calc(0.5rem + 1vw);
   }
 
     .lg\:leading-\[calc\(1rem\+6vw\)\] {
