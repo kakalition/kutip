@@ -742,6 +742,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
+.grid-cols-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
 .grid-rows-2 {
   grid-template-rows: repeat(2, minmax(0, 1fr));
 }
@@ -771,6 +774,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .justify-between {
   justify-content: space-between;
+}
+.gap-20 {
+  gap: 5rem;
 }
 .overflow-x-clip {
   overflow-x: clip;
@@ -836,6 +842,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-8 {
   padding: 2rem;
 }
+.p-0 {
+  padding: 0px;
+}
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -855,6 +864,42 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-24 {
   padding-left: 6rem;
   padding-right: 6rem;
+}
+.px-64 {
+  padding-left: 16rem;
+  padding-right: 16rem;
+}
+.px-\[10vw\] {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+.py-\[2vw\] {
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+.px-\[4vw\] {
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+.py-\[6vw\] {
+  padding-top: 6vw;
+  padding-bottom: 6vw;
+}
+.px-\[12vw\] {
+  padding-left: 12vw;
+  padding-right: 12vw;
+}
+.py-\[3vw\] {
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+}
+.px-\[6vw\] {
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+.px-\[7vw\] {
+  padding-left: 7vw;
+  padding-right: 7vw;
 }
 .pl-8 {
   padding-left: 2rem;
@@ -943,6 +988,39 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-\[calc\(2rem\+2vw\)\] {
   font-size: calc(2rem + 2vw);
 }
+.text-\[14rem\+5vw\] {
+  font-size: 14rem + 5vw;
+}
+.text-\[12rem\+5vw\] {
+  font-size: 12rem + 5vw;
+}
+.text-\[calc\(12rem\+5vw\)\] {
+  font-size: calc(12rem + 5vw);
+}
+.text-\[calc\(8rem\+10vw\)\] {
+  font-size: calc(8rem + 10vw);
+}
+.text-\[calc\(4rem\+10vw\)\] {
+  font-size: calc(4rem + 10vw);
+}
+.text-\[calc\(2rem\+10vw\)\] {
+  font-size: calc(2rem + 10vw);
+}
+.text-\[calc\(2rem\+5vw\)\] {
+  font-size: calc(2rem + 5vw);
+}
+.text-\[calc\(3rem\+10vw\)\] {
+  font-size: calc(3rem + 10vw);
+}
+.text-\[1rem-5vw\] {
+  font-size: 1rem - 5vw;
+}
+.text-\[1rem\+5vw\] {
+  font-size: 1rem + 5vw;
+}
+.text-\[calc\(1rem\+5vw\)\] {
+  font-size: calc(1rem + 5vw);
+}
 .font-light {
   font-weight: 300;
 }
@@ -966,6 +1044,33 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .leading-none {
   line-height: 1;
+}
+.leading-\[calc\(1rem\+10vw\)\] {
+  line-height: calc(1rem + 10vw);
+}
+.leading-\[calc\(1rem\+15vw\)\] {
+  line-height: calc(1rem + 15vw);
+}
+.leading-\[calc\(1rem\+5vw\)\] {
+  line-height: calc(1rem + 5vw);
+}
+.leading-\[calc\(1rem\+7vw\)\] {
+  line-height: calc(1rem + 7vw);
+}
+.leading-\[calc\(1rem\+8vw\)\] {
+  line-height: calc(1rem + 8vw);
+}
+.leading-\[calc\(1rem\+9vw\)\] {
+  line-height: calc(1rem + 9vw);
+}
+.leading-\[calc\(1rem\+4vw\)\] {
+  line-height: calc(1rem + 4vw);
+}
+.leading-\[calc\(1rem\+11vw\)\] {
+  line-height: calc(1rem + 11vw);
+}
+.leading-\[calc\(1rem\+12vw\)\] {
+  line-height: calc(1rem + 12vw);
 }
 .tracking-wide {
   letter-spacing: 0.025em;
@@ -1115,6 +1220,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-row-end: 3;
   }
 
+  .md\:m-0 {
+    margin: 0px;
+  }
+
   .md\:ml-24 {
     margin-left: 6rem;
   }
@@ -1127,6 +1236,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: grid;
   }
 
+  .md\:h-28 {
+    height: 7rem;
+  }
+
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -1135,8 +1248,100 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-template-rows: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
   .md\:justify-center {
     justify-content: center;
+  }
+
+  .md\:p-0 {
+    padding: 0px;
+  }
+
+  .md\:py-\[2vw\] {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
+
+  .md\:px-\[4vw\] {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+
+  .md\:py-\[1vw\] {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+  }
+
+  .md\:px-\[2vw\] {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+  .md\:pl-24 {
+    padding-left: 6rem;
+  }
+
+  .md\:text-left {
+    text-align: left;
+  }
+
+  .md\:text-\[calc\(8rem\+10vw\)\] {
+    font-size: calc(8rem + 10vw);
+  }
+
+  .md\:text-\[calc\(6rem\+10vw\)\] {
+    font-size: calc(6rem + 10vw);
+  }
+
+  .md\:text-\[calc\(4rem\+10vw\)\] {
+    font-size: calc(4rem + 10vw);
+  }
+
+  .md\:text-\[calc\(0\.5rem\+3vw\)\] {
+    font-size: calc(0.5rem + 3vw);
+  }
+
+  .md\:text-\[calc\(0\.5rem\+1vw\)\] {
+    font-size: calc(0.5rem + 1vw);
+  }
+
+  .md\:text-\[calc\(0\.5rem\+2vw\)\] {
+    font-size: calc(0.5rem + 2vw);
+  }
+
+  .md\:text-\[calc\(0\.1rem\+2vw\)\] {
+    font-size: calc(0.1rem + 2vw);
+  }
+
+  .md\:text-\[calc\(0\.1rem\+1vw\)\] {
+    font-size: calc(0.1rem + 1vw);
+  }
+
+  .md\:text-\[calc\(1rem\+1vw\)\] {
+    font-size: calc(1rem + 1vw);
+  }
+
+  .md\:leading-\[calc\(1rem\+8vw\)\] {
+    line-height: calc(1rem + 8vw);
+  }
+
+  .md\:leading-\[calc\(0\.5rem\+8vw\)\] {
+    line-height: calc(0.5rem + 8vw);
+  }
+
+  .md\:leading-\[calc\(0\.1rem\+8vw\)\] {
+    line-height: calc(0.1rem + 8vw);
+  }
+
+  .md\:leading-\[calc\(1rem\+4vw\)\] {
+    line-height: calc(1rem + 4vw);
+  }
+
+  .md\:leading-\[calc\(1rem\+6vw\)\] {
+    line-height: calc(1rem + 6vw);
   }
 }
 
@@ -1202,6 +1407,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 3rem;
   }
 
+  .lg\:h-28 {
+    height: 7rem;
+  }
+
   .lg\:w-full {
     width: 100%;
   }
@@ -1216,6 +1425,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:grid-rows-3 {
     grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
   }
 
   .lg\:items-stretch {
@@ -1234,8 +1447,90 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding: 6rem;
   }
 
+  .lg\:py-\[2vw\] {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
+
+  .lg\:px-\[4vw\] {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+
+  .lg\:py-\[1vw\] {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+  }
+
+  .lg\:px-\[2vw\] {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+  .lg\:py-\[1\.5vw\] {
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+  }
+
+  .lg\:px-\[3vw\] {
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+
+  .lg\:pl-24 {
+    padding-left: 6rem;
+  }
+
   .lg\:text-left {
     text-align: left;
+  }
+
+  .lg\:text-\[calc\(8rem\+10vw\)\] {
+    font-size: calc(8rem + 10vw);
+  }
+
+  .lg\:text-\[calc\(4rem\+10vw\)\] {
+    font-size: calc(4rem + 10vw);
+  }
+
+  .lg\:text-\[calc\(0\.5rem\+1vw\)\] {
+    font-size: calc(0.5rem + 1vw);
+  }
+
+  .lg\:text-\[calc\(0\.5rem\+2vw\)\] {
+    font-size: calc(0.5rem + 2vw);
+  }
+
+  .lg\:text-\[calc\(1rem\+1vw\)\] {
+    font-size: calc(1rem + 1vw);
+  }
+
+  .lg\:text-\[calc\(0\.6rem\+1vw\)\] {
+    font-size: calc(0.6rem + 1vw);
+  }
+
+  .lg\:text-\[calc\(0\.8rem\+1vw\)\] {
+    font-size: calc(0.8rem + 1vw);
+  }
+
+  .lg\:leading-\[calc\(1rem\+10vw\)\] {
+    line-height: calc(1rem + 10vw);
+  }
+
+  .lg\:leading-\[calc\(1rem\+4vw\)\] {
+    line-height: calc(1rem + 4vw);
+  }
+
+  .lg\:leading-\[calc\(1rem\+9vw\)\] {
+    line-height: calc(1rem + 9vw);
+  }
+
+  .lg\:leading-\[calc\(1rem\+6vw\)\] {
+    line-height: calc(1rem + 6vw);
+  }
+
+  .lg\:leading-\[calc\(1rem\+8vw\)\] {
+    line-height: calc(1rem + 8vw);
   }
 }
 

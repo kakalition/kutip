@@ -14,7 +14,7 @@ export default function WelcomeFragmentTwoComponent(props) {
                     Uplift your day with curated quotes.
                 </h3>
 
-                <div className="h-24 lg:h-0" />
+                <div className="h-20 lg:h-0" />
 
                 <div
                     className="lg:placeholder: flex w-[90%] flex-col justify-center
