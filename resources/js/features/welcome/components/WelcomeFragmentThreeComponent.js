@@ -4,8 +4,8 @@ export default function WelcomeFragmentThreeComponent(props) {
             <div className="flex h-full w-full flex-col">
                 <h3
                     className="font-regular place-self-end font-playfair-display text-[calc(2rem+1vw)] leading-[calc(1rem+8vw)] text-primary
-                    md:leading-[calc(1rem+7vw)]
-                    lg:leading-[calc(1rem+6vw)]"
+                    md:leading-[calc(1rem+4vw)]
+                    lg:leading-[calc(1rem+3vw)]"
                 >
                     Many different
                     <br />

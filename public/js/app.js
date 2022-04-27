@@ -8387,7 +8387,7 @@ function WelcomeFragmentThreeComponent(props) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "flex h-full w-full flex-col",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
-        className: "font-regular place-self-end font-playfair-display text-[calc(2rem+1vw)] leading-[calc(1rem+8vw)] text-primary md:leading-[calc(1rem+7vw)] lg:leading-[calc(1rem+6vw)]",
+        className: "font-regular place-self-end font-playfair-display text-[calc(2rem+1vw)] leading-[calc(1rem+8vw)] text-primary md:leading-[calc(1rem+4vw)] lg:leading-[calc(1rem+3vw)]",
         children: ["Many different", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "famous name to", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "choose from."]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "h-[calc(8rem+5vw)]"
@@ -8439,7 +8439,7 @@ function WelcomeFragmentTwoComponent(props) {
         className: "w-full text-center font-playfair-display text-[calc(2rem+3vw)] font-semibold leading-tight text-primary lg:w-full lg:text-left lg:text-[calc(2rem+2vw)]",
         children: "Uplift your day with curated quotes."
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "h-24"
+        className: "h-[15vw] lg:h-[10vw]"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: "flex w-[90%] flex-col justify-center  rounded-3xl bg-slate-100 p-8  lg:w-[70%] lg:place-self-end lg:p-12",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {

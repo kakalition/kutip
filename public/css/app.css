@@ -1682,6 +1682,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: calc(1rem + 3vw);
   }
 
+  .lg\:h-\[10vw\] {
+    height: 10vw;
+  }
+
   .lg\:w-full {
     width: 100%;
   }
@@ -1854,6 +1858,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:leading-\[calc\(1rem\+5vw\)\] {
     line-height: calc(1rem + 5vw);
+  }
+
+  .lg\:leading-\[calc\(1rem\+3vw\)\] {
+    line-height: calc(1rem + 3vw);
   }
 }
 
