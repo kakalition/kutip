@@ -619,6 +619,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-44 {
   margin-right: 11rem;
 }
+.mt-24 {
+  margin-top: 6rem;
+}
+.mt-\[10vw\] {
+  margin-top: 10vw;
+}
 .flex {
   display: flex;
 }
@@ -681,6 +687,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-4 {
   height: 1rem;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.min-h-\[120vh\] {
+  min-height: 120vh;
+}
+.min-h-\[1400vh\] {
+  min-height: 1400vh;
+}
+.min-h-\[140vh\] {
+  min-height: 140vh;
+}
+.min-h-\[110vh\] {
+  min-height: 110vh;
 }
 .w-36 {
   width: 9rem;
@@ -869,6 +890,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-0 {
   padding: 0px;
 }
+.p-\[10vw\] {
+  padding: 10vw;
+}
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1045,6 +1069,30 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-\[calc\(1rem\+5vw\)\] {
   font-size: calc(1rem + 5vw);
 }
+.text-\[8rem\] {
+  font-size: 8rem;
+}
+.text-\[8rem\+5vw\] {
+  font-size: 8rem + 5vw;
+}
+.text-\[calc\(8rem\+5vw\)\] {
+  font-size: calc(8rem + 5vw);
+}
+.text-\[calc\(6rem\+5vw\)\] {
+  font-size: calc(6rem + 5vw);
+}
+.text-\[calc\(6rem\+2vw\)\] {
+  font-size: calc(6rem + 2vw);
+}
+.text-\[calc\(4rem\+3vw\)\] {
+  font-size: calc(4rem + 3vw);
+}
+.text-\[calc\(3rem\+4vw\)\] {
+  font-size: calc(3rem + 4vw);
+}
+.text-\[calc\(2rem\+4vw\)\] {
+  font-size: calc(2rem + 4vw);
+}
 .font-light {
   font-weight: 300;
 }
@@ -1095,6 +1143,36 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .leading-\[calc\(1rem\+12vw\)\] {
   line-height: calc(1rem + 12vw);
+}
+.leading-\[1vw\] {
+  line-height: 1vw;
+}
+.leading-\[5vw\] {
+  line-height: 5vw;
+}
+.leading-\[10vw\] {
+  line-height: 10vw;
+}
+.leading-\[1rem\] {
+  line-height: 1rem;
+}
+.leading-\[2rem\+2vw\] {
+  line-height: 2rem + 2vw;
+}
+.leading-\[1rem\+2vw\] {
+  line-height: 1rem + 2vw;
+}
+.leading-\[0\.75rem\+2vw\] {
+  line-height: 0.75rem + 2vw;
+}
+.leading-\[0\.75rem\+1vw\] {
+  line-height: 0.75rem + 1vw;
+}
+.leading-\[calc\(0\.75rem\+1vw\)\] {
+  line-height: calc(0.75rem + 1vw);
+}
+.leading-\[calc\(1rem\+1vw\)\] {
+  line-height: calc(1rem + 1vw);
 }
 .tracking-wide {
   letter-spacing: 0.025em;
@@ -1375,6 +1453,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:leading-\[calc\(1rem\+6vw\)\] {
     line-height: calc(1rem + 6vw);
   }
+
+  .md\:leading-\[calc\(1rem\+7vw\)\] {
+    line-height: calc(1rem + 7vw);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1583,6 +1665,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:leading-\[calc\(1rem\+8vw\)\] {
     line-height: calc(1rem + 8vw);
+  }
+
+  .lg\:leading-\[calc\(1rem\+5vw\)\] {
+    line-height: calc(1rem + 5vw);
   }
 }
 

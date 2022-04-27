@@ -8383,28 +8383,31 @@ __webpack_require__.r(__webpack_exports__);
 
 function WelcomeFragmentThreeComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "w-screen h-[170vh] bg-[#8D1747] flex justify-center items-center",
+    className: "flex min-h-[110vh] w-screen items-center justify-center bg-[#8D1747] p-[10vw]",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "w-full h-full",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "flex w-full items-end justify-end",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
-          className: "mt-32 mr-32 font-playfair-display font-regular text-7xl text-primary",
-          children: ["Many different", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "famous name to", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "choose from."]
-        })
+      className: "borderize flex h-full w-full flex-col",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
+        className: "font-regular place-self-end font-playfair-display text-[calc(2rem+3vw)] leading-[calc(1rem+8vw)] text-primary md:leading-[calc(1rem+7vw)] lg:leading-[calc(1rem+6vw)]",
+        children: ["Many different", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "famous name to", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "choose from."]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "h-44"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-        className: "font-playfair-display font-black text-[14rem] leading-none tracking-wide text-[#FFA781]",
+        className: "font-playfair-display text-[calc(2rem+4vw)] font-black leading-none tracking-wide text-[#FFA781]",
         children: "Epictetus"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "h-4"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-        className: "font-playfair-display font-black text-[14rem] leading-none tracking-wide text-[#FFA781]",
+        className: "font-playfair-display text-[calc(2rem+4vw)] font-black leading-none tracking-wide text-[#FFA781]",
         children: "Seneca"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "h-4"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-        className: "font-playfair-display font-black text-[13rem] leading-none tracking-wide text-[#FFA781]",
+        className: "font-playfair-display text-[calc(2rem+4vw)] font-black leading-none tracking-wide text-[#FFA781]",
         children: "Marcus Aurelius"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "h-4"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-        className: "font-playfair-display font-black text-[13rem] leading-none tracking-wide text-white",
+        className: "font-playfair-display text-[calc(2rem+4vw)] font-black leading-none tracking-wide text-white",
         children: "And many more!"
       })]
     })
