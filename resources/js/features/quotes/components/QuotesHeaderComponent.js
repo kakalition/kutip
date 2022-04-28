@@ -5,12 +5,16 @@ export default function QuotesHeaderComponent(props) {
     const color = useSelector((state) => state.color.value);
 
     return (
-        <div className="flex flex-row items-center justify-between pl-8 pr-10 py-6">
+        <div className="flex flex-row items-center justify-between p-6">
             <div className="flex flex-row items-center">
-                <button type="button" onClick={props.onBackClicked} className="p-2 hover:-translate-x-3 transition-transform">
+                <button
+                    type="button"
+                    onClick={props.onBackClicked}
+                    className="p-2 transition-transform hover:-translate-x-3"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-10 w-10"
+                        className="h-[calc(1rem+2vw)] w-[calc(1rem+2vw)]"
                         style={{ stroke: color.neutralColor }}
                         fill="none"
                         viewBox="0 0 24 24"
@@ -24,14 +28,15 @@ export default function QuotesHeaderComponent(props) {
                         />
                     </svg>
                 </button>
-                <div className="w-10" />
+                <div className="w-[2vw] lg:w-[1vw]" />
                 <p
-                    className="font-playfair-display font-semibold text-white text-4xl pb-1"
+                    className="pb-1 font-playfair-display text-[calc(1rem+2vw)] font-semibold text-white lg:text-[calc(1.5rem+1vw)]"
                     style={{ color: color.neutralColor }}
                 >
                     {props.author}
                 </p>
             </div>
+
             <NameWithLimitComponent />
         </div>
     );

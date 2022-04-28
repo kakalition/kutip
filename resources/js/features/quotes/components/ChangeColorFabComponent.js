@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { randomize } from "../data/ColorSlice";
 
 export default function ChangeColorFabComponent(props) {
-    const color = useSelector((state) => state.color.value)
+    const color = useSelector((state) => state.color.value);
     const dispatch = useDispatch();
 
     function randomizeColor() {
@@ -11,7 +11,7 @@ export default function ChangeColorFabComponent(props) {
 
     return (
         <button
-            className="h-28 w-28 hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl transition-all rounded-full flex items-center justify-center shadow-l"
+            className="shadow-l flex h-[calc(4rem+3vw)] w-[calc(4rem+3vw)] items-center justify-center rounded-full transition-all hover:-translate-y-2 hover:scale-[1.05] hover:shadow-2xl"
             style={{ backgroundColor: color.fabColor }}
             onClick={randomizeColor}
             type="button"
@@ -19,7 +19,7 @@ export default function ChangeColorFabComponent(props) {
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-12 w-12 transition-colors"
-                style={{ 
+                style={{
                     stroke: color.neutralColor,
                     fill: color.neutralColor,
                 }}

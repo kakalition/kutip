@@ -12,10 +12,12 @@ export default function QuoteComponent(props) {
     const [num, setnum] = useState(0)
 
     return (
-        <div className="p-28">
+        <div className="">
             <p
                 id="quote"
-                className="font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781]"
+                className="font-playfair-display font-bold text-[calc(2rem+2vw)] leading-tight text-[#FFA781] text-center
+                md:text-[calc(2rem+4vw)] md:text-left
+                lg:text-[calc(3rem+4vw)]"
                 style={{ color: color.primaryColor }}
             >
                 {quote}<span className="animate-typewriter" id="type-cursor">|</span>

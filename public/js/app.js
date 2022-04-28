@@ -7376,13 +7376,13 @@ function NameWithLimitComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "flex flex-col",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_1__["default"])(className, "text-xl font-regular"),
+      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_1__["default"])(className, "font-regular text-[calc(0.75rem+0.5vw)]"),
       style: {
         color: color.neutralColor
       },
       children: "Kharisma Sri Wibowo"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_1__["default"])(className, "text-l font-light"),
+      className: (0,_utils_ClassNameJoiner__WEBPACK_IMPORTED_MODULE_1__["default"])(className, "text-[calc(0.6rem+0.5vw)] font-light"),
       style: {
         color: color.neutralColor
       },
@@ -7769,11 +7769,11 @@ function HomeHeaderComponent(props) {
         onClick: props.logoutCallback,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
           xmlns: "http://www.w3.org/2000/svg",
-          className: "h-[6vw] w-[6vw] stroke-secondary md:h-[4vw] md:w-[4vw] lg:h-[3vw] lg:w-[3vw]",
+          className: "h-[6vw] w-[6vw] stroke-secondary md:h-[4vw] md:w-[4vw] lg:h-[2vw] lg:w-[2vw]",
           fill: "none",
           viewBox: "0 0 24 24",
           stroke: "currentColor",
-          strokeWidth: 2,
+          strokeWidth: 1.5,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
             strokeLinecap: "round",
             strokeLinejoin: "round",
@@ -7897,7 +7897,7 @@ function QuotesPage(props) {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
     id: "viewport",
-    className: "w-screen h-screen flex flex-col transition-colors",
+    className: "flex h-screen w-screen flex-col transition-colors",
     style: {
       backgroundColor: color.bgColor
     },
@@ -7906,27 +7906,28 @@ function QuotesPage(props) {
       onBackClicked: onBackClicked
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
       id: "main-content",
-      className: "h-full flex flex-row",
+      className: "flex h-full flex-col py-[8vw] lg:flex-row lg:py-0 lg:px-[3vw]",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-        className: "w-[90%] flex items-center",
+        className: "flex h-full w-full items-center px-[5vw] ",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-        id: "tool-box",
-        className: "flex flex-col items-center justify-center w-[10%] mr-6",
+        className: "flex flex-row items-center justify-center justify-self-end lg:flex-col",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
           className: "",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
             callback: changeQuote
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-          className: "absolute bottom-14",
+          className: "w-[5vw] lg:h-[3vw]"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+          className: "",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ChangeColorFabComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {})
         })]
       })]
     })]
   });
 }
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__["default"])('quotes-root', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(QuotesPage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__["default"])("quotes-root", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(QuotesPage, {}));
 
 /***/ }),
 
@@ -7958,7 +7959,7 @@ function ChangeColorFabComponent(props) {
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-    className: "h-28 w-28 hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl transition-all rounded-full flex items-center justify-center shadow-l",
+    className: "shadow-l flex h-[calc(4rem+3vw)] w-[calc(4rem+3vw)] items-center justify-center rounded-full transition-all hover:-translate-y-2 hover:scale-[1.05] hover:shadow-2xl",
     style: {
       backgroundColor: color.fabColor
     },
@@ -8004,7 +8005,7 @@ function NextButtonComponent(props) {
     return state.color.value;
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "flex items-center justify-center h-28 w-28 border-4 rounded-full hover:scale-[1.02] hover:translate-x-4 transition-all",
+    className: "flex h-[calc(4rem+3vw)] w-[calc(4rem+3vw)] items-center justify-center rounded-full border-[3px] lg:border-4 transition-all lg:hover:translate-x-4 hover:translate-x-2 hover:scale-[1.02]",
     style: {
       borderColor: color.neutralColor
     },
@@ -8079,10 +8080,10 @@ function QuoteComponent(props) {
       setnum = _useState2[1];
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "p-28",
+    className: "",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
       id: "quote",
-      className: "font-playfair-display font-bold text-[7rem] leading-tight text-[#FFA781]",
+      className: "font-playfair-display font-bold text-[calc(2rem+2vw)] leading-tight text-[#FFA781] text-center md:text-[calc(2rem+4vw)] md:text-left lg:text-[calc(3rem+4vw)]",
       style: {
         color: color.primaryColor
       },
@@ -8122,16 +8123,16 @@ function QuotesHeaderComponent(props) {
     return state.color.value;
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "flex flex-row items-center justify-between pl-8 pr-10 py-6",
+    className: "flex flex-row items-center justify-between p-6",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "flex flex-row items-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "button",
         onClick: props.onBackClicked,
-        className: "p-2 hover:-translate-x-3 transition-transform",
+        className: "p-2 transition-transform hover:-translate-x-3",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
           xmlns: "http://www.w3.org/2000/svg",
-          className: "h-10 w-10",
+          className: "h-[calc(1rem+2vw)] w-[calc(1rem+2vw)]",
           style: {
             stroke: color.neutralColor
           },
@@ -8146,9 +8147,9 @@ function QuotesHeaderComponent(props) {
           })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "w-10"
+        className: "w-[2vw] lg:w-[1vw]"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        className: "font-playfair-display font-semibold text-white text-4xl pb-1",
+        className: "pb-1 font-playfair-display text-[calc(1rem+2vw)] font-semibold text-white lg:text-[calc(1.5rem+1vw)]",
         style: {
           color: color.neutralColor
         },

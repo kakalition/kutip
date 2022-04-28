@@ -21,11 +21,11 @@ export default function HomeHeaderComponent(props) {
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-[6vw] w-[6vw] stroke-secondary
                         md:h-[4vw] md:w-[4vw]
-                        lg:h-[3vw] lg:w-[3vw]"
+                        lg:h-[2vw] lg:w-[2vw]"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        strokeWidth={2}
+                        strokeWidth={1.5}
                     >
                         <path
                             strokeLinecap="round"
