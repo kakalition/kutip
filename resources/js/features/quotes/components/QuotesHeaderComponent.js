@@ -5,7 +5,7 @@ import NameWithLimitComponent from "../../../common-component/NameWithLimitCompo
  * Description
  * @param {string} props.authorName
  * @param {string} props.onBackClicked
- * @param {string} props.colorPalette
+ * @param {Object} props.colorPalette
  */
 export default function QuotesHeaderComponent(props) {
     return (

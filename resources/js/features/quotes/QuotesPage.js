@@ -1,14 +1,11 @@
 import _ from "lodash";
 import { useEffect, useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import ElementBinder from "../../utils/ElementBinder";
 import ChangeColorFabComponent from "./components/ChangeColorFabComponent";
 import NextButtonComponent from "./components/NextButtonComponent";
 import QuoteComponent from "./components/QuoteComponent";
 import QuotesHeaderComponent from "./components/QuotesHeaderComponent";
 import { colorArray } from "./data/ColorArray";
-import { randomize } from "./data/ColorSlice";
-import { setQuote } from "./data/QuoteSlice";
 
 export default function QuotesPage(props) {
     // Property
@@ -57,7 +54,7 @@ export default function QuotesPage(props) {
         <div
             id="viewport"
             className="flex h-screen w-screen flex-col transition-colors"
-            style={{ backgroundColor: color.bgColor }}
+            style={{ backgroundColor: currentColor.bgColor }}
         >
             <QuotesHeaderComponent
                 authorName={authorName}
@@ -69,21 +66,24 @@ export default function QuotesPage(props) {
                 className="flex h-full flex-col py-[8vw] lg:flex-row lg:py-0 lg:px-[3vw]"
             >
                 <div className="flex h-full w-full items-center px-[5vw] ">
-                    <QuoteComponent currentColor={currentColor} />
+                    <QuoteComponent
+                        quote={currentQuote}
+                        colorPalette={currentColor}
+                    />
                 </div>
 
                 <div className="flex flex-row items-center justify-center justify-self-end lg:flex-col">
                     <div className="">
                         <NextButtonComponent
-                            callback={changeQuote}
-                            currentColor={currentColor}
+                            colorPalette={currentColor}
+                            changeQuoteCallback={changeQuote}
                         />
                     </div>
 
                     <div className="w-[5vw] lg:h-[3vw]" />
 
                     <div className="">
-                        <ChangeColorFabComponent currentColor={currentColor} />
+                        <ChangeColorFabComponent colorPalette={currentColor} changeColorCallback={changeColorPalette}/>
                     </div>
                 </div>
             </div>
