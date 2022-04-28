@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { colorArray } from "./ColorHolder"
+import { colorArray } from "./ColorArray"
 
 export const colorSlice = createSlice({
     name: 'color',

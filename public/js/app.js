@@ -7807,9 +7807,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/NextButtonComponent */ "./resources/js/features/quotes/components/NextButtonComponent.js");
 /* harmony import */ var _components_QuoteComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/QuoteComponent */ "./resources/js/features/quotes/components/QuoteComponent.js");
 /* harmony import */ var _components_QuotesHeaderComponent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/QuotesHeaderComponent */ "./resources/js/features/quotes/components/QuotesHeaderComponent.js");
-/* harmony import */ var _data_ColorSlice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./data/ColorSlice */ "./resources/js/features/quotes/data/ColorSlice.js");
-/* harmony import */ var _data_QuoteSlice__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./data/QuoteSlice */ "./resources/js/features/quotes/data/QuoteSlice.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _data_ColorArray__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./data/ColorArray */ "./resources/js/features/quotes/data/ColorArray.js");
+/* harmony import */ var _data_ColorSlice__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./data/ColorSlice */ "./resources/js/features/quotes/data/ColorSlice.js");
+/* harmony import */ var _data_QuoteSlice__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./data/QuoteSlice */ "./resources/js/features/quotes/data/QuoteSlice.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -7842,37 +7849,43 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function QuotesPage(props) {
   // Property
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
-
-  var formattedAuthorName = lodash__WEBPACK_IMPORTED_MODULE_0___default().startCase(props.author); // Local State
+  var authorName = lodash__WEBPACK_IMPORTED_MODULE_0___default().startCase(props.author); // Local State
 
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
-      isInitialState = _useState2[0],
-      setInitialState = _useState2[1];
+      originalList = _useState2[0],
+      setOriginalList = _useState2[1];
 
-  var originalQuoteList = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(function () {
-    return JSON.parse(props.quotes).map(function (quote) {
-      return quote.replace(/[~]/g, " ");
-    });
-  }, [props.quotes]);
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(_toConsumableArray(originalQuoteList)),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState4 = _slicedToArray(_useState3, 2),
       availableQuote = _useState4[0],
-      setAvailableQuote = _useState4[1]; // ReduxState
+      setAvailableQuote = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState6 = _slicedToArray(_useState5, 2),
+      currentQuote = _useState6[0],
+      setCurrentQuote = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(_data_ColorArray__WEBPACK_IMPORTED_MODULE_8__.colorArray[0]),
+      _useState8 = _slicedToArray(_useState7, 2),
+      currentColor = _useState8[0],
+      setCurrentColor = _useState8[1]; // UseEffect
 
 
-  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
-    return state.color.value;
-  });
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    setOriginalList(JSON.parse(props.quotes).map(function (quote) {
+      return quote.replace(/[~]/g, " ");
+    }));
+    setAvailableQuote(_toConsumableArray(originalList));
+  }, [props.quotes]);
 
   function changeQuote() {
     if (availableQuote.length === 0) {
-      availableQuote = originalQuoteList;
+      setAvailableQuote(originalQuoteList);
     }
 
     var randomIndex = lodash__WEBPACK_IMPORTED_MODULE_0___default().random(0, availableQuote.length - 1, false);
@@ -7881,53 +7894,64 @@ function QuotesPage(props) {
     setAvailableQuote(availableQuote.filter(function (element) {
       return element != pickedQuote;
     }));
-    dispatch((0,_data_QuoteSlice__WEBPACK_IMPORTED_MODULE_9__.setQuote)(pickedQuote));
+    setCurrentQuote(pickedQuote);
+  }
+
+  function changeColorPalette() {
+    var localColor = _objectSpread({}, currentColor);
+
+    while (localColor.bgColor == currentColor.bgColor) {
+      var randomIndex = lodash__WEBPACK_IMPORTED_MODULE_0___default().random(0, _data_ColorArray__WEBPACK_IMPORTED_MODULE_8__.colorArray.length - 1, false);
+
+      localColor = _data_ColorArray__WEBPACK_IMPORTED_MODULE_8__.colorArray[randomIndex];
+    }
+
+    setCurrentColor(localColor);
   }
 
   function onBackClicked() {
     window.location.href = "/quotes";
-  } // Initial Random
-
-
-  if (isInitialState) {
-    dispatch((0,_data_ColorSlice__WEBPACK_IMPORTED_MODULE_8__.randomize)());
-    changeQuote();
-    setInitialState(false);
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
     id: "viewport",
     className: "flex h-screen w-screen flex-col transition-colors",
     style: {
       backgroundColor: color.bgColor
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_QuotesHeaderComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      author: formattedAuthorName,
-      onBackClicked: onBackClicked
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_QuotesHeaderComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      authorName: authorName,
+      onBackClicked: onBackClicked,
+      colorPalette: currentColor
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
       id: "main-content",
       className: "flex h-full flex-col py-[8vw] lg:flex-row lg:py-0 lg:px-[3vw]",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
         className: "flex h-full w-full items-center px-[5vw] ",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_QuoteComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          currentColor: currentColor
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
         className: "flex flex-row items-center justify-center justify-self-end lg:flex-col",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
           className: "",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
-            callback: changeQuote
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_NextButtonComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            callback: changeQuote,
+            currentColor: currentColor
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
           className: "w-[5vw] lg:h-[3vw]"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
           className: "",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ChangeColorFabComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_ChangeColorFabComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            currentColor: currentColor
+          })
         })]
       })]
     })]
   });
 }
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__["default"])("quotes-root", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(QuotesPage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__["default"])("quotes-root", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(QuotesPage, {}));
 
 /***/ }),
 
@@ -8116,12 +8140,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
+/**
+ * Description
+ * @param {string} props.authorName
+ * @param {string} props.onBackClicked
+ * @param {string} props.colorPalette
+ */
+
 
 
 function QuotesHeaderComponent(props) {
-  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useSelector)(function (state) {
-    return state.color.value;
-  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "flex flex-row items-center justify-between p-6",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -8134,7 +8162,7 @@ function QuotesHeaderComponent(props) {
           xmlns: "http://www.w3.org/2000/svg",
           className: "h-[calc(1rem+2vw)] w-[calc(1rem+2vw)]",
           style: {
-            stroke: color.neutralColor
+            stroke: props.colorPalette.neutralColor
           },
           fill: "none",
           viewBox: "0 0 24 24",
@@ -8151,9 +8179,9 @@ function QuotesHeaderComponent(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
         className: "pb-1 font-playfair-display text-[calc(1rem+2vw)] font-semibold text-white lg:text-[calc(1.5rem+1vw)]",
         style: {
-          color: color.neutralColor
+          color: props.colorPalette.neutralColor
         },
-        children: props.author
+        children: props.authorName
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
   });
@@ -8161,10 +8189,10 @@ function QuotesHeaderComponent(props) {
 
 /***/ }),
 
-/***/ "./resources/js/features/quotes/data/ColorHolder.js":
-/*!**********************************************************!*\
-  !*** ./resources/js/features/quotes/data/ColorHolder.js ***!
-  \**********************************************************/
+/***/ "./resources/js/features/quotes/data/ColorArray.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/features/quotes/data/ColorArray.js ***!
+  \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -8172,21 +8200,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "colorArray": () => (/* binding */ colorArray)
 /* harmony export */ });
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var ColorHolder = /*#__PURE__*/_createClass(function ColorHolder(bgColor, primaryColor, neutralColor, fabColor) {
-  _classCallCheck(this, ColorHolder);
-
-  this.bgColor = bgColor;
-  this.primaryColor = primaryColor;
-  this.neutralColor = neutralColor;
-  this.fabColor = fabColor;
-});
-
 var colorArray = [{
   // Maroon
   bgColor: "#5B0E2D",
@@ -8223,22 +8236,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "randomize": () => (/* binding */ randomize)
 /* harmony export */ });
 /* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-/* harmony import */ var _ColorHolder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ColorHolder */ "./resources/js/features/quotes/data/ColorHolder.js");
+/* harmony import */ var _ColorArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ColorArray */ "./resources/js/features/quotes/data/ColorArray.js");
 
 
 var colorSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createSlice)({
   name: 'color',
   initialState: {
-    value: _ColorHolder__WEBPACK_IMPORTED_MODULE_0__.colorArray[0]
+    value: _ColorArray__WEBPACK_IMPORTED_MODULE_0__.colorArray[0]
   },
   reducers: {
     randomize: function randomize(state) {
       var color = state.value;
 
       while (color.bgColor == state.value.bgColor) {
-        var randomIndex = _.random(0, _ColorHolder__WEBPACK_IMPORTED_MODULE_0__.colorArray.length - 1, false);
+        var randomIndex = _.random(0, _ColorArray__WEBPACK_IMPORTED_MODULE_0__.colorArray.length - 1, false);
 
-        color = _ColorHolder__WEBPACK_IMPORTED_MODULE_0__.colorArray[randomIndex];
+        color = _ColorArray__WEBPACK_IMPORTED_MODULE_0__.colorArray[randomIndex];
       }
 
       state.value = color;
