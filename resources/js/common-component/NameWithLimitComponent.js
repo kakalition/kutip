@@ -9,13 +9,16 @@ export default function NameWithLimitComponent(props) {
     return (
         <div className="flex flex-col">
             <p
-                className={ClassNameJoiner(className, "text-xl font-regular")}
+                className={ClassNameJoiner(
+                    className,
+                    "font-regular text-[calc(0.75rem+0.5vw)]"
+                )}
                 style={{ color: color.neutralColor }}
             >
                 Kharisma Sri Wibowo
             </p>
             <p
-                className={ClassNameJoiner(className, "text-l font-light")}
+                className={ClassNameJoiner(className, "text-[calc(0.6rem+0.5vw)] font-light")}
                 style={{ color: color.neutralColor }}
             >
                 Daily Limit: 1/10

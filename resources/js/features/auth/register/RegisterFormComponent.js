@@ -13,22 +13,26 @@ export default function RegisterForm(props) {
                 ).content,
             },
         };
-        axios
-            .post("/register", formData, config)
-            .then((response) => {
-                if (response.status == 200) {
-                    window.location.href = "/quotes"
-                }
-            });
+        axios.post("/register", formData, config).then((response) => {
+            if (response.status == 200) {
+                window.location.href = "/quotes";
+            }
+        });
     }
 
     return (
-        <>
-            <h1 className="ml-28 font-playfair-display font-bold text-secondary text-8xl">
+        <div className="flex w-full flex-col items-center justify-center lg:items-start">
+            <h1
+                className="text-center font-playfair-display text-[calc(2rem+6vw)] font-bold text-secondary
+                lg:text-left lg:text-[calc(2rem+3vw)]"
+            >
                 New Account
             </h1>
             <div className="h-20" />
-            <form id="register-form" className="ml-28" onSubmit={onSubmit}>
+            <form 
+                id="register-form" 
+                className="w-full px-20 lg:px-0" 
+                onSubmit={onSubmit}>
                 <div>
                     {CommonInputBuilder(
                         "text",
@@ -68,6 +72,6 @@ export default function RegisterForm(props) {
                 </div>
             </form>
             <div className="h-8" />
-        </>
+        </div>
     );
 }

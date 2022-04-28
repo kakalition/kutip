@@ -1,27 +1,44 @@
 export default function WelcomeFragmentThreeComponent(props) {
     return (
-        <div className="w-screen h-[170vh] bg-[#8D1747] flex justify-center items-center">
-            <div className="w-full h-full">
-                <div className="flex w-full items-end justify-end">
-                    <h3 className="mt-32 mr-32 font-playfair-display font-regular text-7xl text-primary">
-                        Many different
-                        <br />
-                        famous name to
-                        <br />
-                        choose from.
-                    </h3>
-                </div>
-                <div className="h-44" />
-                <h4 className="font-playfair-display font-black text-[14rem] leading-none tracking-wide text-[#FFA781]">
+        <div className="flex min-h-[110vh] w-screen items-center justify-center bg-[#8D1747] p-[10vw]">
+            <div className="flex h-full w-full flex-col">
+                <h3
+                    className="font-regular place-self-end font-playfair-display text-[calc(2rem+1vw)] leading-[calc(1rem+8vw)] text-primary
+                    md:leading-[calc(1rem+4vw)]
+                    lg:leading-[calc(1rem+3vw)]"
+                >
+                    Many different
+                    <br />
+                    famous name to
+                    <br />
+                    choose from.
+                </h3>
+                <div className="h-[calc(8rem+5vw)]" />
+                <h4
+                    className="font-playfair-display text-[calc(2rem+2vw)] font-black leading-none tracking-wide text-[#FFA781]
+                md:text-[calc(2rem+4vw)]"
+                >
                     Epictetus
                 </h4>
-                <h4 className="font-playfair-display font-black text-[14rem] leading-none tracking-wide text-[#FFA781]">
+                <div className="h-4" />
+                <h4
+                    className="font-playfair-display text-[calc(2rem+2vw)] font-black leading-none tracking-wide text-[#FFA781]
+                md:text-[calc(2rem+4vw)]"
+                >
                     Seneca
                 </h4>
-                <h4 className="font-playfair-display font-black text-[13rem] leading-none tracking-wide text-[#FFA781]">
+                <div className="h-4" />
+                <h4
+                    className="font-playfair-display text-[calc(2rem+2vw)] font-black leading-none tracking-wide text-[#FFA781]
+                md:text-[calc(2rem+4vw)]"
+                >
                     Marcus Aurelius
                 </h4>
-                <h4 className="font-playfair-display font-black text-[13rem] leading-none tracking-wide text-white">
+                <div className="h-4" />
+                <h4
+                    className="font-playfair-display text-[calc(2rem+2vw)] font-black leading-none tracking-wide text-white
+                md:text-[calc(2rem+4vw)]"
+                >
                     And many more!
                 </h4>
             </div>

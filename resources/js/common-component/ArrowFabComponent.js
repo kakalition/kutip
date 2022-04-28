@@ -1,13 +1,19 @@
 export default function ArrowFabComponent(props) {
     return (
         <button
-            className="h-36 w-36 hover:scale-[1.08] hover:-translate-y-3 hover:shadow-2xl transition-all rounded-full flex items-center justify-center bg-[#8D1747] shadow-l"
+            className="shadow-l flex h-[calc(3rem+8vw)] w-[calc(3rem+8vw)] items-center justify-center rounded-full bg-[#8D1747] 
+            transition-all hover:-translate-y-3 hover:scale-[1.08] hover:shadow-2xl
+            md:h-[calc(3rem+7vw)] md:w-[calc(3rem+7vw)]
+            lg:h-[calc(3rem+5vw)] lg:w-[calc(3rem+5vw)]"
             type="button"
             onClick={props.toTopCallback}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-14 w-14 stroke-white "
+                className="h-[calc(1rem+4vw)] w-[calc(1rem+4vw)] stroke-white 
+                md:h-[calc(1rem+3vw)] md:w-[calc(1rem+3vw)]
+                lg:h-[calc(1rem+3vw)] lg:w-[calc(1rem+3vw)]"
+                
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

@@ -5,8 +5,8 @@ export default function NextButtonComponent(props) {
 
     return (
         <div
-            className="flex items-center justify-center h-28 w-28 border-4 rounded-full hover:scale-[1.02] hover:translate-x-4 transition-all"
-            style={{ borderColor: color.neutralColor}}
+            className="flex h-[calc(4rem+3vw)] w-[calc(4rem+3vw)] items-center justify-center rounded-full border-[3px] lg:border-4 transition-all lg:hover:translate-x-4 hover:translate-x-2 hover:scale-[1.02]"
+            style={{ borderColor: color.neutralColor }}
             onClick={props.callback}
         >
             <svg

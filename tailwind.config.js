@@ -21,9 +21,21 @@ module.exports = {
         "burlywood-neutral": "#FAFAFA",
         "burlywood-fab": "#FAFAFA",
       },
+
       fontFamily: {
         "playfair-display": ["Playfair Display", "sans-serif"],
         "poppins": ["Poppins", "sans-serif"]
+      },
+
+      animation: {
+        'typewriter': 'typewriter 700ms infinite ease-in'
+      },
+
+      keyframes: {
+        typewriter: {
+          '0%': { opacity: '0.75'},
+          '100%': { opacity: '0'},
+        }
       }
     },
   },

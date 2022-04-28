@@ -1,29 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { AuthBuilder } from "../../../common-component/AuthBuilder";
 import QuoteComponent from "../components/QuoteComponent";
 import LoginFormComponent from "./LoginFormComponent";
 
 export default function RegisterPage(props) {
-    return (
-        <div id="root" className="flex flex-row h-screen w-screen">
-            <div
-                id="left-side-wrapper"
-                className="h-screen w-4/5 flex flex-col items-start justify-center bg-primary"
-            >
-                <div id="form-wrapper" className="w-full">
-                    <LoginFormComponent />
-                </div>
-            </div>
-            <div
-                id="right-side-wrapper"
-                className="h-screen w-3/5 flex items-center justify-center bg-secondary"
-            >
-                <div id="quote-wrapper" className="w-full m-20">
-                    <QuoteComponent />
-                </div>
-            </div>
-        </div>
-    );
+    return AuthBuilder(<LoginFormComponent />, <QuoteComponent />);
 }
 
 if (document.getElementById("login-root")) {

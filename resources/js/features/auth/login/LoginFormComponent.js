@@ -13,22 +13,27 @@ export default function LoginFormComponent(props) {
                 ).content,
             },
         };
-        axios
-            .post("/login", formData, config)
-            .then((response) => {
-                if (response.status == 200) {
-                    window.location.href = "/quotes";
-                }
-            });
+        axios.post("/login", formData, config).then((response) => {
+            if (response.status == 200) {
+                window.location.href = "/quotes";
+            }
+        });
     }
 
     return (
-        <>
-            <h1 className="ml-28 font-playfair-display font-bold text-secondary text-8xl">
+        <div className="flex w-full flex-col items-center justify-center lg:items-start">
+            <h1
+                className="text-center font-playfair-display text-[calc(2rem+6vw)] font-bold text-secondary
+                lg:text-left lg:text-[calc(2rem+3vw)]"
+            >
                 Welcome back
             </h1>
             <div className="h-20" />
-            <form id="login-form" className="ml-28" onSubmit={onSubmit}>
+            <form
+                id="login-form"
+                className="w-full px-20 lg:px-0"
+                onSubmit={onSubmit}
+            >
                 <div>
                     {CommonInputBuilder(
                         "email",
@@ -45,9 +50,9 @@ export default function LoginFormComponent(props) {
                         "••••••••"
                     )}
                 </div>
-                <div className="flex flex-row items-center justify-start w-2/3">
+                <div className="flex w-full flex-row items-center justify-start">
                     <input
-                        className="h-8 w-8 accent-sky-300 focus:outline-sky-300"
+                        className="h-6 w-6 accent-secondary"
                         type="checkbox"
                         id="remember"
                         name="remember"
@@ -64,6 +69,6 @@ export default function LoginFormComponent(props) {
                 </button>
             </form>
             <div className="h-8" />
-        </>
+        </div>
     );
 }
