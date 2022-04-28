@@ -1,7 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
 import VSpacer from "../../../utils/VSpacer";
-import store from "../../../store";
-import { useState } from "react";
 
 /**
  * @param {string} props.quote

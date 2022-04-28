@@ -7871,15 +7871,17 @@ function QuotesPage(props) {
 
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    setOriginalList(JSON.parse(props.quotes).map(function (quote) {
+    var mapped = JSON.parse(props.quotes).map(function (quote) {
       return quote.replace(/[~]/g, " ");
-    }));
-    setAvailableQuote(_toConsumableArray(originalList));
-  }, [props.quotes]);
+    });
+    setOriginalList(_toConsumableArray(mapped));
+    setAvailableQuote(_toConsumableArray(mapped));
+    setCurrentQuote(mapped[0]);
+  }, []); // Issue: not resetting
 
   function changeQuote() {
-    if (availableQuote.length === 0) {
-      setAvailableQuote(originalQuoteList);
+    if (availableQuote.length == 0) {
+      setAvailableQuote(originalList);
     }
 
     var randomIndex = lodash__WEBPACK_IMPORTED_MODULE_0___default().random(0, availableQuote.length - 1, false);
@@ -8008,26 +8010,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ NextButtonComponent)
 /* harmony export */ });
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 /**
  * @param {Object} props.colorPalette
  * @callback props.changeQuoteCallback
  */
-
-
 function NextButtonComponent(props) {
-  var color = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useSelector)(function (state) {
-    return state.color.value;
-  });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
     className: "flex h-[calc(4rem+3vw)] w-[calc(4rem+3vw)] items-center justify-center rounded-full border-[3px] lg:border-4 transition-all lg:hover:translate-x-4 hover:translate-x-2 hover:scale-[1.02]",
     style: {
       borderColor: props.colorPalette.neutralColor
     },
     onClick: props.changeQuoteCallback,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       className: "h-12 w-12 transition-colors",
       style: {
@@ -8037,7 +8034,7 @@ function NextButtonComponent(props) {
       viewBox: "0 0 24 24",
       stroke: "currentColor",
       strokeWidth: 2,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         d: "M14 5l7 7m0 0l-7 7m7-7H3"
@@ -8059,14 +8056,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ QuoteComponent)
 /* harmony export */ });
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _utils_VSpacer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/VSpacer */ "./resources/js/utils/VSpacer.js");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../store */ "./resources/js/store.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
+/* harmony import */ var _utils_VSpacer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/VSpacer */ "./resources/js/utils/VSpacer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 /**
  * @param {string} props.quote
@@ -8076,20 +8067,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function QuoteComponent(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
       id: "quote",
       className: "text-center font-playfair-display text-[calc(2rem+2vw)] font-bold leading-tight text-[#FFA781] md:text-left md:text-[calc(2rem+4vw)] lg:text-[calc(3rem+4vw)]",
       style: {
         color: props.colorPalette.primaryColor
       },
-      children: [props.quote, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+      children: [props.quote, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
         className: "animate-typewriter",
         id: "type-cursor",
         children: "|"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_utils_VSpacer__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_utils_VSpacer__WEBPACK_IMPORTED_MODULE_0__["default"], {
       size: "h-[2rem]"
     })]
   });

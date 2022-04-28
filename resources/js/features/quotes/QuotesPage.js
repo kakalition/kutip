@@ -19,15 +19,18 @@ export default function QuotesPage(props) {
 
     // UseEffect
     useEffect(() => {
-        setOriginalList(
-            JSON.parse(props.quotes).map((quote) => quote.replace(/[~]/g, " "))
+        const mapped = JSON.parse(props.quotes).map((quote) =>
+            quote.replace(/[~]/g, " ")
         );
-        setAvailableQuote([...originalList]);
-    }, [props.quotes]);
+        setOriginalList([...mapped]);
+        setAvailableQuote([...mapped]);
+        setCurrentQuote(mapped[0]);
+    }, []);
 
+    // Issue: not resetting
     function changeQuote() {
-        if (availableQuote.length === 0) {
-            setAvailableQuote(originalQuoteList);
+        if (availableQuote.length == 0) {
+            setAvailableQuote(originalList);
         }
         const randomIndex = _.random(0, availableQuote.length - 1, false);
         const pickedQuote = availableQuote[randomIndex];
@@ -83,7 +86,10 @@ export default function QuotesPage(props) {
                     <div className="w-[5vw] lg:h-[3vw]" />
 
                     <div className="">
-                        <ChangeColorFabComponent colorPalette={currentColor} changeColorCallback={changeColorPalette}/>
+                        <ChangeColorFabComponent
+                            colorPalette={currentColor}
+                            changeColorCallback={changeColorPalette}
+                        />
                     </div>
                 </div>
             </div>
