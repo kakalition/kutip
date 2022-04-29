@@ -18,3 +18,6 @@ a. Modify authors and quotes
 3. Run same command in setup. (make sure author_id in QuoteSeeder.php correspond to correct author id in AuthorSeeder.php)
 
 b. Or you can manually modify it using SQL queries.
+
+### Known Issue
+Passed JSON from Laravel should not contain spaces, currently replaced with tilde (~). After parse JSON, replace it again with space.
