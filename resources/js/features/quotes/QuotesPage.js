@@ -13,7 +13,7 @@ export default function QuotesPage(props) {
 
     // Local State
     const [originalList, setOriginalList] = useState([]);
-    const [availableQuote, setAvailableQuote] = useState([]);
+    const [availableQuote, setAvailableQuote] = useState({ value: [] });
     const [currentQuote, setCurrentQuote] = useState("");
     const [currentColor, setCurrentColor] = useState(colorArray[0]);
 
@@ -23,21 +23,23 @@ export default function QuotesPage(props) {
             quote.replace(/[~]/g, " ")
         );
         setOriginalList([...mapped]);
-        setAvailableQuote([...mapped]);
         setCurrentQuote(mapped[0]);
     }, []);
 
-    // Issue: not resetting
     function changeQuote() {
-        if (availableQuote.length == 0) {
-            setAvailableQuote(originalList);
+        let batchHolder = _.cloneDeep(availableQuote);
+
+        if (batchHolder.value.length == 0) {
+            batchHolder.value = [...originalList];
         }
-        const randomIndex = _.random(0, availableQuote.length - 1, false);
-        const pickedQuote = availableQuote[randomIndex];
-        setAvailableQuote(
-            availableQuote.filter((element) => element != pickedQuote)
+
+        const randomIndex = _.random(0, batchHolder.value.length - 1, false);
+        const pickedQuote = batchHolder.value[randomIndex];
+        batchHolder.value = batchHolder.value.filter(
+            (element) => element != pickedQuote
         );
         setCurrentQuote(pickedQuote);
+        setAvailableQuote(batchHolder);
     }
 
     function changeColorPalette() {

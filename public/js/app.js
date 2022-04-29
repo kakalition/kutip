@@ -7854,7 +7854,9 @@ function QuotesPage(props) {
       originalList = _useState2[0],
       setOriginalList = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    value: []
+  }),
       _useState4 = _slicedToArray(_useState3, 2),
       availableQuote = _useState4[0],
       setAvailableQuote = _useState4[1];
@@ -7875,22 +7877,24 @@ function QuotesPage(props) {
       return quote.replace(/[~]/g, " ");
     });
     setOriginalList(_toConsumableArray(mapped));
-    setAvailableQuote(_toConsumableArray(mapped));
     setCurrentQuote(mapped[0]);
-  }, []); // Issue: not resetting
+  }, []);
 
   function changeQuote() {
-    if (availableQuote.length == 0) {
-      setAvailableQuote(originalList);
+    var batchHolder = lodash__WEBPACK_IMPORTED_MODULE_0___default().cloneDeep(availableQuote);
+
+    if (batchHolder.value.length == 0) {
+      batchHolder.value = _toConsumableArray(originalList);
     }
 
-    var randomIndex = lodash__WEBPACK_IMPORTED_MODULE_0___default().random(0, availableQuote.length - 1, false);
+    var randomIndex = lodash__WEBPACK_IMPORTED_MODULE_0___default().random(0, batchHolder.value.length - 1, false);
 
-    var pickedQuote = availableQuote[randomIndex];
-    setAvailableQuote(availableQuote.filter(function (element) {
+    var pickedQuote = batchHolder.value[randomIndex];
+    batchHolder.value = batchHolder.value.filter(function (element) {
       return element != pickedQuote;
-    }));
+    });
     setCurrentQuote(pickedQuote);
+    setAvailableQuote(batchHolder);
   }
 
   function changeColorPalette() {
