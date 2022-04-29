@@ -7854,9 +7854,7 @@ function QuotesPage(props) {
       originalList = _useState2[0],
       setOriginalList = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
-    value: []
-  }),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState4 = _slicedToArray(_useState3, 2),
       availableQuote = _useState4[0],
       setAvailableQuote = _useState4[1];
@@ -7881,16 +7879,16 @@ function QuotesPage(props) {
   }, []);
 
   function changeQuote() {
-    var batchHolder = lodash__WEBPACK_IMPORTED_MODULE_0___default().cloneDeep(availableQuote);
+    var batchHolder = _toConsumableArray(availableQuote);
 
-    if (batchHolder.value.length == 0) {
-      batchHolder.value = _toConsumableArray(originalList);
+    if (batchHolder.length == 0) {
+      batchHolder = _toConsumableArray(originalList);
     }
 
-    var randomIndex = lodash__WEBPACK_IMPORTED_MODULE_0___default().random(0, batchHolder.value.length - 1, false);
+    var randomIndex = lodash__WEBPACK_IMPORTED_MODULE_0___default().random(0, batchHolder.length - 1, false);
 
-    var pickedQuote = batchHolder.value[randomIndex];
-    batchHolder.value = batchHolder.value.filter(function (element) {
+    var pickedQuote = batchHolder[randomIndex];
+    batchHolder = batchHolder.filter(function (element) {
       return element != pickedQuote;
     });
     setCurrentQuote(pickedQuote);

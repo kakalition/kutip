@@ -13,7 +13,7 @@ export default function QuotesPage(props) {
 
     // Local State
     const [originalList, setOriginalList] = useState([]);
-    const [availableQuote, setAvailableQuote] = useState({ value: [] });
+    const [availableQuote, setAvailableQuote] = useState([]);
     const [currentQuote, setCurrentQuote] = useState("");
     const [currentColor, setCurrentColor] = useState(colorArray[0]);
 
@@ -27,17 +27,15 @@ export default function QuotesPage(props) {
     }, []);
 
     function changeQuote() {
-        let batchHolder = _.cloneDeep(availableQuote);
+        let batchHolder = [...availableQuote];
 
-        if (batchHolder.value.length == 0) {
-            batchHolder.value = [...originalList];
+        if (batchHolder.length == 0) {
+            batchHolder = [...originalList];
         }
 
-        const randomIndex = _.random(0, batchHolder.value.length - 1, false);
-        const pickedQuote = batchHolder.value[randomIndex];
-        batchHolder.value = batchHolder.value.filter(
-            (element) => element != pickedQuote
-        );
+        const randomIndex = _.random(0, batchHolder.length - 1, false);
+        const pickedQuote = batchHolder[randomIndex];
+        batchHolder = batchHolder.filter((element) => element != pickedQuote);
         setCurrentQuote(pickedQuote);
         setAvailableQuote(batchHolder);
     }
