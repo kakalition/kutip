@@ -6164,7 +6164,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 function ChangeColorFabComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
-    className: "shadow-l flex h-[calc(4rem+3vw)] w-[calc(4rem+3vw)] items-center justify-center rounded-full transition-all hover:-translate-y-2 hover:scale-[1.05] hover:shadow-2xl",
+    className: "shadow-l flex h-[calc(4rem+1vw)] w-[calc(4rem+1vw)] md:h-[calc(4rem+3vw)] md:w-[calc(4rem+3vw)] items-center justify-center rounded-full transition-all hover:-translate-y-2 hover:scale-[1.05] hover:shadow-2xl",
     style: {
       backgroundColor: props.colorPalette.fabColor
     },
@@ -6172,7 +6172,7 @@ function ChangeColorFabComponent(props) {
     type: "button",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
-      className: "h-12 w-12 transition-colors",
+      className: "h-[calc(1rem+3vw)] w-[calc(1rem+3vw)] md:h-10 md:w-10 transition-colors",
       style: {
         stroke: props.colorPalette.neutralColor,
         fill: props.colorPalette.neutralColor
@@ -6210,14 +6210,14 @@ __webpack_require__.r(__webpack_exports__);
  */
 function NextButtonComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "flex h-[calc(4rem+3vw)] w-[calc(4rem+3vw)] items-center justify-center rounded-full border-[3px] lg:border-4 transition-all lg:hover:translate-x-4 hover:translate-x-2 hover:scale-[1.02]",
+    className: "flex h-[calc(4rem+1vw)] w-[calc(4rem+1vw)] items-center justify-center rounded-full border-[3px] transition-all hover:translate-x-2 hover:scale-[1.02] md:h-[calc(4rem+3vw)] md:w-[calc(4rem+3vw)] lg:border-4 lg:hover:translate-x-4",
     style: {
       borderColor: props.colorPalette.neutralColor
     },
     onClick: props.changeQuoteCallback,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
-      className: "h-12 w-12 transition-colors",
+      className: "h-[calc(1rem+3vw)] w-[calc(1rem+3vw)] transition-colors md:h-10 md:w-10",
       style: {
         stroke: props.colorPalette.neutralColor
       },

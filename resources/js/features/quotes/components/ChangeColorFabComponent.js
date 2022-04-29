@@ -5,14 +5,14 @@
 export default function ChangeColorFabComponent(props) {
     return (
         <button
-            className="shadow-l flex h-[calc(4rem+3vw)] w-[calc(4rem+3vw)] items-center justify-center rounded-full transition-all hover:-translate-y-2 hover:scale-[1.05] hover:shadow-2xl"
+            className="shadow-l flex h-[calc(4rem+1vw)] w-[calc(4rem+1vw)] md:h-[calc(4rem+3vw)] md:w-[calc(4rem+3vw)] items-center justify-center rounded-full transition-all hover:-translate-y-2 hover:scale-[1.05] hover:shadow-2xl"
             style={{ backgroundColor: props.colorPalette.fabColor }}
             onClick={props.changeColorCallback}
             type="button"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12 transition-colors"
+                className="h-[calc(1rem+3vw)] w-[calc(1rem+3vw)] md:h-10 md:w-10 transition-colors"
                 style={{
                     stroke: props.colorPalette.neutralColor,
                     fill: props.colorPalette.neutralColor,

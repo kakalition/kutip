@@ -625,6 +625,24 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[15vw\] {
   height: 15vw;
 }
+.h-\[2vw\] {
+  height: 2vw;
+}
+.h-\[5vw\] {
+  height: 5vw;
+}
+.h-\[8vw\] {
+  height: 8vw;
+}
+.h-\[calc\(1rem\+3vw\)\] {
+  height: calc(1rem + 3vw);
+}
+.h-\[calc\(4rem\+2vw\)\] {
+  height: calc(4rem + 2vw);
+}
+.h-\[calc\(4rem\+1vw\)\] {
+  height: calc(4rem + 1vw);
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -675,6 +693,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[90\%\] {
   width: 90%;
+}
+.w-\[10vw\] {
+  width: 10vw;
+}
+.w-\[8vw\] {
+  width: 8vw;
+}
+.w-\[calc\(1rem\+3vw\)\] {
+  width: calc(1rem + 3vw);
+}
+.w-\[calc\(4rem\+2vw\)\] {
+  width: calc(4rem + 2vw);
+}
+.w-\[calc\(4rem\+1vw\)\] {
+  width: calc(4rem + 1vw);
 }
 @-webkit-keyframes typewriter {
 
@@ -1047,6 +1080,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 4vw;
   }
 
+  .md\:h-12 {
+    height: 3rem;
+  }
+
+  .md\:h-10 {
+    height: 2.5rem;
+  }
+
+  .md\:h-\[calc\(4rem\+3vw\)\] {
+    height: calc(4rem + 3vw);
+  }
+
   .md\:w-\[calc\(3rem\+7vw\)\] {
     width: calc(3rem + 7vw);
   }
@@ -1061,6 +1106,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:w-\[4vw\] {
     width: 4vw;
+  }
+
+  .md\:w-12 {
+    width: 3rem;
+  }
+
+  .md\:w-10 {
+    width: 2.5rem;
+  }
+
+  .md\:w-\[calc\(4rem\+3vw\)\] {
+    width: calc(4rem + 3vw);
   }
 
   .md\:border-\[3px\] {
