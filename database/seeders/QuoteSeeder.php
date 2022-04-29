@@ -86,7 +86,7 @@ class QuoteSeeder extends Seeder
             ['author_id' => '5', 'quote' => 'Extravagance is its own destroyer.'],
             ['author_id' => '5', 'quote' => 'Man conquers the world by conquering himself.'],
             ['author_id' => '5', 'quote' => 'Steel your sensibilities, so that life shall hurt you as little as possible.'],
-            ['author_id' => '5', 'quote' => 'Better to trip with the feet than with the tongue'],
+            ['author_id' => '5', 'quote' => 'Better to trip with the feet than with the tongue.'],
             ['author_id' => '5', 'quote' => 'A bad feeling is a commotion of the mind repugnant to reason, and against nature.'],
         ];
 
