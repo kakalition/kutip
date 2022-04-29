@@ -6019,8 +6019,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function QuotesPage(props) {
   // Property
-  var authorName = lodash__WEBPACK_IMPORTED_MODULE_0___default().startCase(props.author); // Local State
+  var authorName = lodash__WEBPACK_IMPORTED_MODULE_0___default().startCase(props.author);
 
+  var WAIT_CONSTANT = 20; // Local State
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -6049,6 +6050,7 @@ function QuotesPage(props) {
     });
     setOriginalList(_toConsumableArray(mapped));
     setCurrentQuote(mapped[0]);
+    setTimeout(function () {}, 2000);
   }, []);
 
   function changeQuote() {
@@ -6064,7 +6066,11 @@ function QuotesPage(props) {
     batchHolder = batchHolder.filter(function (element) {
       return element != pickedQuote;
     });
-    setCurrentQuote(pickedQuote);
+    var duration = currentQuote.length * WAIT_CONSTANT;
+    setCurrentQuote("");
+    setTimeout(function () {
+      setCurrentQuote(pickedQuote);
+    }, duration);
     setAvailableQuote(batchHolder);
   }
 
@@ -6232,7 +6238,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ QuoteComponent)
 /* harmony export */ });
 /* harmony import */ var _utils_VSpacer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/VSpacer */ "./resources/js/utils/VSpacer.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 /**
  * @param {string} props.quote
@@ -6242,20 +6262,65 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function QuoteComponent(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  // Property
+  var TYPE_CONSTANT = 40;
+  var DELETE_CONSTANT = 10; // Local State
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      text = _useState2[0],
+      setText = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      fullText = _useState4[0],
+      setFullText = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+      _useState6 = _slicedToArray(_useState5, 2),
+      index = _useState6[0],
+      setIndex = _useState6[1]; // UseEffect
+
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    setFullText(props.quote);
+  }, [props.quote]);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (text.length < fullText.length) fill();else unfill();
+  }, [index, fullText]); // Local Function
+
+  function fill() {
+    if (index < fullText.length) {
+      setTimeout(function () {
+        setText(text + fullText[index]);
+        setIndex(index + 1);
+      }, TYPE_CONSTANT);
+    }
+  }
+
+  function unfill() {
+    if (index > fullText.length) {
+      setTimeout(function () {
+        setText(text.substring(0, text.length - 1));
+        setIndex(index - 1);
+      }, DELETE_CONSTANT);
+    }
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
       id: "quote",
       className: "text-center font-playfair-display text-[calc(2rem+2vw)] font-bold leading-tight text-[#FFA781] md:text-left md:text-[calc(2rem+4vw)] lg:text-[calc(3rem+4vw)]",
       style: {
         color: props.colorPalette.primaryColor
       },
-      children: [props.quote, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      children: [text, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
         className: "animate-typewriter",
         id: "type-cursor",
         children: "|"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_utils_VSpacer__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_utils_VSpacer__WEBPACK_IMPORTED_MODULE_0__["default"], {
       size: "h-[2rem]"
     })]
   });
