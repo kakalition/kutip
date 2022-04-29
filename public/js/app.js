@@ -5887,7 +5887,9 @@ function HomePage(props) {
   }
 
   function logout() {
-    axios__WEBPACK_IMPORTED_MODULE_3___default().post("/logout");
+    axios__WEBPACK_IMPORTED_MODULE_3___default().post("/logout").then(function () {
+      return window.location.href = "/";
+    });
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
@@ -5942,7 +5944,7 @@ function HomeHeaderComponent(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "flex flex-row items-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-        className: "font-playfair-display text-[calc(1rem+2vw)] font-semibold text-secondary lg:text-[calc(1rem+1vw)]",
+        className: "font-playfair-display text-[calc(1rem+2vw)] font-semibold text-secondary lg:text-[calc(1rem+1vw)]  pb-1",
         children: props.username
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "w-[3vw] md:w-[2vw] lg:w-[1vw]"

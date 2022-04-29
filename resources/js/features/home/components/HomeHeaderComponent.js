@@ -10,7 +10,7 @@ export default function HomeHeaderComponent(props) {
 
             <div className="flex flex-row items-center">
                 <p className="font-playfair-display text-[calc(1rem+2vw)] font-semibold text-secondary
-                lg:text-[calc(1rem+1vw)]">
+                lg:text-[calc(1rem+1vw)]  pb-1">
                     {props.username}
                 </p>
 

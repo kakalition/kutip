@@ -49,7 +49,7 @@ export default function HomePage(props) {
     }
 
     function logout() {
-        axios.post("/logout");
+        axios.post("/logout").then(() => window.location.href = `/`);
     }
 
     return (
