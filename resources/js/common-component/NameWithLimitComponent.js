@@ -1,7 +1,6 @@
 import ClassNameJoiner from "../utils/ClassNameJoiner";
 
 export default function NameWithLimitComponent(props) {
-
     let className = "font-poppins";
 
     return (
@@ -16,7 +15,10 @@ export default function NameWithLimitComponent(props) {
                 Kharisma Sri Wibowo
             </p>
             <p
-                className={ClassNameJoiner(className, "text-[calc(0.6rem+0.5vw)] font-light")}
+                className={ClassNameJoiner(
+                    className,
+                    "text-[calc(0.6rem+0.5vw)] font-light"
+                )}
                 style={{ color: props.colorPalette.neutralColor }}
             >
                 Daily Limit: 1/10
