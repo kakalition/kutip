@@ -10,6 +10,7 @@ import { colorArray } from "./data/ColorArray";
 export default function QuotesPage(props) {
     // Property
     const authorName = _.startCase(props.author);
+    const WAIT_CONSTANT = 20;
 
     // Local State
     const [originalList, setOriginalList] = useState([]);
@@ -24,6 +25,7 @@ export default function QuotesPage(props) {
         );
         setOriginalList([...mapped]);
         setCurrentQuote(mapped[0]);
+        setTimeout(() => {}, 2000);
     }, []);
 
     function changeQuote() {
@@ -36,7 +38,13 @@ export default function QuotesPage(props) {
         const randomIndex = _.random(0, batchHolder.length - 1, false);
         const pickedQuote = batchHolder[randomIndex];
         batchHolder = batchHolder.filter((element) => element != pickedQuote);
-        setCurrentQuote(pickedQuote);
+
+        const duration = currentQuote.length * WAIT_CONSTANT;
+        setCurrentQuote("");
+        setTimeout(() => {
+            setCurrentQuote(pickedQuote);
+        }, duration);
+
         setAvailableQuote(batchHolder);
     }
 
