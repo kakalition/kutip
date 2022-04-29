@@ -39,8 +39,6 @@ export default function QuotesHeaderComponent(props) {
                     {props.authorName}
                 </p>
             </div>
-
-            <NameWithLimitComponent colorPalette={props.colorPalette} />
         </div>
     );
 }

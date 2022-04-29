@@ -5441,7 +5441,7 @@ function ArrowFabComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
     className: "shadow-l flex h-[calc(3rem+8vw)] w-[calc(3rem+8vw)] items-center justify-center rounded-full bg-[#8D1747]  transition-all hover:-translate-y-3 hover:scale-[1.08] hover:shadow-2xl md:h-[calc(3rem+7vw)] md:w-[calc(3rem+7vw)] lg:h-[calc(3rem+5vw)] lg:w-[calc(3rem+5vw)]",
     type: "button",
-    onClick: props.toTopCallback,
+    onClick: props.scrollCallback,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       className: "h-[calc(1rem+4vw)] w-[calc(1rem+4vw)] stroke-white  md:h-[calc(1rem+3vw)] md:w-[calc(1rem+3vw)] lg:h-[calc(1rem+3vw)] lg:w-[calc(1rem+3vw)]",
@@ -5880,6 +5880,13 @@ function HomePage(props) {
     };
   }
 
+  function scrollToTop() {
+    window.scroll({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
   function logout() {
     axios__WEBPACK_IMPORTED_MODULE_3___default().post("/logout");
   }
@@ -5900,7 +5907,9 @@ function HomePage(props) {
       className: "h-24"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "fixed bottom-14 right-[10vw]",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_ArrowFabComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_ArrowFabComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        scrollCallback: scrollToTop
+      })
     })]
   });
 }
@@ -6351,9 +6360,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function QuotesHeaderComponent(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     className: "flex flex-row items-center justify-between p-6",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "flex flex-row items-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
         type: "button",
@@ -6384,9 +6393,7 @@ function QuotesHeaderComponent(props) {
         },
         children: props.authorName
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      colorPalette: props.colorPalette
-    })]
+    })
   });
 }
 

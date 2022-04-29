@@ -6,7 +6,7 @@ export default function ArrowFabComponent(props) {
             md:h-[calc(3rem+7vw)] md:w-[calc(3rem+7vw)]
             lg:h-[calc(3rem+5vw)] lg:w-[calc(3rem+5vw)]"
             type="button"
-            onClick={props.toTopCallback}
+            onClick={props.scrollCallback}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"

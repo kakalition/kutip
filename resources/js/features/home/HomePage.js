@@ -46,6 +46,10 @@ export default function HomePage(props) {
         };
     }
 
+    function scrollToTop() {
+        window.scroll({top: 0, behavior: "smooth"});
+    }
+
     function logout() {
         axios.post("/logout");
     }
@@ -59,7 +63,7 @@ export default function HomePage(props) {
             {authors}
             <div className="h-24" />
             <div className="fixed bottom-14 right-[10vw]">
-                <ArrowFabComponent />
+                <ArrowFabComponent scrollCallback={scrollToTop}/>
             </div>
         </div>
     );
