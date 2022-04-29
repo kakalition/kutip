@@ -1,27 +1,21 @@
-import { useDispatch, useSelector } from "react-redux";
-import { randomize } from "../data/ColorSlice";
-
+/**
+ * @param {Object} props.colorPalette
+ * @callback props.changeColorCallback
+ */
 export default function ChangeColorFabComponent(props) {
-    const color = useSelector((state) => state.color.value);
-    const dispatch = useDispatch();
-
-    function randomizeColor() {
-        dispatch(randomize());
-    }
-
     return (
         <button
             className="shadow-l flex h-[calc(4rem+3vw)] w-[calc(4rem+3vw)] items-center justify-center rounded-full transition-all hover:-translate-y-2 hover:scale-[1.05] hover:shadow-2xl"
-            style={{ backgroundColor: color.fabColor }}
-            onClick={randomizeColor}
+            style={{ backgroundColor: props.colorPalette.fabColor }}
+            onClick={props.changeColorCallback}
             type="button"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-12 w-12 transition-colors"
                 style={{
-                    stroke: color.neutralColor,
-                    fill: color.neutralColor,
+                    stroke: props.colorPalette.neutralColor,
+                    fill: props.colorPalette.neutralColor,
                 }}
                 viewBox="0 0 20 20"
                 fill="currentColor"

@@ -1,9 +1,12 @@
-import { useSelector } from "react-redux";
 import NameWithLimitComponent from "../../../common-component/NameWithLimitComponent";
 
+/**
+ * Description
+ * @param {string} props.authorName
+ * @param {string} props.onBackClicked
+ * @param {Object} props.colorPalette
+ */
 export default function QuotesHeaderComponent(props) {
-    const color = useSelector((state) => state.color.value);
-
     return (
         <div className="flex flex-row items-center justify-between p-6">
             <div className="flex flex-row items-center">
@@ -15,7 +18,7 @@ export default function QuotesHeaderComponent(props) {
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-[calc(1rem+2vw)] w-[calc(1rem+2vw)]"
-                        style={{ stroke: color.neutralColor }}
+                        style={{ stroke: props.colorPalette.neutralColor }}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -31,13 +34,13 @@ export default function QuotesHeaderComponent(props) {
                 <div className="w-[2vw] lg:w-[1vw]" />
                 <p
                     className="pb-1 font-playfair-display text-[calc(1rem+2vw)] font-semibold text-white lg:text-[calc(1.5rem+1vw)]"
-                    style={{ color: color.neutralColor }}
+                    style={{ color: props.colorPalette.neutralColor }}
                 >
-                    {props.author}
+                    {props.authorName}
                 </p>
             </div>
 
-            <NameWithLimitComponent />
+            <NameWithLimitComponent colorPalette={props.colorPalette} />
         </div>
     );
 }

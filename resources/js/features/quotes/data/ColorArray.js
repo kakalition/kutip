@@ -1,12 +1,3 @@
-class ColorHolder {
-    constructor(bgColor, primaryColor, neutralColor, fabColor) {
-        this.bgColor = bgColor;
-        this.primaryColor = primaryColor;
-        this.neutralColor = neutralColor;
-        this.fabColor = fabColor;
-    }
-}
-
 export const colorArray = [
     {// Maroon
         bgColor: "#5B0E2D",

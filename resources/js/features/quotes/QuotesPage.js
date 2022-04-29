@@ -1,83 +1,95 @@
 import _ from "lodash";
-import { useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useMemo, useState } from "react";
 import ElementBinder from "../../utils/ElementBinder";
 import ChangeColorFabComponent from "./components/ChangeColorFabComponent";
 import NextButtonComponent from "./components/NextButtonComponent";
 import QuoteComponent from "./components/QuoteComponent";
 import QuotesHeaderComponent from "./components/QuotesHeaderComponent";
-import { randomize } from "./data/ColorSlice";
-import { setQuote } from "./data/QuoteSlice";
+import { colorArray } from "./data/ColorArray";
 
 export default function QuotesPage(props) {
     // Property
-    const dispatch = useDispatch();
-    const formattedAuthorName = _.startCase(props.author);
+    const authorName = _.startCase(props.author);
 
     // Local State
-    const [isInitialState, setInitialState] = useState(true);
-    const originalQuoteList = useMemo(
-        () =>
-            JSON.parse(props.quotes).map((quote) => quote.replace(/[~]/g, " ")),
-        [props.quotes]
-    );
-    let [availableQuote, setAvailableQuote] = useState([...originalQuoteList]);
+    const [originalList, setOriginalList] = useState([]);
+    const [availableQuote, setAvailableQuote] = useState([]);
+    const [currentQuote, setCurrentQuote] = useState("");
+    const [currentColor, setCurrentColor] = useState(colorArray[0]);
 
-    // ReduxState
-    const color = useSelector((state) => state.color.value);
+    // UseEffect
+    useEffect(() => {
+        const mapped = JSON.parse(props.quotes).map((quote) =>
+            quote.replace(/[~]/g, " ")
+        );
+        setOriginalList([...mapped]);
+        setCurrentQuote(mapped[0]);
+    }, []);
 
     function changeQuote() {
-        if (availableQuote.length === 0) {
-            availableQuote = originalQuoteList;
+        let batchHolder = [...availableQuote];
+
+        if (batchHolder.length == 0) {
+            batchHolder = [...originalList];
         }
-        const randomIndex = _.random(0, availableQuote.length - 1, false);
-        const pickedQuote = availableQuote[randomIndex];
-        setAvailableQuote(
-            availableQuote.filter((element) => element != pickedQuote)
-        );
-        dispatch(setQuote(pickedQuote));
+
+        const randomIndex = _.random(0, batchHolder.length - 1, false);
+        const pickedQuote = batchHolder[randomIndex];
+        batchHolder = batchHolder.filter((element) => element != pickedQuote);
+        setCurrentQuote(pickedQuote);
+        setAvailableQuote(batchHolder);
+    }
+
+    function changeColorPalette() {
+        let localColor = { ...currentColor };
+        while (localColor.bgColor == currentColor.bgColor) {
+            const randomIndex = _.random(0, colorArray.length - 1, false);
+            localColor = colorArray[randomIndex];
+        }
+        setCurrentColor(localColor);
     }
 
     function onBackClicked() {
         window.location.href = "/quotes";
     }
 
-    // Initial Random
-    if (isInitialState) {
-        dispatch(randomize());
-        changeQuote();
-        setInitialState(false);
-    }
-
     return (
         <div
             id="viewport"
             className="flex h-screen w-screen flex-col transition-colors"
-            style={{ backgroundColor: color.bgColor }}
+            style={{ backgroundColor: currentColor.bgColor }}
         >
             <QuotesHeaderComponent
-                author={formattedAuthorName}
+                authorName={authorName}
                 onBackClicked={onBackClicked}
+                colorPalette={currentColor}
             />
             <div
                 id="main-content"
                 className="flex h-full flex-col py-[8vw] lg:flex-row lg:py-0 lg:px-[3vw]"
             >
-                <div
-                    className="flex h-full w-full items-center px-[5vw] "
-                >
-                    <QuoteComponent />
+                <div className="flex h-full w-full items-center px-[5vw] ">
+                    <QuoteComponent
+                        quote={currentQuote}
+                        colorPalette={currentColor}
+                    />
                 </div>
 
                 <div className="flex flex-row items-center justify-center justify-self-end lg:flex-col">
                     <div className="">
-                        <NextButtonComponent callback={changeQuote} />
+                        <NextButtonComponent
+                            colorPalette={currentColor}
+                            changeQuoteCallback={changeQuote}
+                        />
                     </div>
 
                     <div className="w-[5vw] lg:h-[3vw]" />
 
                     <div className="">
-                        <ChangeColorFabComponent />
+                        <ChangeColorFabComponent
+                            colorPalette={currentColor}
+                            changeColorCallback={changeColorPalette}
+                        />
                     </div>
                 </div>
             </div>
