@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import NameWithLimitComponent from "../../../common-component/NameWithLimitComponent";
 
 /**
@@ -41,7 +40,7 @@ export default function QuotesHeaderComponent(props) {
                 </p>
             </div>
 
-            <NameWithLimitComponent />
+            <NameWithLimitComponent colorPalette={props.colorPalette} />
         </div>
     );
 }
