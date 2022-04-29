@@ -5441,7 +5441,7 @@ function ArrowFabComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
     className: "shadow-l flex h-[calc(3rem+8vw)] w-[calc(3rem+8vw)] items-center justify-center rounded-full bg-[#8D1747]  transition-all hover:-translate-y-3 hover:scale-[1.08] hover:shadow-2xl md:h-[calc(3rem+7vw)] md:w-[calc(3rem+7vw)] lg:h-[calc(3rem+5vw)] lg:w-[calc(3rem+5vw)]",
     type: "button",
-    onClick: props.toTopCallback,
+    onClick: props.scrollCallback,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       className: "h-[calc(1rem+4vw)] w-[calc(1rem+4vw)] stroke-white  md:h-[calc(1rem+3vw)] md:w-[calc(1rem+3vw)] lg:h-[calc(1rem+3vw)] lg:w-[calc(1rem+3vw)]",
@@ -5863,7 +5863,6 @@ function AuthorNameBuilder(props) {
 }
 
 function HomePage(props) {
-  //const username = JSON.parse(props.user)["name"];
   var authors = JSON.parse(props.authors).map(function (author) {
     var formattedName = _.startCase(author);
 
@@ -5880,8 +5879,17 @@ function HomePage(props) {
     };
   }
 
+  function scrollToTop() {
+    window.scroll({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
   function logout() {
-    axios__WEBPACK_IMPORTED_MODULE_3___default().post("/logout");
+    axios__WEBPACK_IMPORTED_MODULE_3___default().post("/logout").then(function () {
+      return window.location.href = "/";
+    });
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
@@ -5890,7 +5898,8 @@ function HomePage(props) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "h-8"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_HomeHeaderComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      logoutCallback: logout
+      logoutCallback: logout,
+      username: props.username
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "h-24"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(AuthorNameBuilder, {
@@ -5900,7 +5909,9 @@ function HomePage(props) {
       className: "h-24"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "fixed bottom-14 right-[10vw]",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_ArrowFabComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_ArrowFabComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        scrollCallback: scrollToTop
+      })
     })]
   });
 }
@@ -5933,8 +5944,8 @@ function HomeHeaderComponent(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "flex flex-row items-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-        className: "font-playfair-display text-[calc(0.5rem+2vw)] font-semibold text-secondary lg:text-[calc(0.5rem+1vw)]",
-        children: "Kharisma Sri Wibowo"
+        className: "font-playfair-display text-[calc(1rem+2vw)] font-semibold text-secondary lg:text-[calc(1rem+1vw)]  pb-1",
+        children: props.username
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "w-[3vw] md:w-[2vw] lg:w-[1vw]"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
@@ -6351,9 +6362,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function QuotesHeaderComponent(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     className: "flex flex-row items-center justify-between p-6",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "flex flex-row items-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
         type: "button",
@@ -6384,9 +6395,7 @@ function QuotesHeaderComponent(props) {
         },
         children: props.authorName
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_NameWithLimitComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      colorPalette: props.colorPalette
-    })]
+    })
   });
 }
 

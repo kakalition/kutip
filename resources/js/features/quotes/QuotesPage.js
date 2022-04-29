@@ -60,6 +60,7 @@ export default function QuotesPage(props) {
         window.location.href = "/quotes";
     }
 
+
     return (
         <div
             id="viewport"
