@@ -6021,7 +6021,7 @@ function QuotesPage(props) {
   // Property
   var authorName = lodash__WEBPACK_IMPORTED_MODULE_0___default().startCase(props.author);
 
-  var WAIT_CONSTANT = 20; // Local State
+  var WAIT_CONSTANT = 25; // Local State
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -6050,7 +6050,6 @@ function QuotesPage(props) {
     });
     setOriginalList(_toConsumableArray(mapped));
     setCurrentQuote(mapped[0]);
-    setTimeout(function () {}, 2000);
   }, []);
 
   function changeQuote() {
@@ -6264,7 +6263,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function QuoteComponent(props) {
   // Property
   var TYPE_CONSTANT = 40;
-  var DELETE_CONSTANT = 15; // Local State
+  var DELETE_CONSTANT = 10; // Local State
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState2 = _slicedToArray(_useState, 2),

@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 export default function QuoteComponent(props) {
     // Property
     const TYPE_CONSTANT = 40;
-    const DELETE_CONSTANT = 15;
+    const DELETE_CONSTANT = 10;
 
     // Local State
     const [text, setText] = useState("");

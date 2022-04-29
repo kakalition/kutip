@@ -10,7 +10,7 @@ import { colorArray } from "./data/ColorArray";
 export default function QuotesPage(props) {
     // Property
     const authorName = _.startCase(props.author);
-    const WAIT_CONSTANT = 20;
+    const WAIT_CONSTANT = 25;
 
     // Local State
     const [originalList, setOriginalList] = useState([]);
@@ -25,7 +25,6 @@ export default function QuotesPage(props) {
         );
         setOriginalList([...mapped]);
         setCurrentQuote(mapped[0]);
-        setTimeout(() => {}, 2000);
     }, []);
 
     function changeQuote() {
