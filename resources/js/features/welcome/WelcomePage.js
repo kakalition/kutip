@@ -16,7 +16,7 @@ export default function WelcomePage(props) {
             <WelcomeFragmentOneComponent/>
             <WelcomeFragmentTwoComponent/>
             <WelcomeFragmentThreeComponent/>
-            <WelcomeFragmentFourComponent toTopCallback={scrollToTop}/>
+            <WelcomeFragmentFourComponent scrollCallback={scrollToTop}/>
         </div>
     );
 }

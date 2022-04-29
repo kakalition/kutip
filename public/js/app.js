@@ -6471,7 +6471,7 @@ function WelcomePage(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     className: "select-none",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_WelcomeFragmentOneComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_WelcomeFragmentTwoComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_WelcomeFragmentThreeComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_WelcomeFragmentFourComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      toTopCallback: scrollToTop
+      scrollCallback: scrollToTop
     })]
   });
 }
@@ -6507,7 +6507,7 @@ function WelcomeFragmentFourComponent(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "h-[10vw] lg:h-[5vw]"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_ArrowFabComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      toTopCallback: props.toTopCallback
+      scrollCallback: props.scrollCallback
     })]
   });
 }

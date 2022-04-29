@@ -424,39 +424,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.container {
-  width: 100%;
-}
-@media (min-width: 640px) {
-
-  .container {
-    max-width: 640px;
-  }
-}
-@media (min-width: 768px) {
-
-  .container {
-    max-width: 768px;
-  }
-}
-@media (min-width: 1024px) {
-
-  .container {
-    max-width: 1024px;
-  }
-}
-@media (min-width: 1280px) {
-
-  .container {
-    max-width: 1280px;
-  }
-}
-@media (min-width: 1536px) {
-
-  .container {
-    max-width: 1536px;
-  }
-}
 .form-label {
   font-family: Poppins, sans-serif;
   font-size: 1.25rem;
@@ -542,11 +509,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
 }
-.borderize {
-  border-width: 4px;
-  --tw-border-opacity: 1;
-  border-color: rgb(220 38 38 / var(--tw-border-opacity));
-}
 .fixed {
   position: fixed;
 }
@@ -592,11 +554,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[6vw\] {
   height: 6vw;
 }
-.h-\[calc\(4rem\+3vw\)\] {
-  height: calc(4rem + 3vw);
+.h-\[calc\(4rem\+1vw\)\] {
+  height: calc(4rem + 1vw);
 }
-.h-12 {
-  height: 3rem;
+.h-\[calc\(1rem\+3vw\)\] {
+  height: calc(1rem + 3vw);
 }
 .h-\[2rem\] {
   height: 2rem;
@@ -624,24 +586,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-\[15vw\] {
   height: 15vw;
-}
-.h-\[2vw\] {
-  height: 2vw;
-}
-.h-\[5vw\] {
-  height: 5vw;
-}
-.h-\[8vw\] {
-  height: 8vw;
-}
-.h-\[calc\(1rem\+3vw\)\] {
-  height: calc(1rem + 3vw);
-}
-.h-\[calc\(4rem\+2vw\)\] {
-  height: calc(4rem + 2vw);
-}
-.h-\[calc\(4rem\+1vw\)\] {
-  height: calc(4rem + 1vw);
 }
 .min-h-screen {
   min-height: 100vh;
@@ -676,11 +620,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[6vw\] {
   width: 6vw;
 }
-.w-\[calc\(4rem\+3vw\)\] {
-  width: calc(4rem + 3vw);
+.w-\[calc\(4rem\+1vw\)\] {
+  width: calc(4rem + 1vw);
 }
-.w-12 {
-  width: 3rem;
+.w-\[calc\(1rem\+3vw\)\] {
+  width: calc(1rem + 3vw);
 }
 .w-\[calc\(1rem\+2vw\)\] {
   width: calc(1rem + 2vw);
@@ -693,21 +637,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[90\%\] {
   width: 90%;
-}
-.w-\[10vw\] {
-  width: 10vw;
-}
-.w-\[8vw\] {
-  width: 8vw;
-}
-.w-\[calc\(1rem\+3vw\)\] {
-  width: calc(1rem + 3vw);
-}
-.w-\[calc\(4rem\+2vw\)\] {
-  width: calc(4rem + 2vw);
-}
-.w-\[calc\(4rem\+1vw\)\] {
-  width: calc(4rem + 1vw);
 }
 @-webkit-keyframes typewriter {
 
@@ -857,18 +786,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-1 {
   padding-bottom: 0.25rem;
 }
-.pt-1 {
-  padding-top: 0.25rem;
-}
-.pb-5 {
-  padding-bottom: 1.25rem;
-}
-.pt-5 {
-  padding-top: 1.25rem;
-}
-.pt-10 {
-  padding-top: 2.5rem;
-}
 .text-left {
   text-align: left;
 }
@@ -903,9 +820,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-\[calc\(1rem\+2vw\)\] {
   font-size: calc(1rem + 2vw);
 }
-.text-\[calc\(0\.5rem\+2vw\)\] {
-  font-size: calc(0.5rem + 2vw);
-}
 .text-\[calc\(1rem\+3vw\)\] {
   font-size: calc(1rem + 3vw);
 }
@@ -928,6 +842,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
+}
+.text-\[calc\(0\.5rem\+2vw\)\] {
+  font-size: calc(0.5rem + 2vw);
 }
 .font-light {
   font-weight: 300;
@@ -1080,16 +997,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 4vw;
   }
 
-  .md\:h-12 {
-    height: 3rem;
+  .md\:h-\[calc\(4rem\+3vw\)\] {
+    height: calc(4rem + 3vw);
   }
 
   .md\:h-10 {
     height: 2.5rem;
-  }
-
-  .md\:h-\[calc\(4rem\+3vw\)\] {
-    height: calc(4rem + 3vw);
   }
 
   .md\:w-\[calc\(3rem\+7vw\)\] {
@@ -1108,16 +1021,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 4vw;
   }
 
-  .md\:w-12 {
-    width: 3rem;
+  .md\:w-\[calc\(4rem\+3vw\)\] {
+    width: calc(4rem + 3vw);
   }
 
   .md\:w-10 {
     width: 2.5rem;
-  }
-
-  .md\:w-\[calc\(4rem\+3vw\)\] {
-    width: calc(4rem + 3vw);
   }
 
   .md\:border-\[3px\] {
@@ -1130,10 +1039,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:text-\[calc\(2rem\+4vw\)\] {
     font-size: calc(2rem + 4vw);
-  }
-
-  .md\:text-\[calc\(2rem\+3vw\)\] {
-    font-size: calc(2rem + 3vw);
   }
 
   .md\:leading-\[calc\(1rem\+4vw\)\] {
@@ -1300,12 +1205,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: calc(1rem + 1vw);
   }
 
-    .lg\:text-\[calc\(0\.5rem\+1vw\)\] {
-    font-size: calc(0.5rem + 1vw);
-  }
-
-    .lg\:text-\[calc\(3rem\+4vw\)\] {
-    font-size: calc(3rem + 4vw);
+    .lg\:text-\[calc\(3rem\+2vw\)\] {
+    font-size: calc(3rem + 2vw);
   }
 
     .lg\:text-\[calc\(1\.5rem\+1vw\)\] {
@@ -1322,10 +1223,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
     .lg\:text-\[calc\(2rem\+2vw\)\] {
     font-size: calc(2rem + 2vw);
-  }
-
-    .lg\:text-\[calc\(3rem\+2vw\)\] {
-    font-size: calc(3rem + 2vw);
   }
 
     .lg\:leading-\[calc\(1rem\+6vw\)\] {
