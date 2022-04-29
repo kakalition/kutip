@@ -50,7 +50,7 @@ export default function QuoteComponent(props) {
                 id="quote"
                 className="text-center font-playfair-display text-[calc(2rem+2vw)] font-bold leading-tight text-[#FFA781]
                 md:text-left md:text-[calc(2rem+4vw)]
-                lg:text-[calc(3rem+4vw)]"
+                lg:text-[calc(3rem+2vw)]"
                 style={{ color: props.colorPalette.primaryColor }}
             >
                 {text}

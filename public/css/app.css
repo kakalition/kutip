@@ -1132,6 +1132,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: calc(2rem + 4vw);
   }
 
+  .md\:text-\[calc\(2rem\+3vw\)\] {
+    font-size: calc(2rem + 3vw);
+  }
+
   .md\:leading-\[calc\(1rem\+4vw\)\] {
     line-height: calc(1rem + 4vw);
   }
@@ -1318,6 +1322,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
     .lg\:text-\[calc\(2rem\+2vw\)\] {
     font-size: calc(2rem + 2vw);
+  }
+
+    .lg\:text-\[calc\(3rem\+2vw\)\] {
+    font-size: calc(3rem + 2vw);
   }
 
     .lg\:leading-\[calc\(1rem\+6vw\)\] {

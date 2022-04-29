@@ -6321,7 +6321,7 @@ function QuoteComponent(props) {
     className: "",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
       id: "quote",
-      className: "text-center font-playfair-display text-[calc(2rem+2vw)] font-bold leading-tight text-[#FFA781] md:text-left md:text-[calc(2rem+4vw)] lg:text-[calc(3rem+4vw)]",
+      className: "text-center font-playfair-display text-[calc(2rem+2vw)] font-bold leading-tight text-[#FFA781] md:text-left md:text-[calc(2rem+4vw)] lg:text-[calc(3rem+2vw)]",
       style: {
         color: props.colorPalette.primaryColor
       },
