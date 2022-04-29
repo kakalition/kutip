@@ -26,8 +26,6 @@ function AuthorNameBuilder(props) {
 }
 
 export default function HomePage(props) {
-    //const username = JSON.parse(props.user)["name"];
-
     const authors = JSON.parse(props.authors).map((author) => {
         const formattedName = _.startCase(author);
         return (
@@ -57,7 +55,7 @@ export default function HomePage(props) {
     return (
         <div id="root" className="w-screen min-h-screen select-none bg-primary px-[10vw]">
             <div className="h-8" />
-            <HomeHeaderComponent logoutCallback={logout} />
+            <HomeHeaderComponent logoutCallback={logout} username={props.username}/>
             <div className="h-24" />
             <AuthorNameBuilder value="Random" textcolor="text-[#8D1747]" />
             {authors}

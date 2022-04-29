@@ -9,9 +9,9 @@ export default function HomeHeaderComponent(props) {
             </p>
 
             <div className="flex flex-row items-center">
-                <p className="font-playfair-display text-[calc(0.5rem+2vw)] font-semibold text-secondary
-                lg:text-[calc(0.5rem+1vw)]">
-                    Kharisma Sri Wibowo
+                <p className="font-playfair-display text-[calc(1rem+2vw)] font-semibold text-secondary
+                lg:text-[calc(1rem+1vw)]">
+                    {props.username}
                 </p>
 
                 <div className="w-[3vw] md:w-[2vw] lg:w-[1vw]" />

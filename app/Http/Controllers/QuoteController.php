@@ -19,7 +19,7 @@ class QuoteController extends Controller
         $temp = str_replace(" ", "-", $js);
 
         return view('home')
-            ->with('user', $user)
+            ->with('username', $user->name)
             ->with('authors', $temp);
     }
 

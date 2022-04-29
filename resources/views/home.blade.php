@@ -3,7 +3,7 @@
 @section('root-view')
     <div 
         id="home-root" 
-        data-user={{ $user }}
+        data-username={{ $username }}
         data-authors={{ $authors }}>
     </div>
 @endsection

@@ -5863,7 +5863,6 @@ function AuthorNameBuilder(props) {
 }
 
 function HomePage(props) {
-  //const username = JSON.parse(props.user)["name"];
   var authors = JSON.parse(props.authors).map(function (author) {
     var formattedName = _.startCase(author);
 
@@ -5897,7 +5896,8 @@ function HomePage(props) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "h-8"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_HomeHeaderComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      logoutCallback: logout
+      logoutCallback: logout,
+      username: props.username
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "h-24"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(AuthorNameBuilder, {
@@ -5942,8 +5942,8 @@ function HomeHeaderComponent(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "flex flex-row items-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-        className: "font-playfair-display text-[calc(0.5rem+2vw)] font-semibold text-secondary lg:text-[calc(0.5rem+1vw)]",
-        children: "Kharisma Sri Wibowo"
+        className: "font-playfair-display text-[calc(1rem+2vw)] font-semibold text-secondary lg:text-[calc(1rem+1vw)]",
+        children: props.username
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "w-[3vw] md:w-[2vw] lg:w-[1vw]"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
